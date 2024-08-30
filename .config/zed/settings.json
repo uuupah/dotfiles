@@ -12,9 +12,12 @@
     "diagnostics": false
   },
   "ui_font_size": 14,
+  "unstable.ui_density": "compact",
+  "ui_font_family": "JetBrains Mono",
   "buffer_font_size": 12,
+  "buffer_line_height": "comfortable",
+  // "buffer_font_family": "JetBrains Mono",
   "buffer_font_family": "JetBrains Mono",
-  // "buffer_font_family": "ProggyClean Nerd Font Mono",
   "theme": {
     "mode": "system",
     "light": "One Light",
@@ -25,6 +28,11 @@
     "font_size": 16,
     "line_height": {
       "custom": 1
+    }
+  },
+  "languages": {
+    "Markdown": {
+      "remove_trailing_whitespace_on_save": false
     }
   },
   // hide all the ai nonsense
