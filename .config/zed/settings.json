@@ -30,9 +30,11 @@
       "custom": 1
     }
   },
+  "tab_size": 2,
   "languages": {
     "Markdown": {
-      "remove_trailing_whitespace_on_save": false
+      "remove_trailing_whitespace_on_save": false,
+      "soft_wrap": "editor_width"
     }
   },
   // hide all the ai nonsense
