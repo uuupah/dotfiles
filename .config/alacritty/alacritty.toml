@@ -1,6 +1,3 @@
-import = [
-  "~/.config/alacritty/themes/themes/alacritty_0_12.toml"
-]
 
 [window]
 title = "alacritty"
@@ -12,3 +9,16 @@ bold  = { family = "ProggyClean Nerd Font Mono", style = "Bold" }
 italic = { family = "ProggyClean Nerd Font Mono", style = "Italic" }
 bold_italic = { family = "ProggyClean Nerd Font Mono", style = "Bold Italic" }
 size = 12
+
+[general]
+import = [
+  "~/.config/alacritty/themes/themes/alacritty_0_12.toml"
+]
+
+[keyboard]
+bindings = [
+{ key = "PageUp", action = "ScrollLineUp" },
+{ key = "PageUp", mods="Control", action = "ScrollHalfPageUp" },
+{ key = "PageDown", action = "ScrollLineDown" },
+{ key = "PageDown", mods="Control", action = "ScrollHalfPageDown" },
+]

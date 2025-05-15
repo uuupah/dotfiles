@@ -1,3 +1,13 @@
+command_timeout = 1000
+
+[[battery.display]]
+threshold = 20
+style = 'yellow'
+
+[[battery.display]]
+threshold = 10
+style = 'red'
+
 [character]
 success_symbol = "[>](green)"
 error_symbol = "[x](red)"
@@ -17,7 +27,6 @@ symbol = "az "
 
 [bun]
 symbol = "bun "
-format = "via [$symbol]($style)"
 
 [buf]
 format = "via [$symbol]($style)"
@@ -27,49 +36,36 @@ symbol = "C "
 
 [cmake]
 symbol = "cmake "
-format = "via [$symbol]($style)"
 
 [cobol]
 symbol = "cobol "
-format = "via [$symbol]($style)"
 
 [conda]
 symbol = "conda "
 
 [crystal]
 symbol = "cr "
-format = "via [$symbol]($style)"
 
 [daml]
 symbol = "daml "
-format = "via [$symbol]($style)"
 
 [dart]
 symbol = "dart "
-format = "via [$symbol]($style)"
 
 [deno]
 symbol = "deno "
-format = "via [$symbol]($style)"
 
 [dotnet]
 symbol = ".NET "
-format = "[$symbol(🎯 $tfm )]($style)"
 
 [elixir]
 symbol = "exs "
-format = 'via [$symbol]($style)'
 
 [elm]
 symbol = "elm "
-format = 'via [$symbol]($style)'
-
-[erlang]
-format = 'via [$symbol]($style)'
 
 [fennel]
 symbol = "fnl "
-format = 'via [$symbol]($style)'
 
 [fossil_branch]
 symbol = "fossil "
@@ -82,15 +78,12 @@ symbol = "git "
 
 [gleam]
 symbol = "gleam "
-format = 'via [$symbol]($style)'
 
 [golang]
 symbol = "go "
-format = 'via [$symbol]($style)'
 
 [gradle]
 symbol = "gradel "
-format = 'via [$symbol]($style)'
 
 [guix_shell]
 symbol = "guix "
@@ -98,56 +91,41 @@ symbol = "guix "
 [hg_branch]
 symbol = "hg "
 
-[haxe]
-format = 'via [$symbol]($style)'
-
-[helm]
-format = 'via [$symbol]($style)'
-
 [java]
 symbol = "java "
-format = 'via [$symbol]($style)'
 
 [julia]
 symbol = "julia "
-format = 'via [$symbol]($style)'
 
 [kotlin]
 symbol = "kt "
-format = 'via [$symbol]($style)'
 
 [lua]
 symbol = "lua "
-format = 'via [$symbol]($style)'
 
 [memory_usage]
 symbol = "memory "
 
 [meson]
 symbol = "meson "
-format = 'via [$symbol]($style)'
 
 [nats]
 symbol = "nats "
 
 [nim]
 symbol = "nim "
-format = 'via [$symbol]($style)'
 
 [nix_shell]
 symbol = "nix "
 
 [nodejs]
 symbol = "nodejs "
-format = 'via [$symbol]($style)'
 
 [ocaml]
 symbol = "ml "
-format = 'via [$symbol(\($switch_indicator$switch_name\) )]($style)'
 
 [opa]
 symbol = "opa "
-format = 'via [$symbol]($style)'
 
 [os.symbols]
 AIX = "aix "
@@ -203,73 +181,48 @@ symbol = "pkg "
 
 [perl]
 symbol = "pl "
-format = 'via [$symbol]($style)'
 
 [php]
 symbol = "php "
-format = 'via [$symbol]($style)'
 
 [pijul_channel]
 symbol = "pijul "
 
 [pulumi]
 symbol = "pulumi "
-format = 'via [$symbol$stack]($style)'
 
 [purescript]
 symbol = "purs "
-format = 'via [$symbol]($style)'
 
 [python]
 symbol = "py "
-format = 'via [$symbol]($style)'
 
 [quarto]
 symbol = "quarto "
-format = 'via [$symbol]($style)'
 
 [raku]
 symbol = "raku "
-format = 'via [$symbol]($style)'
-
-[red]
-format = 'via [$symbol]($style)'
-
-[rlang]
-format = 'via [$symbol]($style)'
 
 [ruby]
 symbol = "rb "
-format = 'via [$symbol]($style)'
 
 [rust]
 symbol = "rs "
-format = 'via [$symbol]($style)'
 
 [solidity]
 symbol = "solidarity "
-format = 'via [$symbol]($style)'
 
 [sudo]
 symbol = "sudo "
 
 [typst]
 symbol = "typst "
-format = 'via [$symbol]($style)'
 
 [swift]
-symbol = "swift "
-format = 'via [$symbol]($style)'
+symbol = "swift " 
 
 [terraform]
 symbol = "terraform "
 
-[vagrant]
-format = 'via [$symbol]($style)'
-
-[vlang]
-format = 'via [$symbol]($style)'
-
 [zig]
 symbol = "zig "
-format = 'via [$symbol]($style)'

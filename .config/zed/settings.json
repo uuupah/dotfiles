@@ -46,7 +46,7 @@
     "button": false
   },
   "chat_panel": {
-    "button": false
+    "button": "never"
   },
   "assistant": {
     "enabled": false,
@@ -55,5 +55,6 @@
   },
   "assistant_v2": {
     "enabled": false
-  }
+  },
+  "soft_wrap": "editor_width"
 }
