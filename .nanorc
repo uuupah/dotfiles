@@ -1,0 +1,15 @@
+set atblanks
+set softwrap
+set tabsize 2
+set tabstospaces
+include "/usr/share/nano/*.nanorc"
+set speller "aspell -x -c"
+set constantshow
+set linenumbers
+set casesensitive
+set zap
+set autoindent
+set indicator
+set minibar
+set nohelp
+set mouse
