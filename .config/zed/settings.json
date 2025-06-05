@@ -35,7 +35,8 @@
   "languages": {
     "Markdown": {
       "remove_trailing_whitespace_on_save": false,
-      "soft_wrap": "editor_width"
+      "soft_wrap": "editor_width",
+      "show_completions_on_input": false
     }
   },
   // hide all the ai nonsense

@@ -24,7 +24,6 @@ diverged = "<>"
 
 [directory]
 read_only = " (read only)"
-truncation_symbol = "//"
 
 [aws]
 disabled = true
