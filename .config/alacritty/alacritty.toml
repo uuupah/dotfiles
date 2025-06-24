@@ -2,6 +2,7 @@
 [window]
 title = "alacritty"
 dimensions = { columns = 80, lines = 24 }
+padding = { x = 1, y = 1 }
 
 [font]
 normal = { family = "ProggyClean Nerd Font Mono", style = "Regular" }
