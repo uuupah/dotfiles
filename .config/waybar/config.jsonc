@@ -31,20 +31,6 @@
     ],
     // Modules configuration
      "hyprland/workspaces": {
-//         "disable-scroll": true,
-//         "all-outputs": true,
-//         "warp-on-scroll": false,
-//         "format": "{name}: {icon}",
-//         "format-icons": {
-//             "1": "",
-//             "2": "",
-//             "3": "",
-//             "4": "",
-//             "5": "",
-//             "urgent": "",
-//             "focused": "",
-//             "default": ""
-//         }
          "persistent-workspaces": {
              "*": [1,2,3,4]
          }
@@ -71,7 +57,7 @@
     "hyprland/window": {
 //      "icon": true,
       "rewrite": {
-          "(.*) - LibreWolf": "Librewolf"
+          "(.*)LibreWolf": "librewolf"
       },
     },
     "mpd": {
