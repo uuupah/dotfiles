@@ -55,7 +55,11 @@ button:hover {
 #workspaces button {
     padding: 0 5px;
     background-color: transparent;
-    color: #ffffff;
+    color: #c5c8c6;
+}
+
+#workspaces button.active {
+    color: #2eb398;
 }
 
 #workspaces button:hover {
@@ -94,7 +98,7 @@ button:hover {
 #power-profiles-daemon,
 #mpd {
     padding: 0 5px;
-    color: #ffffff;
+    color: #c5c6c8;
 }
 
 #window,

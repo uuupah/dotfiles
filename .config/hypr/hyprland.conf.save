@@ -4,7 +4,6 @@
 
 # See https://wiki.hyprland.org/Configuring/Monitors/
 monitor=eDP-1, 1920x1080@60, 0x0, 1
-monitor=DP-3, disabled
 
 ###################
 ### MY PROGRAMS ###
@@ -53,10 +52,10 @@ general {
     gaps_in = 2
     gaps_out = 2
 
-    border_size = 2
+    border_size = 1
 
     # https://wiki.hyprland.org/Configuring/Variables/#variable-types for info about colors
-    col.active_border = rgb(70c0b1)
+    col.active_border = rgb(2eb398)
     col.inactive_border = rgb(595959)
 
     # Set to true enable resizing windows by clicking and dragging on borders and gaps
@@ -74,7 +73,7 @@ decoration {
 
     # Change transparency of focused and unfocused windows
     active_opacity = 1.0
-    inactive_opacity = 0.97
+    inactive_opacity = 0.9
 
     drop_shadow = false
     shadow_range = 4
@@ -134,7 +133,7 @@ input {
     kb_layout = us
     kb_variant =
     kb_model =
-    kb_options = ctrl:nocaps
+  kb_options = ctrl:nocaps
     kb_rules =
 
     follow_mouse = 1
@@ -187,12 +186,12 @@ bind = $mainMod, 1, workspace, 1
 bind = $mainMod, 2, workspace, 2
 bind = $mainMod, 3, workspace, 3
 bind = $mainMod, 4, workspace, 4
-#bind = $mainMod, 5, workspace, 5
-#bind = $mainMod, 6, workspace, 6
-#bind = $mainMod, 7, workspace, 7
-#bind = $mainMod, 8, workspace, 8
-#bind = $mainMod, 9, workspace, 9
-#bind = $mainMod, 0, workspace, 10
+bind = $mainMod, 5, workspace, 5
+bind = $mainMod, 6, workspace, 6
+bind = $mainMod, 7, workspace, 7
+bind = $mainMod, 8, workspace, 8
+bind = $mainMod, 9, workspace, 9
+bind = $mainMod, 0, workspace, 10
 
 # Move active window to a workspace with mainMod + SHIFT + [0-9]
 bind = $mainMod SHIFT, 1, movetoworkspace, 1
@@ -252,4 +251,3 @@ windowrulev2 = suppressevent maximize, class:.*
 windowrulev2 = nofocus,class:^$,title:^$,xwayland:1,floating:1,fullscreen:0,pinned:0
 
 windowrule = float, title:"open folder"
-

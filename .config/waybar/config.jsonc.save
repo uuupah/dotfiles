@@ -8,12 +8,12 @@
     "spacing": 4, // Gaps between modules (4px)
     // Choose the order of the modules
     "modules-left": [
-       "hyprland/workspaces",
-//        "hyprland/submap",
+        "hyprland/workspaces",
+        "hyprland/submap",
         "sway/scratchpad"
     ],
     "modules-center": [
-        "hyprland/window"
+        "sway/window"
     ],
     "modules-right": [
 //        "idle_inhibitor",
@@ -31,22 +31,19 @@
     ],
     // Modules configuration
      "hyprland/workspaces": {
-//         "disable-scroll": true,
-//         "all-outputs": true,
-//         "warp-on-scroll": false,
-//         "format": "{name}: {icon}",
-//         "format-icons": {
-//             "1": "",
-//             "2": "",
-//             "3": "",
-//             "4": "",
-//             "5": "",
-//             "urgent": "",
-//             "focused": "",
-//             "default": ""
-//         }
-         "persistent-workspaces": {
-             "*": [1,2,3,4]
+         "disable-scroll": true,
+         "all-outputs": true,
+         "warp-on-scroll": false,
+         "format": "{name}: {icon}",
+         "format-icons": {
+             "1": "",
+             "2": "",
+             "3": "",
+             "4": "",
+             "5": "",
+             "urgent": "",
+             "focused": "",
+             "default": ""
          }
      },
     "keyboard-state": {
@@ -58,7 +55,7 @@
             "unlocked": ""
         }
     },
-    "sway/mode": {
+    "hyprland/submap": {
         "format": "<span style=\"italic\">{}</span>"
     },
     "sway/scratchpad": {
@@ -67,9 +64,6 @@
         "format-icons": ["", ""],
         "tooltip": true,
         "tooltip-format": "{app}: {title}"
-    },
-    "hyprland/window": {
-      "icon": true,
     },
     "mpd": {
         "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ⸨{songPosition}|{queueLength}⸩ {volume}% ",
@@ -109,7 +103,6 @@
         "spacing": 10
     },
     "clock": {
-        "interval": 1,
         // "timezone": "America/New_York",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
         "format": "{:%Y年%m月%d日 %H:%M:%S}",
