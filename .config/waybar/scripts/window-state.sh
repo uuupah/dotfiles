@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# care of gngeorgiev https://gist.github.com/gngeorgiev/faff04ee9be262fe37db194839eb65a8
+
 window_info=$(hyprctl activewindow -j)
 workspace_info=$(hyprctl activeworkspace -j)
 
