@@ -18,9 +18,13 @@
         "network",
         "bluetooth",
         "sway/language",
+        "custom/pipe-divider",
         "clock",
         "tray"
     ],
+    "custom/pipe-divider": {
+        "format": "|"
+    },
     "custom/window-state": {
         "exec": "bash -c '/home/uuu/.config/waybar/scripts/window-state.sh'",
         "return-type": "json",
@@ -51,7 +55,11 @@
         "tooltip-format": "{app}: {title}"
     },
     "hyprland/window": {
+      "icon": true,
+      "icon-size": 24,
+      "max-length": 30,
       "rewrite": {
+          "(.*)Microsoft(.{4})Edge": "microsoft edge", // wtf lol
           "(.*)LibreWolf": "librewolf"
       }
     },
@@ -152,9 +160,9 @@
     "bluetooth": {
       // "format-alt": "bluetooth: {status}",
       "format": "",
-      "format-off": "",
-      "format-disabled": "",
-      "format-connected": " {num_connections}",
+      "format-off": "!",
+      "format-disabled": "!",
+      "format-connected": " ({num_connections})",
       "on-click": "foot bluetoothctl",
       "tooltip-format": "{status}"
     },
