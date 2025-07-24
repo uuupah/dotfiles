@@ -1,0 +1,17 @@
+font = /usr/share/fonts/unifont/unifont.otf
+font-size = 12
+hint-font = false
+ascii-input = true
+late-keyboard-init = true
+
+outline-width = 0
+border-width = 2
+
+background-color=#1D1F21
+text-color=#C5C8C6
+border-color=#707671
+selection-color=#8ABEB7
+
+width = 300
+height = 200
+num-results = 10
