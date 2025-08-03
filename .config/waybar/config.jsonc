@@ -19,6 +19,7 @@
         "bluetooth",
         "network",
         "sway/language",
+//        "backlight",
         "custom/divider",
         "clock",
         "tray"
@@ -128,7 +129,7 @@
     },
     "backlight": {
         "format": "{percent}% {icon}",
-        "format-icons": ["🌑", "🌘", "🌗", "🌖", "🌕"]
+        "format-icons": ["", "", ""]
     },
     "battery": {
         "interval": 1,
