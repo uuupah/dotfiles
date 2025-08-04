@@ -1,3 +1,47 @@
+@define-color background rgb(29, 32, 33);
+@define-color foreground rgb(251, 241, 199);
+
+@define-color black rgb(40, 40, 40);
+@define-color red rgb(204, 36, 29);
+@define-color green rgb(152, 151, 26);
+@define-color yellow rgb(215, 153, 33);
+@define-color blue rgb(69, 133, 136);
+@define-color magenta rgb(177, 98, 134);
+@define-color cyan rgb(104, 157, 106);
+@define-color white rgb(168, 153, 132);
+
+@define-color bright-black rgb(146, 131, 116);
+@define-color bright-red rgb(251, 73, 52);
+@define-color bright-green rgb(184, 187, 38);
+@define-color bright-yellow rgb(250, 189, 47);
+@define-color bright-blue rgb(131, 165, 152);
+@define-color bright-magenta rgb(211, 134, 155);
+@define-color bright-cyan rgb(142, 192, 124);
+@define-color bright-white rgb(235, 219, 178);
+
+/*:root {*/
+/*  --background: #1d2021;*/
+/*  --foreground: #fbf1c7;*/
+/**/
+/*  --black: #282828;*/
+/*  --red: #cc241d;*/
+/*  --green: #98971a;*/
+/*  --yellow: #d79921;*/
+/*  --blue: #458588;*/
+/*  --magenta: #b16286;*/
+/*  --cyan: 689d6a;*/
+/*  --white: #a89984;*/
+/**/
+/*  --bright-black: #928374;*/
+/*  --bright-red: #fb4934;*/
+/*  --bright-green: #b8bb26;*/
+/*  --bright-yellow: #fabd2f;*/
+/*  --bright-blue: #83a598;*/
+/*  --bright-magenta: #d3869b;*/
+/*  --bright-cyan: #8ec07c;*/
+/*  --bright-white: #ebdbb2;*/
+/*}*/
+
 * {
   font-family:
     "Unifont-JP", "Noto Sans Mono", "Font Awesome 6 Free",
@@ -6,9 +50,9 @@
 }
 
 window#waybar {
-  background-color: #1d1f21;
+  background-color: @background;
   /*    border-bottom: 3px solid rgb(100, 114, 125);*/
-  color: #c5c8c6;
+  color: @foreground;
   transition-property: background-color;
   transition-duration: 0.5s;
 }
@@ -24,17 +68,17 @@ button {
 /* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
 button:hover {
   background: inherit;
-  box-shadow: inset 0 -3px #c5c6c8;
+  box-shadow: inset 0 -3px @foreground;
 }
 
 #workspaces button {
   padding: 0 5px;
   background-color: transparent;
-  color: #c5c8c6;
+  color: @foreground;
 }
 
 #workspaces button.active {
-  color: #2eb398;
+  color: @yellow;
 /*  color: #E7C547; */
 }
 
@@ -43,18 +87,18 @@ button:hover {
 }
 
 #workspaces button.focused {
-  background-color: #64727d;
+/*  background-color: #64727d;*/
   box-shadow: inset 0 -3px #ffffff;
 }
 
 #workspaces button.urgent {
-  background-color: #eb4d4b;
+  background-color: @red;
 }
 
-#mode {
-  background-color: #64727d;
-  box-shadow: inset 0 -3px #ffffff;
-}
+/*#mode {*/
+/*  background-color: @foreground;*/
+/*  box-shadow: inset 0 -3px #ffffff;*/
+/*}*/
 
 #clock,
 #battery,
@@ -76,7 +120,7 @@ button:hover {
 #mpd,
 #custom-launcher {
   padding: 0 5px;
-  color: #c5c6c8;
+  color: @foreground;
 }
 
 /* #clock:hover, */
@@ -99,7 +143,7 @@ button:hover {
 #mpd:hover,
 #custom-launcher:hover {
   background: inherit;
-  box-shadow: inset 0 -3px #c5c6c8;
+  box-shadow: inset 0 -3px @foreground;
   background: rgba(0, 0, 0, 0.2);
 }
 
