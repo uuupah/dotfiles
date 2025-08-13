@@ -69,6 +69,7 @@
       "icon": false,
       "icon-size": 24,
       "max-length": 30,
+      "format": "{title} - {class}",
       "rewrite": {
           "(.*)Microsoft(.{4})Edge": "edge", // wtf lol
           "(.*)LibreWolf": "librewolf"
