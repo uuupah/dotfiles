@@ -14,6 +14,7 @@
         // "custom/media"
     ],
     "modules-right": [
+        "custom/pomodoro",
         "battery",
         "pulseaudio",
         "bluetooth",
@@ -55,6 +56,13 @@
             "unlocked": ""
         }
     },
+    "custom/pomodoro": {
+    	"format": "{}",
+    	"return-type": "json",
+    	"exec": "waybar-module-pomodoro",
+    	"on-click": "waybar-module-pomodoro toggle",
+    	"on-click-right": "waybar-module-pomodoro reset",
+    },
     "sway/mode": {
         "format": "<span style=\"italic\">{}</span>"
     },
@@ -69,7 +77,6 @@
       "icon": false,
       "icon-size": 24,
       "max-length": 30,
-      "format": "{title} - {class}",
       "rewrite": {
           "(.*)Microsoft(.{4})Edge": "edge", // wtf lol
           "(.*)LibreWolf": "librewolf"

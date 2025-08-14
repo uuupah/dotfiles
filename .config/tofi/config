@@ -5,11 +5,11 @@ ascii-input = true
 late-keyboard-init = true
 
 outline-width = 0
-border-width = 2
+border-width = 1
 
 background-color=#1D1F21
 text-color=#C5C8C6
-border-color=#707671
+border-color=#C5C8C6
 selection-color=#8ABEB7
 
 width = 300
