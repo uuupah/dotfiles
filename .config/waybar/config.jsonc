@@ -15,6 +15,8 @@
   ],
   "modules-right": [
     "custom/spacer",
+    "custom/weather",
+    "custom/pipe-divider",
     "custom/pomodoro",
     "custom/pipe-divider",
     "battery",
@@ -32,7 +34,7 @@
     //"custom/power"
   ],
   "custom/spacer": {
-    "format": "    "
+    "format": "        "
   },
   "custom/pipe-divider": {
     "format": "|"
@@ -41,6 +43,11 @@
     "exec": "bash -c '/home/uuu/.config/waybar/scripts/window-state.sh'",
     "return-type": "json",
     "interval": 1
+  },
+  "custom/weather": {
+    "exec": "bash -c '/home/uuu/.config/waybar/scripts/weather.sh'",
+    "return-type": "text",
+    "interval": 600
   },
   "hyprland/workspaces": {
     "persistent-workspaces": {
