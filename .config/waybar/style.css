@@ -31,10 +31,10 @@
   box-shadow: none;
   text-shadow: none;
   background: none;
-  color: #d3c6aa;
 }
 
 window#waybar {
+  color: #d3c6aa;
   background-color: #2d353b;
   transition-property: background-color;
   transition-duration: 0.5s;
@@ -46,6 +46,10 @@ button {
   /* Avoid rounded borders under each button name */
   border: none;
   border-radius: 0;
+}
+
+#workspaces button {
+  color: #d3c6aa;
 }
 
 #workspaces button.active {
