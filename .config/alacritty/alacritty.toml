@@ -13,8 +13,8 @@ size = 12
 
 [general]
 import = [
-#  "~/.config/alacritty/themes/everforest_dark_hard.toml"
-  "~/.config/alacritty/themes/alacritty_0_12.toml"
+  "~/.config/alacritty/themes/everforest_dark_medium.toml"
+#  "~/.config/alacritty/themes/alacritty_0_12.toml"
 ]
 
 [keyboard]

@@ -7,10 +7,12 @@ late-keyboard-init = true
 outline-width = 0
 border-width = 1
 
-background-color=#1D1F21
-text-color=#C5C8C6
-border-color=#C5C8C6
-selection-color=#8ABEB7
+background-color=#2D353B
+text-color=#D3C6AA
+border-color=#D3C6AA
+selection-color=#2D353B
+selection-background=#D3C6AA
+selection-background-padding=0,4
 
 width = 300
 height = 200
