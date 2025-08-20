@@ -4,6 +4,8 @@ hint-font = false
 ascii-input = true
 late-keyboard-init = true
 
+prompt-text="sel:"
+
 outline-width = 0
 border-width = 1
 
@@ -15,6 +17,6 @@ selection-padding=-1
 selection-background=#D3C6AA
 selection-background-padding=0,-1,0,4
 
-width = 300
-height = 194
-num-results = 10
+width = 150
+height = 130
+num-results = 6

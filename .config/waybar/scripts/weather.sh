@@ -6,6 +6,10 @@ WEATHER=$(echo "$INXI_OUT" | jq -r '.[]."000#1#0#Weather"[0]."002#0#2#conditions
 TEMP=$(echo "$INXI_OUT" | jq -r '.[]."000#1#0#Weather"[0]."001#0#2#temperature"' | cut -d'.' -f1)
 TEMP="${TEMP}°"
 
+if [ -z "$TEMP" ]; then
+  TEMP="--°"
+fi
+
 # check openweathermaps condition codes https://openweathermap.org/weather-conditions#Weather-Condition-Codes-2
 
 if [[ $WEATHER == *"thunderstorm"* ]]; then
@@ -34,6 +38,8 @@ elif [[ $WEATHER == *"tornado"* ]]; then
   echo "tndo $TEMP"
 elif [[ $WEATHER == *"cloud"* ]]; then
   echo "cloud $TEMP"
-else
+elif [[ $WEATHER == *"clear"* ]]; then
   echo "clear $TEMP"
+else
+  echo "wthr $TEMP"
 fi

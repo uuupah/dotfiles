@@ -22,7 +22,7 @@
   "theme": {
     "mode": "dark",
     "light": "One Light",
-    "dark": "One Dark"
+    "dark": "Everforest Dark Medium"
   },
   "terminal": {
     "font_family": "ProggyClean Nerd Font Mono",
@@ -52,7 +52,6 @@
   },
   "agent": {
     "enabled": false,
-    "version": "2",
     "button": false
   },
   "assistant_v2": {

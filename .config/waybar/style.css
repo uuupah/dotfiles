@@ -59,6 +59,7 @@ button {
 
 #workspaces button.urgent {
   background-color: #e67e80;
+  color: #2d353b;;
 }
 
 #workspaces button,
