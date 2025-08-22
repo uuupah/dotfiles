@@ -7,6 +7,9 @@
 // custom settings, run `zed: open default settings` from the
 // command palette
 {
+  "title_bar": {
+    // "show_menus": true
+  },
   "telemetry": {
     "metrics": false,
     "diagnostics": false

@@ -85,7 +85,8 @@
       "Microsoft-edge":"edge",
       "dev.zed.Zed": "zed",
       "org.pulseaudio.pavucontrol": "volume control",
-      "org.keepassxc.KeePassXC": "keepassxc"
+      "org.keepassxc.KeePassXC": "keepassxc",
+      "org.remmina.Remmina": "remmina"
     }
   },
   "mpd": {
@@ -177,7 +178,7 @@
     "tooltip-format": "{essid}\n{ifname} via {gwaddr}",
     "format-linked": " {ifname} (No IP)",
     "format-disconnected": "no wifi",
-    "on-click": "alacritty -e nmcli device wifi rescan; nmtui",
+    "on-click": "alacritty -e nmcli device wifi rescan; alacritty -e nmtui",
   },
   "bluetooth": {
     "format": "bt (0)",
