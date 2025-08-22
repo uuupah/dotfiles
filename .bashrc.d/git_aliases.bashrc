@@ -1,1 +1,8 @@
 alias gs='git status'
+alias gpl='git pull'
+alias gf='git fetch'
+alias gps='git push'
+alias gp='git push'
+alias gc='git commit -m'
+alias gd='git diff'
+alias ga='git add'
