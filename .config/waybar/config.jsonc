@@ -86,7 +86,8 @@
       "dev.zed.Zed": "zed",
       "org.pulseaudio.pavucontrol": "volume control",
       "org.keepassxc.KeePassXC": "keepassxc",
-      "org.remmina.Remmina": "remmina"
+      "org.remmina.Remmina": "remmina",
+      "com.github.taiko2k.tauonmb": "tauon"
     }
   },
   "mpd": {

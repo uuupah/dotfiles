@@ -1,3 +1,6 @@
 {
-    "colorscheme": "everforest"
+    "colorscheme": "everforest",
+    "diffgutter": true,
+    "softwrap": true,
+    "wordwrap": true
 }
