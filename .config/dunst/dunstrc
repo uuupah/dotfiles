@@ -2,11 +2,11 @@
 # i've trimmed this down to make it readable, if starting over get the base rc from here: https://github.com/dunst-project/dunst/blob/master/dunstrc
 
 [global]
-    monitor = 0
+    monitor = eDP-1
     follow = none
 
     width = 320
-    height = (0, 300)
+    height = (0, 150)
     origin = top-right
     offset = (12, 12)
     scale = 0
@@ -32,13 +32,13 @@
 
     sort = update
 
-    idle_threshold = 120
+    idle_threshold = 0
 
     font = "Unifont-JP 12"
     line_height = 0
 
     markup = full
-    format = "[ %s ]\n\n%b"
+    format = "[ %s ]\n%b"
 
     alignment = left
     vertical_alignment = center
@@ -155,9 +155,9 @@
 
 # Disable the transient hint so that idle_threshold cannot be bypassed from the
 # client
-#[transient_disable]
-#    match_transient = yes
-#    set_transient = no
+[transient_disable]
+    match_transient = yes
+    set_transient = no
 #
 # Make the handling of transient notifications more strict by making them not
 # be placed in history.

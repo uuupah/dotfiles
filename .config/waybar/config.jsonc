@@ -15,9 +15,9 @@
   ],
   "modules-right": [
     "custom/spacer",
-//    "custom/weather",
-//    "custom/pipe-divider",
     "custom/pomodoro",
+//    "custom/pipe-divider",
+//    "custom/weather",
     "custom/pipe-divider",
     "battery",
     "custom/pipe-divider",
@@ -45,9 +45,9 @@
     "interval": 1
   },
   "custom/weather": {
-    "exec": "bash -c '/home/uuu/.config/waybar/scripts/weather.sh'",
+    "exec": "bash -c 'cat /tmp/weather'",
     "return-type": "text",
-    "interval": 600
+    "interval": 60
   },
   "hyprland/workspaces": {
     "persistent-workspaces": {
@@ -87,7 +87,8 @@
       "org.pulseaudio.pavucontrol": "volume control",
       "org.keepassxc.KeePassXC": "keepassxc",
       "org.remmina.Remmina": "remmina",
-      "com.github.taiko2k.tauonmb": "tauon"
+      "com.github.taiko2k.tauonmb": "tauon",
+      "Io.github.ungoogled_software.ungoogled_chromium": "ungoogled chromium"
     }
   },
   "mpd": {
@@ -182,10 +183,10 @@
     "on-click": "alacritty -e nmcli device wifi rescan; alacritty -e nmtui",
   },
   "bluetooth": {
-    "format": "bt (0)",
+    "format": "bt on",
     "format-off": "bt off",
     "format-disabled": "bt off",
-    "format-connected": "bt ({num_connections})",
+    "format-connected": "bt {num_connections}",
     "on-click": "blueman-manager",
     "tooltip-format": "{status}"
   },

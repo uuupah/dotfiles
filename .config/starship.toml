@@ -241,7 +241,7 @@ disabled = true
 symbol = "purs "
 
 [python]
-disabled = true
+disabled = false
 symbol = "py "
 
 [quarto]
