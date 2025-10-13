@@ -6,7 +6,7 @@ if pgrep -x tofi >/dev/null; then
   exit
 fi
 
-choice=$(printf "%s\n" "power off" "restart" "suspend" "hibernate" "lock" "log out" | tofi -c ~/.config/tofi/config_powermenu)
+choice=$(printf "%s\n" "power off" "restart" "suspend" "hibernate" "lock" "log out" | tofi --prompt="sel: " --height=112 --width=130)
 
 case "$choice" in
   "power off")

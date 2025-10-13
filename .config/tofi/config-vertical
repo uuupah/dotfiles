@@ -12,7 +12,7 @@ text-color=#D3C6AA
 border-color=#D3C6AA
 selection-color=#2D353B
 selection-background=#D3C6AA
-selection-background-padding=0,-1,0,2
+selection-background-padding=0,-1,1,2
 
 prompt-text="run: "
 prompt-color=#2D353B
@@ -24,6 +24,7 @@ padding-bottom = 0
 padding-left = 0
 padding-right = 0
 
+
 width = 300
-height = 176
+height = 178
 num-results = 10
