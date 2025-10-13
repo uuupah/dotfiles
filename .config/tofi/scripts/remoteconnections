@@ -17,8 +17,6 @@ do
   connectionarray[${friendlyname}]=${i}
 done
 
-selectedconnection=$(printf $friendlynames | tofi --prompt "connect: ")
+selectedconnection=$(printf $friendlynames | tofi --prompt "connect: ") || exit 0
 
-if [ -n "$selectedconnection" ]; then
-	remmina ${connectionarray["${selectedconnection}"]} 
-fi
+remmina ${connectionarray["${selectedconnection}"]} 
