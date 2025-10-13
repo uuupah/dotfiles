@@ -1,10 +1,10 @@
 // -*- mode: jsonc -*-
 {
   "reload_style_on_change": true,
-  "height": 26, // Waybar height (to be removed for auto height)
-  "spacing": 4, // Gaps between modules (4px)
+  "height": 16, // Waybar height (to be removed for auto height)
+  "spacing": 0, // Gaps between modules (4px)
+  "margin":0,
   "modules-left": [
-//    "custom/launcher",
     "hyprland/workspaces",
     "hyprland/scratchpad",
   ],
@@ -16,8 +16,6 @@
   "modules-right": [
     "custom/spacer",
     "custom/pomodoro",
-//    "custom/pipe-divider",
-//    "custom/weather",
     "custom/pipe-divider",
     "battery",
     "custom/pipe-divider",
@@ -68,7 +66,7 @@
     }
   },
   "custom/pomodoro": {
-    "format": "pom {}",
+    "format": "pom {} ",
     "return-type": "json",
     "exec": "waybar-module-pomodoro --no-icons --no-work-icons --autow --autob",
     "on-click": "waybar-module-pomodoro toggle",
@@ -88,7 +86,8 @@
       "org.keepassxc.KeePassXC": "keepassxc",
       "org.remmina.Remmina": "remmina",
       "com.github.taiko2k.tauonmb": "tauon",
-      "Io.github.ungoogled_software.ungoogled_chromium": "ungoogled chromium"
+      "Io.github.ungoogled_software.ungoogled_chromium": "ungoogled chromium",
+      "xdg-desktop-portal-gtk":"file explorer"
     }
   },
   "mpd": {
@@ -217,7 +216,6 @@
     },
     "escape": true,
     "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
-    // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
   },
   "custom/power": {
     "format": "⏻ ",

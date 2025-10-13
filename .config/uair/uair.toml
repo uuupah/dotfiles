@@ -4,11 +4,12 @@ format = "{time}\n"
 [[sessions]]
 id = "work"
 name = "Work"
-duration = "25m"
+duration = "25s"
 command = "notify-send 'Work Done!'"
 
 [[sessions]]
+autostart = "true"
 id = "rest"
 name = "Rest"
-duration = "5m"
+duration = "5s"
 command = "notify-send 'Rest Done!'"

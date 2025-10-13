@@ -24,7 +24,7 @@
 
 * {
   font-family:
-    "Unifont-JP", "Noto Sans Mono", "Font Awesome 6 Free",
+    "Unifont-JP", "ProggyClean Nerd Font", "Noto Sans Mono", "Font Awesome 6 Free",
     "Font Awesome 6 Brands", monospace;
   font-size: 12pt;
   transition: none;
@@ -38,6 +38,8 @@ window#waybar {
   background-color: #2d353b;
   transition-property: background-color;
   transition-duration: 0.5s;
+  padding: 0; 
+  margin: 0; 
 }
 
 button {
