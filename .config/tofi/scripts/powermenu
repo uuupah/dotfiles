@@ -6,7 +6,7 @@ if pgrep -x tofi >/dev/null; then
   exit
 fi
 
-choice=$(printf "%s\n" "power off" "restart" "suspend" "hibernate" "lock" "log out" | tofi --prompt="sel: " --height=112 --width=130)
+choice=$(printf "%s\n" "power off" "restart" "suspend" "hibernate" "lock" "log out" | tofi --prompt="sel: " --height=112 --width=130) || exit 0
 
 case "$choice" in
   "power off")

@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+if pgrep -x tofi >/dev/null; then
+  killall -q tofi
+  exit
+fi
+
+choice=$(printf "%s\n" "remmina connections" | tofi --prompt="sel: ") || exit 0
+
+case "$choice" in
+  "remmina connections")
+    $HOME/.config/tofi/scripts/remoteconnections
+    ;;
+esac
