@@ -1,0 +1,149 @@
+#!/usr/bin/env bash
+
+homedir="/home/uuu"
+
+# TODO use pywal or a script to generate the different colour cache file formats
+#      eg raw list, standard css, define css, json
+#      be sure to define bg, fg, 8 standard and 8 bright colours - consider dim versions as well, and greys (eg micro uses standard, dim and bright bg colours)
+#      for now, just rawdog them straight into the script, and in the near future read them from some kind of file. probably json with jq
+
+#onedarkpro c/o https://github.com/sc0ttman/omarchy-one-dark-pro-theme/blob/main/alacritty.toml
+foreground="#abb2bf"
+background="#1e2229"
+black="#282c34"
+red="#e06c75"
+green="#98c379"
+yellow="#e5c07b"
+blue="#61afef"
+magenta="#c678dd"
+cyan="#56b6c2"
+white="#abb2bf"
+brightblack="#5c6370"
+brightred="#e06c75"   # Some variants use #be5046
+brightgreen="#98c379"
+brightyellow="#e5c07b"
+brightblue="#61afef"
+brightmagenta="#c678dd"
+brightcyan="#56b6c2"
+brightwhite="#c8ccd4"
+dimblack="#21252b"
+dimred="#be5046"
+dimgreen="#7da869"
+dimyellow="#d19a66"
+dimblue="#528bff"
+dimmagenta="#a678dd"
+dimcyan="#4aa5b7"
+dimwhite="#9aa2ad"
+
+# # everforest
+# background="#2d353b"
+# foreground="#d3c6aa"
+# black="#475258"
+# red="#e67e80"
+# green="#a7c080"
+# yellow="#dbbc7f"
+# blue="#7fbbb3"
+# magenta="#d699b6"
+# cyan="#83c092"
+# white="#d3c6aa"
+# brightblack="#475258"
+# brightred="#e67e80"
+# brightgreen="#a7c080"
+# brightyellow="#dbbc7f"
+# brightblue="#7fbbb3"
+# brightmagenta="#d699b6"
+# brightcyan="#83c092"
+# brightwhite="#d3c6aa"
+# dimblack="#232A2E"
+# dimred="#543A48"
+# dimgreen="#425047"
+# dimyellow="#4D4C43"
+# dimblue="#3A515D"
+
+# #nord
+# background="#2e3440"
+# foreground="#d8dee9"
+# black="#3b4252"
+# red="#bf616a"
+# green="#a3be8c"
+# yellow="#ebcb8b"
+# blue="#81a1c1"
+# magenta="#b48ead"
+# cyan="#88c0d0"
+# white="#e5e9f0"
+# brightblack="#4c566a"
+# brightred="#bf616a"
+# brightgreen="#a3be8c"
+# brightyellow="#ebcb8b"
+# brightblue="#81a1c1"
+# brightmagenta="#b48ead"
+# brightcyan="#8fbcbb"
+# brightwhite="#eceff4"
+# dimblack="#373e4d"
+# dimred="#94545d"
+# dimgreen="#809575"
+# dimyellow="#b29e75"
+# dimblue="#68809a"
+# dimmagenta="#8c738c"
+# dimcyan="#6d96a5"
+# dimwhite="#aeb3bb"
+
+# TODO force reloads of apps that need them, and rewrite apps where otherwise possible
+
+# alacritty - generate a toml
+alacrittyconfig="[colors.primary]
+foreground = \"$foreground\"
+background = \"$background\"
+
+[colors.normal]
+black = \"$black\"
+red = \"$red\"
+green = \"$green\"
+yellow = \"$yellow\"
+blue = \"$blue\"
+magenta = \"$magenta\"
+cyan = \"$cyan\"
+white = \"$white\"
+
+[colors.bright]
+black = \"$brightblack\"
+red = \"$brightred\"
+green = \"$brightgreen\"
+yellow = \"$brightyellow\"
+blue = \"$brightblue\"
+magenta = \"$brightmagenta\"
+cyan = \"$brightcyan\"
+white = \"$brightwhite\"
+
+[colors.dim]
+black = \"$dimblack\"
+red = \"$dimred\"
+green = \"$dimgreen\"
+yellow = \"$yellow\"
+blue = \"$dimblue\"
+magenta = \"$dimmagenta\"
+cyan = \"$dimcyan\"
+white = \"$dimwhite"\"
+
+rm ${homedir}/.config/alacritty/themes/uuuwal.toml
+touch ${homedir}/.config/alacritty/themes/uuuwal.toml
+printf "${alacrittyconfig}" >> ${homedir}/.config/alacritty/themes/uuuwal.toml
+# i dont love the below as a solution but it works to force a refresh on the alacritty config
+printf " " >> ${homedir}/.config/alacritty/alacritty.toml
+truncate -s-1 ${homedir}/.config/alacritty/alacritty.toml
+
+# waybar (use @defines)
+
+# dunst -lf  "${color0:-#ffffff}" \
+#       -lb  "${color1:-#eeeeee}" \
+#       -lfr "${color2:-#dddddd}" \
+#       -nf  "${color3:-#cccccc}" \
+#       -nb  "${color4:-#bbbbbb}" \
+#       -nfr "${color5:-#aaaaaa}" \
+#       -cf  "${color6:-#999999}" \
+#       -cb  "${color7:-#888888}" \
+#       -cfr "${color8:-#777777}" > /dev/null 2>&1 &
+
+# gtk c/o oomox
+
+# micro - make a .micro file. extra colours will come in handy here
