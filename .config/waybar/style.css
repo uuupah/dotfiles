@@ -22,6 +22,59 @@
   --bright-white:   #d3c6aa;
 }*/
 
+/* dark colour */
+
+window#waybar {
+  background-color: #2d353b;
+}
+
+#workspaces button.active,
+#workspaces button.urgent {
+  color: #2d353b;
+}
+
+/* light colour */
+/* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
+button:hover,
+#workspaces button.focused,
+/* #clock:hover, */
+/* #battery:hover, */
+#bluetooth:hover,
+#memory:hover,
+#disk:hover,
+#temperature:hover,
+#backlight:hover,
+#network:hover,
+#pulseaudio:hover,
+#wireplumber:hover,
+#custom-media:hover,
+#tray:hover,
+#mode:hover,
+#idle_inhibitor:hover,
+#scratchpad:hover,
+#power-profiles-daemon:hover,
+#mpd:hover,
+#custom-launcher:hover,
+#custom-pomodoro:hover {
+  box-shadow: inset 0 -1px #d3c6aa;
+}
+
+window#waybar, #workspaces button {
+  color: #d3c6aa;
+}
+
+#workspaces button.active {
+  background-color: #d3c6aa;
+}
+
+/* notification colour */
+
+#workspaces button.urgent {
+  background-color: #e67e80;
+}
+
+/* other styles */
+
 * {
   font-family:
     "Unifont-JP", "ProggyClean Nerd Font", "Noto Sans Mono", "Font Awesome 6 Free",
@@ -34,8 +87,6 @@
 }
 
 window#waybar {
-  color: #d3c6aa;
-  background-color: #2d353b;
   transition-property: background-color;
   transition-duration: 0.5s;
   padding: 0; 
@@ -48,20 +99,6 @@ button {
   /* Avoid rounded borders under each button name */
   border: none;
   border-radius: 0;
-}
-
-#workspaces button {
-  color: #d3c6aa;
-}
-
-#workspaces button.active {
-  background-color: #d3c6aa;
-  color: #2d353b;
-}
-
-#workspaces button.urgent {
-  background-color: #e67e80;
-  color: #2d353b;;
 }
 
 #workspaces button,
@@ -85,33 +122,6 @@ button {
 #mpd,
 #custom-launcher {
   padding: 0 5px;
-/*  color: #d3c6aa;*/
-}
-
-/* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
-button:hover,
-#workspaces button.focused,
-/* #clock:hover, */
-/* #battery:hover, */
-#bluetooth:hover,
-#cpu:hover,
-#memory:hover,
-#disk:hover,
-#temperature:hover,
-#backlight:hover,
-#network:hover,
-#pulseaudio:hover,
-#wireplumber:hover,
-#custom-media:hover,
-#tray:hover,
-#mode:hover,
-#idle_inhibitor:hover,
-#scratchpad:hover,
-#power-profiles-daemon:hover,
-#mpd:hover,
-#custom-launcher:hover,
-#custom-pomodoro:hover {
-  box-shadow: inset 0 -2px #d3c6aa;
 }
 
 #window {
@@ -135,8 +145,5 @@ button:hover,
 tooltip {
   background-color: #d3c6aa;
   color: #2d353b;
-  border-radius: 0;
-  border-style: solid;
-  border-color: #2d353b;
-  border-width: 2px;
+  border: none;
 }
