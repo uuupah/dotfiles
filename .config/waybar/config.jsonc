@@ -24,6 +24,10 @@
     "bluetooth",
     "custom/pipe-divider",
     "network",
+    "custom/pipe-divider",
+    "cpu",
+    "custom/pipe-divider",
+    "memory",
     "sway/language",
     //        "backlight",
     "custom/pipe-divider",
@@ -87,8 +91,16 @@
       "org.remmina.Remmina": "remmina",
       "com.github.taiko2k.tauonmb": "tauon",
       "Io.github.ungoogled_software.ungoogled_chromium": "ungoogled chromium",
-      "xdg-desktop-portal-gtk":"file explorer"
+      "xdg-desktop-portal-gtk":"file explorer",
+      "Code":"vscode"
     }
+  },
+  "cpu": {
+    "format": "cpu {usage}%",
+    "tooltip": false
+  },
+  "memory": {
+    "format": "mem {}%"
   },
   "mpd": {
     "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ⸨{songPosition}|{queueLength}⸩ {volume}% ",
@@ -130,13 +142,6 @@
     "interval": 1,
     "tooltip-format": "{calendar}",
     "format": "{:%Y年%m月%d日 %H:%M:%S}"
-  },
-  "cpu": {
-    "format": "{usage}% ",
-    "tooltip": false
-  },
-  "memory": {
-    "format": "{}% "
   },
   "temperature": {
     "critical-threshold": 80,
