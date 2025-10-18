@@ -35,30 +35,30 @@ dimmagenta="#a678dd"
 dimcyan="#4aa5b7"
 dimwhite="#9aa2ad"
 
-# # everforest
-# background="#2d353b"
-# foreground="#d3c6aa"
-# black="#475258"
-# red="#e67e80"
-# green="#a7c080"
-# yellow="#dbbc7f"
-# blue="#7fbbb3"
-# magenta="#d699b6"
-# cyan="#83c092"
-# white="#d3c6aa"
-# brightblack="#475258"
-# brightred="#e67e80"
-# brightgreen="#a7c080"
-# brightyellow="#dbbc7f"
-# brightblue="#7fbbb3"
-# brightmagenta="#d699b6"
-# brightcyan="#83c092"
-# brightwhite="#d3c6aa"
-# dimblack="#232A2E"
-# dimred="#543A48"
-# dimgreen="#425047"
-# dimyellow="#4D4C43"
-# dimblue="#3A515D"
+# everforest
+background="#2d353b"
+foreground="#d3c6aa"
+black="#475258"
+red="#e67e80"
+green="#a7c080"
+yellow="#dbbc7f"
+blue="#7fbbb3"
+magenta="#d699b6"
+cyan="#83c092"
+white="#d3c6aa"
+brightblack="#475258"
+brightred="#e67e80"
+brightgreen="#a7c080"
+brightyellow="#dbbc7f"
+brightblue="#7fbbb3"
+brightmagenta="#d699b6"
+brightcyan="#83c092"
+brightwhite="#d3c6aa"
+dimblack="#232A2E"
+dimred="#543A48"
+dimgreen="#425047"
+dimyellow="#4D4C43"
+dimblue="#3A515D"
 
 # #nord
 # background="#2e3440"
@@ -160,9 +160,37 @@ rm ${homedir}/.config/tofi/themes/uuu
 touch ${homedir}/.config/tofi/themes/uuu
 printf "${toficonfig}" >> ${homedir}/.config/tofi/themes/uuu
 
-printf "${toficonfig}"
-
 # micro - make a .micro file. extra colours will come in handy here
+## this will need some tweaking
+microconfig='
+color-link default "${foreground},${background}"  #fg, bg
+color-link comment "${blue},${background}"        #gray 1, bg
+color-link symbol "${foreground},${background}    #fg, bg
+color-link constant "#D699B6,#2d353b"             #brightmagenta, bg
+color-link constant.string "#DBBC7F,#2d353b"      #yellow, bg
+color-link constant.string.char "#DBBC7F,#2d353b" #yellow, bg
+color-link identifier "#A7C080,#2d353b"           #green, bg
+color-link statement "#E67E80,#2d353b"            #red, bg # maybe should be light red
+color-link preproc "#bf616a,#2d353b"              #red, bg
+color-link type "#dc7a7e,#2d353b"                 #red, bg
+color-link special "#E67E80,#2d353b"              #red, bg
+color-link underlined "#bf616a"                   #red
+color-link error "#E67E80,#2d353b"                #red, bg
+color-link hlsearch "#2d353b,#fe8019"             #bg,
+color-link diff-added "#a3be8c"                   #green
+color-link diff-modified "#ebcb8b"                #yellow
+color-link diff-deleted "#E67E80"                 #red
+color-link gutter-error "#E67E80,#2d353b"         #red, bg
+color-link gutter-warning "#dc7a7e,#2d353b"       #red, bg
+color-link line-number "#859289,#2d353b"          #gray 1, bg
+color-link current-line-number "#d3c6aa,#3D484D"  #fg, bg2 (bg2 is two steps lighter than bg)
+color-link cursor-line "#3D484D"                  #bg2
+color-link color-column "#4c566a"                 #bg3
+color-link statusline "#859289,#232A2E"           #gray 1, bg dim
+color-link tabbar "#d8dee9,#4c566a"               #gray 1, bg3 (its actually way lighter than gray 1 but we dont need more fucking colours)
+color-link todo "#E57E00,#2d353b"                 #orange, bg'
+
+printf "${microconfig}"
 
 # gtk c/o oomox
 
