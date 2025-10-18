@@ -15,9 +15,6 @@ selection-background=#D3C6AA
 selection-background-padding=0,-1,0,2
 
 prompt-text="run: "
-prompt-color=#2D353B
-prompt-background=#D3C6AA
-prompt-background-padding=0,10,0,-1
 
 padding-top = 0
 padding-bottom = 0
@@ -27,3 +24,5 @@ padding-right = 0
 width = 300
 height = 176
 num-results = 10
+
+include = /home/uuu/.config/tofi/themes/uuu
