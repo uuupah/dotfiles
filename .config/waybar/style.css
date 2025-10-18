@@ -22,9 +22,15 @@
   --bright-white:   #d3c6aa;
 }*/
 
-@define-color background #2d353b;
-@define-color foreground #d3c6aa;
-@define-color important #E67E80;
+@import '/home/uuu/.config/colours/uuuwaybar.css';
+
+/* @define-color background #2d353b; */
+/* @define-color foreground #d3c6aa; */
+/* @define-color important #E67E80; */
+
+@define-color background @bg;
+@define-color foreground @fg;
+@define-color important @im;
 
 /* dark colour */
 

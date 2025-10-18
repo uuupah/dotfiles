@@ -12,7 +12,7 @@ size = 12
 
 [general]
 import = [
-  "~/.config/alacritty/themes/everforest_dark_medium.toml"
+  "~/.config/alacritty/themes/uuuwal.toml"
   #"~/.config/alacritty/themes/djakovic.toml"
 ]
 

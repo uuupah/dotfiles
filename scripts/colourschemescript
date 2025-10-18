@@ -60,33 +60,33 @@ dimwhite="#9aa2ad"
 # dimyellow="#4D4C43"
 # dimblue="#3A515D"
 
-# #nord
-# background="#2e3440"
-# foreground="#d8dee9"
-# black="#3b4252"
-# red="#bf616a"
-# green="#a3be8c"
-# yellow="#ebcb8b"
-# blue="#81a1c1"
-# magenta="#b48ead"
-# cyan="#88c0d0"
-# white="#e5e9f0"
-# brightblack="#4c566a"
-# brightred="#bf616a"
-# brightgreen="#a3be8c"
-# brightyellow="#ebcb8b"
-# brightblue="#81a1c1"
-# brightmagenta="#b48ead"
-# brightcyan="#8fbcbb"
-# brightwhite="#eceff4"
-# dimblack="#373e4d"
-# dimred="#94545d"
-# dimgreen="#809575"
-# dimyellow="#b29e75"
-# dimblue="#68809a"
-# dimmagenta="#8c738c"
-# dimcyan="#6d96a5"
-# dimwhite="#aeb3bb"
+#nord
+background="#2e3440"
+foreground="#d8dee9"
+black="#3b4252"
+red="#bf616a"
+green="#a3be8c"
+yellow="#ebcb8b"
+blue="#81a1c1"
+magenta="#b48ead"
+cyan="#88c0d0"
+white="#e5e9f0"
+brightblack="#4c566a"
+brightred="#bf616a"
+brightgreen="#a3be8c"
+brightyellow="#ebcb8b"
+brightblue="#81a1c1"
+brightmagenta="#b48ead"
+brightcyan="#8fbcbb"
+brightwhite="#eceff4"
+dimblack="#373e4d"
+dimred="#94545d"
+dimgreen="#809575"
+dimyellow="#b29e75"
+dimblue="#68809a"
+dimmagenta="#8c738c"
+dimcyan="#6d96a5"
+dimwhite="#aeb3bb"
 
 # TODO force reloads of apps that need them, and rewrite apps where otherwise possible
 
@@ -132,7 +132,12 @@ printf "${alacrittyconfig}" >> ${homedir}/.config/alacritty/themes/uuuwal.toml
 printf " " >> ${homedir}/.config/alacritty/alacritty.toml
 truncate -s-1 ${homedir}/.config/alacritty/alacritty.toml
 
-# waybar (use @defines)
+# waybar (this feels dodgy but it works)
+waybarconfig="@define-color bg ${background};
+@define-color fg ${foreground};
+@define-color im ${red};"
+
+printf "${waybarconfig}" | tee ${homedir}/.config/colours/uuuwaybar.css > /dev/null
 
 # dunst -lf  "${color0:-#ffffff}" \
 #       -lb  "${color1:-#eeeeee}" \
@@ -143,6 +148,8 @@ truncate -s-1 ${homedir}/.config/alacritty/alacritty.toml
 #       -cf  "${color6:-#999999}" \
 #       -cb  "${color7:-#888888}" \
 #       -cfr "${color8:-#777777}" > /dev/null 2>&1 &
+
+# tofi
 
 # gtk c/o oomox
 
