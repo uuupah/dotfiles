@@ -60,34 +60,34 @@ dimgreen="#425047"
 dimyellow="#4D4C43"
 dimblue="#3A515D"
 
-# #nord
-# background="#2e3440"
-# foreground="#d8dee9"
-# black="#3b4252"
-# red="#bf616a"
-# green="#a3be8c"
-# yellow="#ebcb8b"
-# blue="#81a1c1"
-# magenta="#b48ead"
-# cyan="#88c0d0"
-# white="#e5e9f0"
-# brightblack="#4c566a"
-# brightred="#bf616a"
-# brightgreen="#a3be8c"
-# brightyellow="#ebcb8b"
-# brightblue="#81a1c1"
-# brightmagenta="#b48ead"
-# brightcyan="#8fbcbb"
-# brightwhite="#eceff4"
-# dimblack="#373e4d"
-# dimred="#94545d"
-# dimgreen="#809575"
-# dimyellow="#b29e75"
-# dimblue="#68809a"
-# dimmagenta="#8c738c"
-# dimcyan="#6d96a5"
-# dimwhite="#aeb3bb"
-
+#nord
+background="#2e3440"
+foreground="#d8dee9"
+black="#3b4252"
+red="#bf616a"
+green="#a3be8c"
+yellow="#ebcb8b"
+blue="#81a1c1"
+magenta="#b48ead"
+cyan="#88c0d0"
+white="#e5e9f0"
+brightblack="#4c566a"
+brightred="#bf616a"
+brightgreen="#a3be8c"
+brightyellow="#ebcb8b"
+brightblue="#81a1c1"
+brightmagenta="#b48ead"
+brightcyan="#8fbcbb"
+brightwhite="#eceff4"
+dimblack="#373e4d"
+dimred="#94545d"
+dimgreen="#809575"
+dimyellow="#b29e75"
+dimblue="#68809a"
+dimmagenta="#8c738c"
+dimcyan="#6d96a5"
+dimwhite="#aeb3bb"
+ 
 # TODO force reloads of apps that need them, and rewrite apps where otherwise possible
 
 # alacritty - generate a toml
@@ -161,36 +161,63 @@ touch ${homedir}/.config/tofi/themes/uuu
 printf "${toficonfig}" >> ${homedir}/.config/tofi/themes/uuu
 
 # micro - make a .micro file. extra colours will come in handy here
-## this will need some tweaking
-microconfig='
-color-link default "${foreground},${background}"  #fg, bg
-color-link comment "${blue},${background}"        #gray 1, bg
-color-link symbol "${foreground},${background}    #fg, bg
-color-link constant "#D699B6,#2d353b"             #brightmagenta, bg
-color-link constant.string "#DBBC7F,#2d353b"      #yellow, bg
-color-link constant.string.char "#DBBC7F,#2d353b" #yellow, bg
-color-link identifier "#A7C080,#2d353b"           #green, bg
-color-link statement "#E67E80,#2d353b"            #red, bg # maybe should be light red
-color-link preproc "#bf616a,#2d353b"              #red, bg
-color-link type "#dc7a7e,#2d353b"                 #red, bg
-color-link special "#E67E80,#2d353b"              #red, bg
-color-link underlined "#bf616a"                   #red
-color-link error "#E67E80,#2d353b"                #red, bg
-color-link hlsearch "#2d353b,#fe8019"             #bg,
-color-link diff-added "#a3be8c"                   #green
-color-link diff-modified "#ebcb8b"                #yellow
-color-link diff-deleted "#E67E80"                 #red
-color-link gutter-error "#E67E80,#2d353b"         #red, bg
-color-link gutter-warning "#dc7a7e,#2d353b"       #red, bg
-color-link line-number "#859289,#2d353b"          #gray 1, bg
-color-link current-line-number "#d3c6aa,#3D484D"  #fg, bg2 (bg2 is two steps lighter than bg)
-color-link cursor-line "#3D484D"                  #bg2
-color-link color-column "#4c566a"                 #bg3
-color-link statusline "#859289,#232A2E"           #gray 1, bg dim
-color-link tabbar "#d8dee9,#4c566a"               #gray 1, bg3 (its actually way lighter than gray 1 but we dont need more fucking colours)
-color-link todo "#E57E00,#2d353b"                 #orange, bg'
+# ## this will need some tweaking
+# microconfig='
+# color-link default "${foreground},${background}"  #fg, bg
+# color-link comment "${blue},${background}"        #gray 1, bg
+# color-link symbol "${foreground},${background}    #fg, bg
+# color-link constant "#D699B6,#2d353b"             #brightmagenta, bg
+# color-link constant.string "#DBBC7F,#2d353b"      #yellow, bg
+# color-link constant.string.char "#DBBC7F,#2d353b" #yellow, bg
+# color-link identifier "#A7C080,#2d353b"           #green, bg
+# color-link statement "#E67E80,#2d353b"            #red, bg # maybe should be light red
+# color-link preproc "#bf616a,#2d353b"              #red, bg
+# color-link type "#dc7a7e,#2d353b"                 #red, bg
+# color-link special "#E67E80,#2d353b"              #red, bg
+# color-link underlined "#bf616a"                   #red
+# color-link error "#E67E80,#2d353b"                #red, bg
+# color-link hlsearch "#2d353b,#fe8019"             #bg,
+# color-link diff-added "#a3be8c"                   #green
+# color-link diff-modified "#ebcb8b"                #yellow
+# color-link diff-deleted "#E67E80"                 #red
+# color-link gutter-error "#E67E80,#2d353b"         #red, bg
+# color-link gutter-warning "#dc7a7e,#2d353b"       #red, bg
+# color-link line-number "#859289,#2d353b"          #gray 1, bg
+# color-link current-line-number "#d3c6aa,#3D484D"  #fg, bg2 (bg2 is two steps lighter than bg)
+# color-link cursor-line "#3D484D"                  #bg2
+# color-link color-column "#4c566a"                 #bg3
+# color-link statusline "#859289,#232A2E"           #gray 1, bg dim
+# color-link tabbar "#d8dee9,#4c566a"               #gray 1, bg3 (its actually way lighter than gray 1 but we dont need more fucking colours)
+# color-link todo "#E57E00,#2d353b"                 #orange, bg'
 
 printf "${microconfig}"
+
+# dunst
+dunstconfig="
+[global]
+    frame_color = \"${brightblack}\"
+
+[urgency_low]
+    background = \"${background}\"
+    foreground = \"${foreground}\"
+    highlight = \"${green}\"
+
+[urgency_normal]
+    background = \"${background}\"
+    foreground = \"${foreground}\"
+    highlight = \"${green}\"
+
+[urgency_critical]
+	background = \"${dimred}\"
+    foreground = \"${foreground}\"
+    highlight = \"${brightred}\""
+
+printf "${dunstconfig}" > ${homedir}/.config/dunst/dunstcolors
+${homedir}/.config/dunst/dunstcombiner
+killall dunst
+notify-send -u low "dunst test" "low urgency"
+notify-send -u normal "dunst test" "normal urgency"
+notify-send -t 10000 -u critical "dunst test" "critical urgency"
 
 # gtk c/o oomox
 
