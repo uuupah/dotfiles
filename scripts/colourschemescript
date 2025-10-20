@@ -60,33 +60,33 @@ dimgreen="#425047"
 dimyellow="#4D4C43"
 dimblue="#3A515D"
 
-#nord
-background="#2e3440"
-foreground="#d8dee9"
-black="#3b4252"
-red="#bf616a"
-green="#a3be8c"
-yellow="#ebcb8b"
-blue="#81a1c1"
-magenta="#b48ead"
-cyan="#88c0d0"
-white="#e5e9f0"
-brightblack="#4c566a"
-brightred="#bf616a"
-brightgreen="#a3be8c"
-brightyellow="#ebcb8b"
-brightblue="#81a1c1"
-brightmagenta="#b48ead"
-brightcyan="#8fbcbb"
-brightwhite="#eceff4"
-dimblack="#373e4d"
-dimred="#94545d"
-dimgreen="#809575"
-dimyellow="#b29e75"
-dimblue="#68809a"
-dimmagenta="#8c738c"
-dimcyan="#6d96a5"
-dimwhite="#aeb3bb"
+# #nord
+# background="#2e3440"
+# foreground="#d8dee9"
+# black="#3b4252"
+# red="#bf616a"
+# green="#a3be8c"
+# yellow="#ebcb8b"
+# blue="#81a1c1"
+# magenta="#b48ead"
+# cyan="#88c0d0"
+# white="#e5e9f0"
+# brightblack="#4c566a"
+# brightred="#bf616a"
+# brightgreen="#a3be8c"
+# brightyellow="#ebcb8b"
+# brightblue="#81a1c1"
+# brightmagenta="#b48ead"
+# brightcyan="#8fbcbb"
+# brightwhite="#eceff4"
+# dimblack="#373e4d"
+# dimred="#94545d"
+# dimgreen="#809575"
+# dimyellow="#b29e75"
+# dimblue="#68809a"
+# dimmagenta="#8c738c"
+# dimcyan="#6d96a5"
+# dimwhite="#aeb3bb"
  
 # TODO force reloads of apps that need them, and rewrite apps where otherwise possible
 
@@ -139,16 +139,6 @@ waybarconfig="@define-color bg ${background};
 
 printf "${waybarconfig}" | tee ${homedir}/.config/colours/uuuwaybar.css > /dev/null
 
-# dunst -lf  "${color0:-#ffffff}" \
-#       -lb  "${color1:-#eeeeee}" \
-#       -lfr "${color2:-#dddddd}" \
-#       -nf  "${color3:-#cccccc}" \
-#       -nb  "${color4:-#bbbbbb}" \
-#       -nfr "${color5:-#aaaaaa}" \
-#       -cf  "${color6:-#999999}" \
-#       -cb  "${color7:-#888888}" \
-#       -cfr "${color8:-#777777}" > /dev/null 2>&1 &
-
 # tofi
 toficonfig="background-color=${background}
 text-color=${foreground}
@@ -193,6 +183,7 @@ printf "${toficonfig}" >> ${homedir}/.config/tofi/themes/uuu
 printf "${microconfig}"
 
 # dunst
+# note the dimred misbehaves with some themes
 dunstconfig="
 [global]
     frame_color = \"${brightblack}\"
