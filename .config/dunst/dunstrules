@@ -26,7 +26,7 @@
     text_icon_padding = 8 
 
     frame_width = 1
-    # frame_color = "#4c566a"
+    # frame_color = "" # frame color is handled in ./dunstcolors
 
     gap_size = 5 
 
@@ -71,32 +71,23 @@
     mouse_middle_click = close_current
     mouse_right_click = close_all
     
-
 [experimental]
     per_monitor_dpi = false
 
+# notification colours are handled in ./dunstcolors
 [urgency_low]
-    # background = "#425047"
-    # foreground = "#D3C6AA"
-    # highlight = "#A7C080"
     timeout = 10
 #    default_icon = dialog-information
 
 [urgency_normal]
-    # background = "#2e3440"
-    # foreground = "#d8dee9"
-    # highlight = "#d8dee9"
     timeout = 10
     override_pause_level = 30
 #    default_icon = dialog-information
 
 [urgency_critical]
-	# background = "#543A48"
-    # foreground = "#D3C6AA"
-    # highlight = "#E67E80"
     timeout = 0
     override_pause_level = 60
-#    default_icon = dialog-warning
+    default_icon = dialog-warning
 
 # Every section that isn't one of the above is interpreted as a rules to
 # override settings for certain messages.
@@ -230,20 +221,3 @@
 [pomodoro]
     summary = "Pomodoro"
     new_icon = task-due
-[global]
-    frame_color = "#D3C6AA"
-
-[urgency_low]
-    background = "#425047"
-    foreground = "#D3C6AA"
-    highlight = "#A7C080"
-
-[urgency_normal]
-    background = "#2D353B"
-    foreground = "#D3C6AA"
-    highlight = "#A7C080"
-
-[urgency_critical]
-	background = "#543A48"
-    foreground = "#D3C6AA"
-    highlight = "#E67E80"
