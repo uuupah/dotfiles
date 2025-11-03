@@ -7,12 +7,13 @@
   "modules-left": [
     "hyprland/workspaces",
     "hyprland/scratchpad",
-  ],
-  "modules-center": [
+    "custom/pipe-divider",
     "hyprland/window",
     "custom/window-state"
-    // "custom/media"
   ],
+  //"modules-center": [
+    // "custom/media"
+  //],
   "modules-right": [
     "custom/spacer",
     "custom/pomodoro",
@@ -40,6 +41,9 @@
   },
   "custom/pipe-divider": {
     "format": "|"
+  },
+  "custom/hyphen-divider": {
+  	"format": " - "
   },
   "custom/window-state": {
     "exec": "bash -c '/home/uuu/.config/waybar/scripts/window-state.sh'",
@@ -154,10 +158,10 @@
   },
   "battery": {
     "interval": 1,
-    "states": {
-      "warning": 30,
-      "critical": 15
-    },
+//    "states": {
+//      "warning": 30,
+//      "critical": 15
+//    },
     "format": "bat {capacity}% {time}",
     "format-time": "({H}:{m})",
     "format-full": "bat {capacity}%",

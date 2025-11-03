@@ -223,7 +223,7 @@
     new_icon = task-due
 
 [global]
-    frame_color = "#4c566a"
+    frame_color = "#d8dee9"
 
 [urgency_low]
     background = "#2e3440"
@@ -236,6 +236,6 @@
     highlight = "#a3be8c"
 
 [urgency_critical]
-	background = "#94545d"
+	background = "#4B3537"
     foreground = "#d8dee9"
     highlight = "#bf616a"

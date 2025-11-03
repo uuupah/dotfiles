@@ -34,7 +34,8 @@
 
 /* dark colour */
 
-window#waybar {
+window#waybar,
+tooltip {
   background-color: @background;
 }
 
@@ -69,12 +70,18 @@ button:hover,
   box-shadow: inset 0 -1px @foreground;
 }
 
-window#waybar, #workspaces button {
+window#waybar,
+#workspaces button,
+tooltip {
   color: @foreground;
 }
 
 #workspaces button.active {
   background-color: @foreground;
+}
+
+tooltip {
+  border-color: @foreground;
 }
 
 /* notification colour */
@@ -94,6 +101,8 @@ window#waybar, #workspaces button {
   box-shadow: none;
   text-shadow: none;
   background: none;
+  border-radius: 0;
+  padding-bottom: 0px; 
 }
 
 window#waybar {
@@ -131,7 +140,7 @@ button {
 #power-profiles-daemon,
 #mpd,
 #custom-launcher {
-  padding: 0 5px;
+  padding: 0 5px 1px 5px; 
 }
 
 #window {
