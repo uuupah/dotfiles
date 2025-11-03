@@ -22,6 +22,10 @@ behind = "<"
 deleted = "x"
 diverged = "<>"
 
+[battery]
+discharging_symbol = "bat "
+charging_symbol = "chg "
+
 [directory]
 read_only = " (read only)"
 
