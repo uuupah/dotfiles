@@ -1118,7 +1118,7 @@
 🎯 bullseye
 🪀 yo-yo
 🪁 kite
-🔫 water pistol
+🔫 water pistol // gun
 🎱 pool 8 ball
 🔮 crystal ball
 🪄 magic wand
@@ -1533,7 +1533,7 @@
 📛 name badge
 🔰 Japanese symbol for beginner
 ⭕ hollow red circle
-✅ check mark button
+✅ check mark button // tick box
 ☑️ check box with check
 ✔️ check mark
 ❌ cross mark
