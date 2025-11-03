@@ -45,30 +45,30 @@ dimmagenta="#a678dd"
 dimcyan="#4aa5b7"
 dimwhite="#9aa2ad"
 
-# everforest
-background="#2d353b"
-foreground="#d3c6aa"
-black="#475258"
-red="#e67e80"
-green="#a7c080"
-yellow="#dbbc7f"
-blue="#7fbbb3"
-magenta="#d699b6"
-cyan="#83c092"
-white="#d3c6aa"
-brightblack="#475258"
-brightred="#e67e80"
-brightgreen="#a7c080"
-brightyellow="#dbbc7f"
-brightblue="#7fbbb3"
-brightmagenta="#d699b6"
-brightcyan="#83c092"
-brightwhite="#d3c6aa"
-dimblack="#232A2E"
-dimred="#543A48"
-dimgreen="#425047"
-dimyellow="#4D4C43"
-dimblue="#3A515D"
+# # everforest
+# background="#2d353b"
+# foreground="#d3c6aa"
+# black="#475258"
+# red="#e67e80"
+# green="#a7c080"
+# yellow="#dbbc7f"
+# blue="#7fbbb3"
+# magenta="#d699b6"
+# cyan="#83c092"
+# white="#d3c6aa"
+# brightblack="#475258"
+# brightred="#e67e80"
+# brightgreen="#a7c080"
+# brightyellow="#dbbc7f"
+# brightblue="#7fbbb3"
+# brightmagenta="#d699b6"
+# brightcyan="#83c092"
+# brightwhite="#d3c6aa"
+# dimblack="#232A2E"
+# dimred="#543A48"
+# dimgreen="#425047"
+# dimyellow="#4D4C43"
+# dimblue="#3A515D"
 
 # # gruvbox
 # background="#282828"
@@ -110,33 +110,53 @@ dimblue="#3A515D"
 # brightcyan="#94e2d5"
 # brightwhite="#a6adc8"
 
-# #nord
-# background="#2e3440"
-# foreground="#d8dee9"
-# black="#3b4252"
-# red="#bf616a"
-# green="#a3be8c"
-# yellow="#ebcb8b"
-# blue="#81a1c1"
-# magenta="#b48ead"
-# cyan="#88c0d0"
-# white="#e5e9f0"
-# brightblack="#4c566a"
-# brightred="#bf616a"
-# brightgreen="#a3be8c"
-# brightyellow="#ebcb8b"
-# brightblue="#81a1c1"
-# brightmagenta="#b48ead"
-# brightcyan="#8fbcbb"
-# brightwhite="#eceff4"
-# dimblack="#373e4d"
-# dimred="#94545d"
-# dimgreen="#809575"
-# dimyellow="#b29e75"
-# dimblue="#68809a"
-# dimmagenta="#8c738c"
-# dimcyan="#6d96a5"
-# dimwhite="#aeb3bb"
+#nord
+background="#2e3440"
+foreground="#d8dee9"
+black="#3b4252"
+red="#bf616a"
+green="#a3be8c"
+yellow="#ebcb8b"
+blue="#81a1c1"
+magenta="#b48ead"
+cyan="#88c0d0"
+white="#e5e9f0"
+brightblack="#4c566a"
+brightred="#bf616a"
+brightgreen="#a3be8c"
+brightyellow="#ebcb8b"
+brightblue="#81a1c1"
+brightmagenta="#b48ead"
+brightcyan="#8fbcbb"
+brightwhite="#eceff4"
+dimblack="#373e4d"
+dimred="#94545d"
+dimgreen="#809575"
+dimyellow="#b29e75"
+dimblue="#68809a"
+dimmagenta="#8c738c"
+dimcyan="#6d96a5"
+dimwhite="#aeb3bb"
+
+#kanegawa
+# background="#1f1f28"
+# foreground="#dcd7ba"
+# black="#090618"
+# red="#c34043"
+# green="#76946a"
+# yellow="#c0a36e"
+# blue="#7e9cd8"
+# magenta="#957fb8"
+# cyan="#6a9589"
+# white="#c8c093"
+# brightblack="#727169"
+# brightred="#e82424"
+# brightgreen="#98bb6c"
+# brightyellow="#e6c384"
+# brightblue="#7fb4ca"
+# brightmagenta="#938aa9"
+# brightcyan="#7aa89f"
+# brightwhite="#dcd7ba"
 
 # TODO color processing to generate a dark black, a light black, a dark red and green, and a grey
 IFS=',' read -r -a blackhsl <<< "$(hextohsl "$black")"
@@ -221,7 +241,7 @@ printf "${waybarconfig}" | tee ${homedir}/.config/colours/uuuwaybar.css > /dev/n
 # tofi
 toficonfig="background-color=${background}
 text-color=${foreground}
-border-color=${brightblack}
+border-color=${foreground}
 selection-color=${background}
 selection-background=${foreground}"
 
@@ -233,7 +253,7 @@ printf "${toficonfig}" >> ${homedir}/.config/tofi/themes/uuu
 # note the dimred misbehaves with some themes
 dunstconfig="
 [global]
-    frame_color = \"${brightblack}\"
+    frame_color = \"${foreground}\"
 
 [urgency_low]
     background = \"${background}\"
@@ -265,7 +285,7 @@ dim=\"${dimblack}\""
 cat ${homedir}/.config/sddm/themerules.conf > /usr/share/sddm/themes/uuusddm/theme.conf
 printf "${sddmconfig}" >> /usr/share/sddm/themes/uuusddm/theme.conf
 
-# gtk c/o oomox
+#TODO gtk c/o oomox 
 oomoxconfig="NAME=uuu
 BG=${black:1}
 FG=${white:1}
@@ -286,3 +306,8 @@ GRADIENT=0.0"
 
 printf "${oomoxconfig}"
 
+#TODO hyprlock
+
+#TODO hyprland borders
+
+#TODO grim screenshotscript
