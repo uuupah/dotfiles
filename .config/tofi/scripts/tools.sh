@@ -6,6 +6,7 @@ if pgrep -x tofi >/dev/null; then
 fi
 
 options="toggle external monitors
+change audio profile
 wifi
 remmina connections"
 
@@ -14,6 +15,9 @@ choice=$(printf "%s\n" "$options" | tofi --prompt="sel: ") || exit 0
 case "$choice" in
   "toggle external monitors")
     $HOME/.config/tofi/scripts/set_hyprland_monitors.sh
+    ;;
+  "change audio profile")
+    $HOME/.config/tofi/scripts/change_pulse_audio_profile.sh
     ;;
   "wifi")
     $HOME/.config/tofi/scripts/wifi_menu.sh
