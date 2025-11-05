@@ -2,7 +2,6 @@
 
 homedir="/home/uuu"
 
-
 hextohsl() {	
   echo $(magick xc:"$1" -colorspace HSL -format "%[pixel:u]" info: | sed 's/hsl(//;s/%)//g;s/)//' | awk -F',' '{printf "%.0f,%.0f,%.0f\n", $1, $2, $3}')
 }
@@ -169,7 +168,7 @@ IFS=',' read -r -a bluehsl <<< "$(hextohsl "$blue")"
 blacksatstep=1
 blacklumstep=3
 
-backgrounddim="#$(hsltohex "${blackhsl[0]}" $((${blackhsl[1]}+($blacksatstep*3))) $((${blackhsl[2]}-($blacklumstep*5))))"
+backgrounddim="#$(magick xc:"${background}" -fill black -colorize 22% -depth 8 -format "%[hex:u]" info:)"
 background0="#$(hsltohex "${blackhsl[0]}" $((${blackhsl[1]}+($blacksatstep*4))) $((${blackhsl[2]}-($blacklumstep*4))))"
 background1="#$(hsltohex "${blackhsl[0]}" $((${blackhsl[1]}+($blacksatstep*3))) $((${blackhsl[2]}-($blacklumstep*3))))"
 background2="#$(hsltohex "${blackhsl[0]}" $((${blackhsl[1]}+($blacksatstep*2))) $((${blackhsl[2]}-($blacklumstep*2))))"
@@ -177,15 +176,16 @@ background3="#$(hsltohex "${blackhsl[0]}" $((${blackhsl[1]}+$blacksatstep)) $(($
 background4="#$black"
 background5="#$(hsltohex "${blackhsl[0]}" $((${blackhsl[1]}-blacksatstep)) $((${blackhsl[2]}+blacklumstep)))"
 
-backgroundred="#$(hsltohex "${redhsl[0]}" $((${blackhsl[1]}+($blacksatstep))) $((${blackhsl[2]}-$blacklumstep)))"
-backgroundgreen="#$(hsltohex "${greenhsl[0]}" $((${blackhsl[1]}+($blacksatstep*4))) $((${blackhsl[2]}-$blacklumstep)))" 
-backgroundyellow="#$(hsltohex "${yellowhsl[0]}" $((${blackhsl[1]}+($blacksatstep*4))) $((${blackhsl[2]}-$blacklumstep)))" 
-backgroundblue="#$(hsltohex "${bluehsl[0]}" $((${blackhsl[1]}+($blacksatstep*4))) $((${blackhsl[2]}-$blacklumstep)))" 
+backgroundred="#$(magick xc:"${red}" -fill "${backgrounddim}" -colorize 75% -depth 8 -format "%[hex:u]" info:)"
+backgroundgreen="#$(magick xc:"${green}" -fill "${backgrounddim}" -colorize 75% -depth 8 -format "%[hex:u]" info:)"
+backgroundyellow="#$(magick xc:"${yellow}" -fill "${backgrounddim}" -colorize 75% -depth 8 -format "%[hex:u]" info:)"
+backgroundblue="#$(magick xc:"${blue}" -fill "${backgrounddim}" -colorize 75% -depth 8 -format "%[hex:u]" info:)"
 
-echo "${redhsl[0]}"
-echo "$((${blackhsl[1]}+($blacksatstep*4)))"
-echo "$((${blackhsl[2]}-$blacklumstep))"
+echo $backgrounddim
 echo $backgroundred
+echo $backgroundgreen
+echo $backgroundyellow
+echo $backgroundblue
 
 # TODO force reloads of apps that need them, and rewrite apps where otherwise possible
 
@@ -251,6 +251,7 @@ printf "${toficonfig}" >> ${homedir}/.config/tofi/themes/uuu
 
 # dunst
 # note the dimred misbehaves with some themes
+echo backgroundred "${backgroundred}"
 dunstconfig="
 [global]
     frame_color = \"${foreground}\"
@@ -266,7 +267,7 @@ dunstconfig="
     highlight = \"${green}\"
 
 [urgency_critical]
-	background = \"${backgroundred}\"
+    background = \"${backgroundred}\"
     foreground = \"${foreground}\"
     highlight = \"${brightred}\""
 
@@ -285,26 +286,13 @@ dim=\"${dimblack}\""
 cat ${homedir}/.config/sddm/themerules.conf > /usr/share/sddm/themes/uuusddm/theme.conf
 printf "${sddmconfig}" >> /usr/share/sddm/themes/uuusddm/theme.conf
 
-#TODO gtk c/o oomox 
-oomoxconfig="NAME=uuu
-BG=${black:1}
-FG=${white:1}
-MENU_BG=${black:1}
-MENU_FG=${white:1}
-SEL_BG=${red:1}
-SEL_FG=${black:1}
-TXT_BG=${black:1}
-TXT_FG=${white:1}
-BTN_BG=${green:1}
-BTN_FG=${white:1}
-HDR_BTN_BG=${yellow:1}
-HDR_BTN_FG=${white:1}
-GTK3_GENERATE_DARK=True
-ROUDNESS=0
-SPACING=3
-GRADIENT=0.0"
+#TODO gtk 
+# prompt user for a theme color
 
-printf "${oomoxconfig}"
+theme=$(gsettings get org.gnome.desktop.interface gtk-theme)
+gsettings set org.gnome.desktop.interface gtk-theme ''
+sleep 1
+gsettings set org.gnome.desktop.interface gtk-theme $theme
 
 #TODO hyprlock
 
