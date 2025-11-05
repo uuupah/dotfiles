@@ -7,10 +7,16 @@ notifid=$(notify-send -p "getting list of wifi networks...")
 # Get a list of available wifi connections and morph it into a nice-looking list
 wifi_list=$(nmcli --fields "SECURITY,SSID,BARS" device wifi list | sed 1d | sed -E 's/WPA*.?\S/[X] /g' | sed "s/^--/[-] /g" | sed "/--/d" | sed 's/\[X\]  \[X\]/[X]/g' | sed "s/\[X\] */[X] /g" | sed "s/\[-\] */[-] /g" | sed "s/ *$//" | awk '!seen[$0]++')
 
-printf "$(printf "$wifi_list" | head -n 1 | awk '{print length($0); }')"
+longest_wifi_name=$(printf "$wifi_list" | head -n 1 | awk '{print length($0); }')""
+if [ -z "$longest_wifi_name" ]; then
+  longest_wifi_name="11"
+fi
+
+echo $longest_wifi_name
 
 # +11 for the prompt, *8 for the character width, +10 for the padding and border on tofi
-width=$(($(($(($(printf "$wifi_list" | head -n 1 | awk '{print length($0); }')+11))*8))+10))
+
+width=$(($(($(($longest_wifi_name+11))*8))+10))
 
 connected=$(nmcli -fields WIFI g)
 if [[ "$connected" =~ "enabled" ]]; then
