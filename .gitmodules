@@ -4,3 +4,6 @@
 [submodule ".themes/.themes/uuu"]
 	path = .themes/.themes/uuu
 	url = git@github.com:uuupah/uuu-gtk-theme.git
+[submodule ".themes/uuu"]
+	path = .themes/uuu
+	url = git@github.com:uuupah/uuu-gtk-theme.git
