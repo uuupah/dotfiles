@@ -1,3 +1,6 @@
 [submodule ".themes/flatcolor"]
 	path = .themes/flatcolor
 	url = git@github.com:uuupah/flatcolor.git
+[submodule ".themes/.themes/uuu"]
+	path = .themes/.themes/uuu
+	url = git@github.com:uuupah/uuu-gtk-theme.git
