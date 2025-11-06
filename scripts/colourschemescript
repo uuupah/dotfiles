@@ -11,164 +11,100 @@ hsltohex() {
   echo $(magick canvas:"hsl($1,$2%,$3%)" -depth 8 -format "%[hex:u]" info:)
 }
 
+#todo check that the schemes folder is here and if not clone it in
+#todo allow for pywal or tinty to generate colours
+
+base16schemes=$(ls -w 1 "${homedir}/scripts/schemes/base16" | sed 's/\.yaml//g')
+base24schemes=$(ls -w 1 "${homedir}/scripts/schemes/base24" | sed 's/\.yaml//g')
+
+selectedscheme=$(printf '%s/n' "$base16schemes" | tofi) || exit 0
+
+echo $selectedscheme
+
+base00=$(cat "${homedir}/scripts/schemes/base16/${selectedscheme}.yaml" | yq .palette.base00)
+base01=$(cat "${homedir}/scripts/schemes/base16/${selectedscheme}.yaml" | yq .palette.base01)
+base02=$(cat "${homedir}/scripts/schemes/base16/${selectedscheme}.yaml" | yq .palette.base02)
+base03=$(cat "${homedir}/scripts/schemes/base16/${selectedscheme}.yaml" | yq .palette.base03)
+base04=$(cat "${homedir}/scripts/schemes/base16/${selectedscheme}.yaml" | yq .palette.base04)
+base05=$(cat "${homedir}/scripts/schemes/base16/${selectedscheme}.yaml" | yq .palette.base05)
+base06=$(cat "${homedir}/scripts/schemes/base16/${selectedscheme}.yaml" | yq .palette.base06)
+base07=$(cat "${homedir}/scripts/schemes/base16/${selectedscheme}.yaml" | yq .palette.base07)
+base08=$(cat "${homedir}/scripts/schemes/base16/${selectedscheme}.yaml" | yq .palette.base08)
+base09=$(cat "${homedir}/scripts/schemes/base16/${selectedscheme}.yaml" | yq .palette.base09)
+base0A=$(cat "${homedir}/scripts/schemes/base16/${selectedscheme}.yaml" | yq .palette.base0A)
+base0B=$(cat "${homedir}/scripts/schemes/base16/${selectedscheme}.yaml" | yq .palette.base0B)
+base0C=$(cat "${homedir}/scripts/schemes/base16/${selectedscheme}.yaml" | yq .palette.base0C)
+base0D=$(cat "${homedir}/scripts/schemes/base16/${selectedscheme}.yaml" | yq .palette.base0D)
+base0E=$(cat "${homedir}/scripts/schemes/base16/${selectedscheme}.yaml" | yq .palette.base0E)
+base0F=$(cat "${homedir}/scripts/schemes/base16/${selectedscheme}.yaml" | yq .palette.base0F)
+
+echo base00 $base00
+
 # TODO use pywal or a script to generate the different colour cache file formats
 #      eg raw list, standard css, define css, json
 #      be sure to define bg, fg, 8 standard and 8 bright colours - consider dim versions as well, and greys (eg micro uses standard, dim and bright bg colours)
 #      for now, just rawdog them straight into the script, and in the near future read them from some kind of file. probably json with jq
 
-#onedarkpro c/o https://github.com/sc0ttman/omarchy-one-dark-pro-theme/blob/main/alacritty.toml
-foreground="#abb2bf"
-background="#1e2229"
-black="#282C34"
-red="#e06c75"
-green="#98c379"
-yellow="#e5c07b"
-blue="#61afef"
-magenta="#c678dd"
-cyan="#56b6c2"
-white="#abb2bf"
-brightblack="#5c6370"
-brightred="#e06c75"   # Some variants use #be5046
-brightgreen="#98c379"
-brightyellow="#e5c07b"
-brightblue="#61afef"
-brightmagenta="#c678dd"
-brightcyan="#56b6c2"
-brightwhite="#c8ccd4"
-dimblack="#21252b"
-dimred="#be5046"
-dimgreen="#7da869"
-dimyellow="#d19a66"
-dimblue="#528bff"
-dimmagenta="#a678dd"
-dimcyan="#4aa5b7"
-dimwhite="#9aa2ad"
+# #onedarkpro c/o https://github.com/sc0ttman/omarchy-one-dark-pro-theme/blob/main/alacritty.toml
+# foreground="#abb2bf"
+# background="#1e2229"
+# black="#282C34"
+# red="#e06c75"
+# green="#98c379"
+# yellow="#e5c07b"
+# blue="#61afef"
+# magenta="#c678dd"
+# cyan="#56b6c2"
+# white="#abb2bf"
+# brightblack="#5c6370"
+# brightred="#e06c75"   # Some variants use #be5046
+# brightgreen="#98c379"
+# brightyellow="#e5c07b"
+# brightblue="#61afef"
+# brightmagenta="#c678dd"
+# brightcyan="#56b6c2"
+# brightwhite="#c8ccd4"
+# dimblack="#21252b"
+# dimred="#be5046"
+# dimgreen="#7da869"
+# dimyellow="#d19a66"
+# dimblue="#528bff"
+# dimmagenta="#a678dd"
+# dimcyan="#4aa5b7"
+# dimwhite="#9aa2ad"
 
-# everforest
-background="#2d353b"
-foreground="#d3c6aa"
-black="#475258"
-red="#e67e80"
-green="#a7c080"
-yellow="#dbbc7f"
-blue="#7fbbb3"
-magenta="#d699b6"
-cyan="#83c092"
-white="#d3c6aa"
-brightblack="#475258"
-brightred="#e67e80"
-brightgreen="#a7c080"
-brightyellow="#dbbc7f"
-brightblue="#7fbbb3"
-brightmagenta="#d699b6"
-brightcyan="#83c092"
-brightwhite="#d3c6aa"
-dimblack="#232A2E"
-dimred="#543A48"
-dimgreen="#425047"
-dimyellow="#4D4C43"
-dimblue="#3A515D"
-
-# # gruvbox
-# background="#282828"
-# foreground="#d4be98"
-# black="#3c3836"
-# red="#ea6962"
-# green="#a9b665"
-# yellow="#d8a657"
-# blue="#7daea3"
-# magenta="#d3869b"
-# cyan="#89b482"
-# white="#d4be98"
-# brightblack="#3c3836"
-# brightred="#ea6962"
-# brightgreen="#a9b665"
-# brightyellow="#d8a657"
-# brightblue="#7daea3"
-# brightmagenta="#d3869b"
-# brightcyan="#89b482"
-# brightwhite="#d4be98"
-
-# # catpuccin
-# background="#1e1e2e"
-# foreground="#cdd6f4"
-# black="#45475a"
-# red="#f38ba8"
-# green="#a6e3a1"
-# yellow="#f9e2af"
-# blue="#89b4fa"
-# magenta="#f5c2e7"
-# cyan="#94e2d5"
-# white="#bac2de"
-# brightblack="#585b70"
-# brightred="#f38ba8"
-# brightgreen="#a6e3a1"
-# brightyellow="#f9e2af"
-# brightblue="#89b4fa"
-# brightmagenta="#f5c2e7"
-# brightcyan="#94e2d5"
-# brightwhite="#a6adc8"
-
-# #nord
-# background="#2e3440"
-# foreground="#d8dee9"
-# black="#3b4252"
-# red="#bf616a"
-# green="#a3be8c"
-# yellow="#ebcb8b"
-# blue="#81a1c1"
-# magenta="#b48ead"
-# cyan="#88c0d0"
-# white="#e5e9f0"
-# brightblack="#4c566a"
-# brightred="#bf616a"
-# brightgreen="#a3be8c"
-# brightyellow="#ebcb8b"
-# brightblue="#81a1c1"
-# brightmagenta="#b48ead"
-# brightcyan="#8fbcbb"
-# brightwhite="#eceff4"
-# dimblack="#373e4d"
-# dimred="#94545d"
-# dimgreen="#809575"
-# dimyellow="#b29e75"
-# dimblue="#68809a"
-# dimmagenta="#8c738c"
-# dimcyan="#6d96a5"
-# dimwhite="#aeb3bb"
-
-#kanegawa
-# background="#1f1f28"
-# foreground="#dcd7ba"
-# black="#090618"
-# red="#c34043"
-# green="#76946a"
-# yellow="#c0a36e"
-# blue="#7e9cd8"
-# magenta="#957fb8"
-# cyan="#6a9589"
-# white="#c8c093"
-# brightblack="#727169"
-# brightred="#e82424"
-# brightgreen="#98bb6c"
-# brightyellow="#e6c384"
-# brightblue="#7fb4ca"
-# brightmagenta="#938aa9"
-# brightcyan="#7aa89f"
-# brightwhite="#dcd7ba"
+# # everforest
+# background="#2d353b"
+# foreground="#d3c6aa"
+# black="#475258"
+# red="#e67e80"
+# green="#a7c080"
+# yellow="#dbbc7f"
+# blue="#7fbbb3"
+# magenta="#d699b6"
+# cyan="#83c092"
+# white="#d3c6aa"
+# brightblack="#475258"
+# brightred="#e67e80"
+# brightgreen="#a7c080"
+# brightyellow="#dbbc7f"
+# brightblue="#7fbbb3"
+# brightmagenta="#d699b6"
+# brightcyan="#83c092"
+# brightwhite="#d3c6aa"
+# dimblack="#232A2E"
+# dimred="#543A48"
+# dimgreen="#425047"
+# dimyellow="#4D4C43"
+# dimblue="#3A515D"
 
 # TODO color processing to generate a dark black, a light black, a dark red and green, and a grey
 IFS=',' read -r -a blackhsl <<< "$(hextohsl "$black")"
-IFS=',' read -r -a whitehsl <<< "$(hextohsl "$white")"
-IFS=',' read -r -a redhsl <<< "$(hextohsl "$red")"
-IFS=',' read -r -a greenhsl <<< "$(hextohsl "$green")"
-IFS=',' read -r -a yellowhsl <<< "$(hextohsl "$yellow")"
-IFS=',' read -r -a bluehsl <<< "$(hextohsl "$blue")"
 
 blacksatstep=1
 blacklumstep=3
 
-backgrounddim="#$(magick xc:"${background}" -fill black -colorize 22% -depth 8 -format "%[hex:u]" info:)"
+backgrounddim="#$(magick xc:"${base00}" -fill black -colorize 22% -depth 8 -format "%[hex:u]" info:)"
 background0="#$(hsltohex "${blackhsl[0]}" $((${blackhsl[1]}+($blacksatstep*4))) $((${blackhsl[2]}-($blacklumstep*4))))"
 background1="#$(hsltohex "${blackhsl[0]}" $((${blackhsl[1]}+($blacksatstep*3))) $((${blackhsl[2]}-($blacklumstep*3))))"
 background2="#$(hsltohex "${blackhsl[0]}" $((${blackhsl[1]}+($blacksatstep*2))) $((${blackhsl[2]}-($blacklumstep*2))))"
@@ -176,16 +112,43 @@ background3="#$(hsltohex "${blackhsl[0]}" $((${blackhsl[1]}+$blacksatstep)) $(($
 background4="#$black"
 background5="#$(hsltohex "${blackhsl[0]}" $((${blackhsl[1]}-blacksatstep)) $((${blackhsl[2]}+blacklumstep)))"
 
-backgroundred="#$(magick xc:"${red}" -fill "${backgrounddim}" -colorize 75% -depth 8 -format "%[hex:u]" info:)"
-backgroundgreen="#$(magick xc:"${green}" -fill "${backgrounddim}" -colorize 75% -depth 8 -format "%[hex:u]" info:)"
-backgroundyellow="#$(magick xc:"${yellow}" -fill "${backgrounddim}" -colorize 75% -depth 8 -format "%[hex:u]" info:)"
-backgroundblue="#$(magick xc:"${blue}" -fill "${backgrounddim}" -colorize 75% -depth 8 -format "%[hex:u]" info:)"
+# these are not quite there but theyre pretty damn close
+backgroundred="#$(magick xc:"${base08}" -fill "${backgrounddim}" -colorize 75% -depth 8 -format "%[hex:u]" info:)"
+backgroundgreen="#$(magick xc:"${base0B}" -fill "${backgrounddim}" -colorize 75% -depth 8 -format "%[hex:u]" info:)"
+backgroundyellow="#$(magick xc:"${base0A}" -fill "${backgrounddim}" -colorize 75% -depth 8 -format "%[hex:u]" info:)"
+backgroundblue="#$(magick xc:"${base0D}" -fill "${backgrounddim}" -colorize 75% -depth 8 -format "%[hex:u]" info:)"
 
-echo $backgrounddim
-echo $backgroundred
-echo $backgroundgreen
-echo $backgroundyellow
-echo $backgroundblue
+darkestbackground= #TODO base11 or generated
+dimbackground="$backgrounddim" #TODO base10 or generated
+background="$base00" #base00
+grey="$base03" #base03
+lightgrey="$base04" #base04
+foreground="$base05" #base05
+black="$base02" #base02
+red="$base08" #base08
+orange="$base09" #base09
+yellow="$base0A" #base0A
+green="$base0B" #base0B
+cyan="$base0C" #base0C
+blue="$base0D" #base0D
+magenta="$base0E" #base0E
+white="$base06" #base06
+brightblack="$base02" #TODO
+brightred="$base08" #TODO base12
+brightyellow="$base0A" #TODO base13
+brightgreen="$base0B" #TODO base14
+brightcyan="$base0C" #TODO base15
+brightblue="$base0D" #TODO base16
+brightmagenta="$base0E" #TODO base17
+brightwhite="$base06" #TODO
+dimblack="$base02" #TODO
+dimred="$backgroundred" #generated
+dimyellow="$backgroundyellow" #generated
+dimgreen="$backgroundgreen" #generated
+dimcyan="$backgroundblue" #TODO
+dimblue="$backgroundblue" #generated
+dimmagenta="$backgroundblue" #TODO
+dimwhite="$base06" #TODO
 
 # TODO force reloads of apps that need them, and rewrite apps where otherwise possible
 
@@ -281,7 +244,7 @@ notify-send -t 10000 -u critical "dunst test" "critical urgency"
 # sddm
 sddmconfig="background=\"${background}\"
 foreground=\"${foreground}\"
-dim=\"${dimblack}\""
+dim=\"${black}\""
 
 cat ${homedir}/.config/sddm/themerules.conf > /usr/share/sddm/themes/uuusddm/theme.conf
 printf "${sddmconfig}" >> /usr/share/sddm/themes/uuusddm/theme.conf
