@@ -2,12 +2,12 @@
 
 homedir="/home/uuu"
 
-hextohsl() {	
+hextohsl() {
   echo $(magick xc:"$1" -colorspace HSL -format "%[pixel:u]" info: | sed 's/hsl(//;s/%)//g;s/)//' | awk -F',' '{printf "%.0f,%.0f,%.0f\n", $1, $2, $3}')
 }
 
 # depth 8 gives you single precision hex
-hsltohex() {	
+hsltohex() {
   echo $(magick canvas:"hsl($1,$2%,$3%)" -depth 8 -format "%[hex:u]" info:)
 }
 
@@ -286,8 +286,24 @@ dim=\"${dimblack}\""
 cat ${homedir}/.config/sddm/themerules.conf > /usr/share/sddm/themes/uuusddm/theme.conf
 printf "${sddmconfig}" >> /usr/share/sddm/themes/uuusddm/theme.conf
 
-#TODO gtk 
+#TODO gtk
+# *16 for the character height, +10 for the padding and border on tofi
+height=$(($((12*16))+10))
+
 # prompt user for a theme color
+themecoloroptions="gray
+foreground
+white
+red
+orange
+yellow
+green
+cyan
+blue
+magenta
+special"
+
+themecolor=$(printf "%s\n" "$themecoloroptions" | tofi --prompt-text "sel: " --height "$height" --num-results "13")
 
 theme=$(gsettings get org.gnome.desktop.interface gtk-theme)
 gsettings set org.gnome.desktop.interface gtk-theme ''

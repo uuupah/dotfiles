@@ -7,3 +7,6 @@
 [submodule ".themes/uuu"]
 	path = .themes/uuu
 	url = git@github.com:uuupah/uuu-gtk-theme.git
+[submodule "scripts/schemes"]
+	path = scripts/schemes
+	url = https://github.com/tinted-theming/schemes
