@@ -8,10 +8,12 @@ fi
 options="toggle external monitors
 change audio profile
 wifi
+change colour scheme
 remmina connections"
 
 choice=$(printf "%s\n" "$options" | tofi --prompt="sel: ") || exit 0
 
+# TODO change this choice to indexes instead of words
 case "$choice" in
   "toggle external monitors")
     $HOME/.config/tofi/scripts/set_hyprland_monitors.sh
@@ -21,6 +23,9 @@ case "$choice" in
     ;;
   "wifi")
     $HOME/.config/tofi/scripts/wifi_menu.sh
+    ;;
+  "change colour scheme")
+    $HOME/scripts/colourschemescript
     ;;
   "remmina connections")
     $HOME/.config/tofi/scripts/remote_connections.sh

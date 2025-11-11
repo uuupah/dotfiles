@@ -26,3 +26,7 @@ height = 186
 num-results = 10
 
 include = /home/uuu/.config/tofi/themes/uuu
+
+output = 
+
+scale = false

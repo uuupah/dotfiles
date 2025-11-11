@@ -1,0 +1,7 @@
+output "eDP-1" {
+    background-color "#232a2e"
+}
+
+overview {
+    backdrop-color "#232a2e"
+}

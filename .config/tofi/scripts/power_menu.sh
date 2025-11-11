@@ -29,6 +29,9 @@ case "$choice" in
       hyprland | hyprland-uwsm)
         hyprctl dispatch exit 1
         ;;
+      niri)
+        niri msg action quit
+        ;;
       sway)
         swaymsg exit
         ;;

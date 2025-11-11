@@ -42,42 +42,6 @@ height=$(($((12*16))+10))
 
 themecolor=$(printf "%s\n" "$themecoloroptions" | tofi --prompt-text "sel: " --height "$height" --num-results "13")
 
-# TODO 🚨 BAD SOLUTION ALERT 🚨
-case "$themecolor" in
-  "gray")
-  basethemecolor=${base03}
-  ;;
-  "foreground")
-  basethemecolor=${base05}
-  ;;
-  "white")
-  basethemecolor=${base06}
-  ;;
-  "red")
-  basethemecolor=${base08}
-  ;;
-  "orange")
-  basethemecolor=${base09}
-  ;;
-  "yellow")
-  basethemecolor=${base0A}
-  ;;
-  "green")
-  basethemecolor=${base0B}
-  ;;
-  "cyan")
-  basethemecolor=${base0C}
-  ;;
-  "blue")
-  basethemecolor=${base0D}
-  ;;
-  "magenta")
-  basethemecolor=${base0E}
-  ;;
-  "special")
-  basethemecolor=${base0F}
-  ;;
-esac
 
 base00=$(cat "${homedir}/scripts/schemes/base16/${selectedscheme}.yaml" | yq .palette.base00)
 base01=$(cat "${homedir}/scripts/schemes/base16/${selectedscheme}.yaml" | yq .palette.base01)
@@ -148,6 +112,43 @@ dimcyan="$backgroundblue" #TODO
 dimblue="$backgroundblue" #generated
 dimmagenta="$backgroundblue" #TODO
 dimwhite="$base06" #TODO
+
+# TODO 🚨 BAD SOLUTION ALERT 🚨
+case "$themecolor" in
+  "gray")
+  basethemecolor=${base03}
+  ;;
+  "foreground")
+  basethemecolor=${base05}
+  ;;
+  "white")
+  basethemecolor=${base06}
+  ;;
+  "red")
+  basethemecolor=${base08}
+  ;;
+  "orange")
+  basethemecolor=${base09}
+  ;;
+  "yellow")
+  basethemecolor=${base0A}
+  ;;
+  "green")
+  basethemecolor=${base0B}
+  ;;
+  "cyan")
+  basethemecolor=${base0C}
+  ;;
+  "blue")
+  basethemecolor=${base0D}
+  ;;
+  "magenta")
+  basethemecolor=${base0E}
+  ;;
+  "special")
+  basethemecolor=${base0F}
+  ;;
+esac
 
 # alacritty
 alacrittyconfig="[colors.primary]
@@ -245,6 +246,8 @@ dim=\"${black}\""
 cat ${homedir}/.config/sddm/themerules.conf > /usr/share/sddm/themes/uuusddm/theme.conf
 printf "${sddmconfig}" >> /usr/share/sddm/themes/uuusddm/theme.conf
 
+echo basethemecolor "$basethemecolor"
+
 # gtk
 gtkconfig="@define-color base00 ${base00};
 @define-color base01 ${base01};
@@ -292,7 +295,7 @@ zedconfig="{
   \"author\": \"uuu\",
   \"themes\": [
     {
-      \"name\": \"Everforest Dark Medium\",
+      \"name\": \"uuu\",
       \"appearance\": \"dark\",
       \"style\": {
         \"border\": \"${backgrounddim}\",
@@ -464,7 +467,7 @@ zedconfig="{
             \"font_weight\": null
           },
           \"comment\": {
-            \"color\": \"${brightblack}\",
+            \"color\": \"${grey}a0\",
             \"font_style\": \"italic\",
             \"font_weight\": null
           },
@@ -805,6 +808,1412 @@ vswindowconfig="// Base colors
 \"statusBarItem.hoverBackground\": \"${base02}\", //2
 \"statusBarItem.prominentForeground\": \"${base07}\", //7
 \"statusBarItem.prominentBackground\": \"${base0E}\", //E
+\"statusBarItem.prominentHoverBackground\": \"${base08}\", //8F}\", //F
+
+// Panel colors
+\"panel.background\": \"${base00}\", //0
+\"panel.dropBorder\": \"${base01}\", //1
+\"panelTitle.activeForeground\": \"${base05}\", //5
+\"panelTitle.inactiveForeground\": \"${base03}\", //3
+
+// Status Bar colors
+\"statusBar.background\": \"${base0D}\", //D
+\"statusBar.foreground\": \"${base07}\", //7
+\"statusBar.debuggingBackground\": \"${base09}\", //9
+\"statusBar.debuggingForeground\": \"${base07}\", //7
+\"statusBar.noFolderBackground\": \"${base0E}\", //E
+\"statusBar.noFolderForeground\": \"${base07}\", //7
+\"statusBarItem.activeBackground\": \"${base03}\", //3
+\"statusBarItem.hoverBackground\": \"${base02}\", //2
+\"statusBarItem.prominentForeground\": \"${base07}\", //7
+\"statusBarItem.prominentBackground\": \"${base0E}\", //E
+\"statusBarItem.prominentHoverBackground\": \"${base08}\", //8F}\", //F
+
+// Panel colors
+\"panel.background\": \"${base00}\", //0
+\"panel.dropBorder\": \"${base01}\", //1
+\"panelTitle.activeForeground\": \"${base05}\", //5
+\"panelTitle.inactiveForeground\": \"${base03}\", //3
+
+// Status Bar colors
+\"statusBar.background\": \"${base0D}\", //D
+\"statusBar.foreground\": \"${base07}\", //7
+\"statusBar.debuggingBackground\": \"${base09}\", //9
+\"statusBar.debuggingForeground\": \"${base07}\", //7
+\"statusBar.noFolderBackground\": \"${base0E}\", //E
+\"statusBar.noFolderForeground\": \"${base07}\", //7
+\"statusBarItem.activeBackground\": \"${base03}\", //3
+\"statusBarItem.hoverBackground\": \"${base02}\", //2
+\"statusBarItem.prominentForeground\": \"${base07}\", //7
+\"statusBarItem.prominentBackground\": \"${base0E}\", //E
+\"statusBarItem.prominentHoverBackground\": \"${base08}\", //8F}\", //F
+
+// Panel colors
+\"panel.background\": \"${base00}\", //0
+\"panel.dropBorder\": \"${base01}\", //1
+\"panelTitle.activeForeground\": \"${base05}\", //5
+\"panelTitle.inactiveForeground\": \"${base03}\", //3
+
+// Status Bar colors
+\"statusBar.background\": \"${base0D}\", //D
+\"statusBar.foreground\": \"${base07}\", //7
+\"statusBar.debuggingBackground\": \"${base09}\", //9
+\"statusBar.debuggingForeground\": \"${base07}\", //7
+\"statusBar.noFolderBackground\": \"${base0E}\", //E
+\"statusBar.noFolderForeground\": \"${base07}\", //7
+\"statusBarItem.activeBackground\": \"${base03}\", //3
+\"statusBarItem.hoverBackground\": \"${base02}\", //2
+\"statusBarItem.prominentForeground\": \"${base07}\", //7
+\"statusBarItem.prominentBackground\": \"${base0E}\", //E
+\"statusBarItem.prominentHoverBackground\": \"${base08}\", //8F}\", //F
+
+// Panel colors
+\"panel.background\": \"${base00}\", //0
+\"panel.dropBorder\": \"${base01}\", //1
+\"panelTitle.activeForeground\": \"${base05}\", //5
+\"panelTitle.inactiveForeground\": \"${base03}\", //3
+
+// Status Bar colors
+\"statusBar.background\": \"${base0D}\", //D
+\"statusBar.foreground\": \"${base07}\", //7
+\"statusBar.debuggingBackground\": \"${base09}\", //9
+\"statusBar.debuggingForeground\": \"${base07}\", //7
+\"statusBar.noFolderBackground\": \"${base0E}\", //E
+\"statusBar.noFolderForeground\": \"${base07}\", //7
+\"statusBarItem.activeBackground\": \"${base03}\", //3
+\"statusBarItem.hoverBackground\": \"${base02}\", //2
+\"statusBarItem.prominentForeground\": \"${base07}\", //7
+\"statusBarItem.prominentBackground\": \"${base0E}\", //E
+\"statusBarItem.prominentHoverBackground\": \"${base08}\", //8F}\", //F
+
+// Panel colors
+\"panel.background\": \"${base00}\", //0
+\"panel.dropBorder\": \"${base01}\", //1
+\"panelTitle.activeForeground\": \"${base05}\", //5
+\"panelTitle.inactiveForeground\": \"${base03}\", //3
+
+// Status Bar colors
+\"statusBar.background\": \"${base0D}\", //D
+\"statusBar.foreground\": \"${base07}\", //7
+\"statusBar.debuggingBackground\": \"${base09}\", //9
+\"statusBar.debuggingForeground\": \"${base07}\", //7
+\"statusBar.noFolderBackground\": \"${base0E}\", //E
+\"statusBar.noFolderForeground\": \"${base07}\", //7
+\"statusBarItem.activeBackground\": \"${base03}\", //3
+\"statusBarItem.hoverBackground\": \"${base02}\", //2
+\"statusBarItem.prominentForeground\": \"${base07}\", //7
+\"statusBarItem.prominentBackground\": \"${base0E}\", //E
+\"statusBarItem.prominentHoverBackground\": \"${base08}\", //8F}\", //F
+
+// Panel colors
+\"panel.background\": \"${base00}\", //0
+\"panel.dropBorder\": \"${base01}\", //1
+\"panelTitle.activeForeground\": \"${base05}\", //5
+\"panelTitle.inactiveForeground\": \"${base03}\", //3
+
+// Status Bar colors
+\"statusBar.background\": \"${base0D}\", //D
+\"statusBar.foreground\": \"${base07}\", //7
+\"statusBar.debuggingBackground\": \"${base09}\", //9
+\"statusBar.debuggingForeground\": \"${base07}\", //7
+\"statusBar.noFolderBackground\": \"${base0E}\", //E
+\"statusBar.noFolderForeground\": \"${base07}\", //7
+\"statusBarItem.activeBackground\": \"${base03}\", //3
+\"statusBarItem.hoverBackground\": \"${base02}\", //2
+\"statusBarItem.prominentForeground\": \"${base07}\", //7
+\"statusBarItem.prominentBackground\": \"${base0E}\", //E
+\"statusBarItem.prominentHoverBackground\": \"${base08}\", //8F}\", //F
+
+// Panel colors
+\"panel.background\": \"${base00}\", //0
+\"panel.dropBorder\": \"${base01}\", //1
+\"panelTitle.activeForeground\": \"${base05}\", //5
+\"panelTitle.inactiveForeground\": \"${base03}\", //3
+
+// Status Bar colors
+\"statusBar.background\": \"${base0D}\", //D
+\"statusBar.foreground\": \"${base07}\", //7
+\"statusBar.debuggingBackground\": \"${base09}\", //9
+\"statusBar.debuggingForeground\": \"${base07}\", //7
+\"statusBar.noFolderBackground\": \"${base0E}\", //E
+\"statusBar.noFolderForeground\": \"${base07}\", //7
+\"statusBarItem.activeBackground\": \"${base03}\", //3
+\"statusBarItem.hoverBackground\": \"${base02}\", //2
+\"statusBarItem.prominentForeground\": \"${base07}\", //7
+\"statusBarItem.prominentBackground\": \"${base0E}\", //E
+\"statusBarItem.prominentHoverBackground\": \"${base08}\", //8F}\", //F
+
+// Panel colors
+\"panel.background\": \"${base00}\", //0
+\"panel.dropBorder\": \"${base01}\", //1
+\"panelTitle.activeForeground\": \"${base05}\", //5
+\"panelTitle.inactiveForeground\": \"${base03}\", //3
+
+// Status Bar colors
+\"statusBar.background\": \"${base0D}\", //D
+\"statusBar.foreground\": \"${base07}\", //7
+\"statusBar.debuggingBackground\": \"${base09}\", //9
+\"statusBar.debuggingForeground\": \"${base07}\", //7
+\"statusBar.noFolderBackground\": \"${base0E}\", //E
+\"statusBar.noFolderForeground\": \"${base07}\", //7
+\"statusBarItem.activeBackground\": \"${base03}\", //3
+\"statusBarItem.hoverBackground\": \"${base02}\", //2
+\"statusBarItem.prominentForeground\": \"${base07}\", //7
+\"statusBarItem.prominentBackground\": \"${base0E}\", //E
+\"statusBarItem.prominentHoverBackground\": \"${base08}\", //8F}\", //F
+
+// Panel colors
+\"panel.background\": \"${base00}\", //0
+\"panel.dropBorder\": \"${base01}\", //1
+\"panelTitle.activeForeground\": \"${base05}\", //5
+\"panelTitle.inactiveForeground\": \"${base03}\", //3
+
+// Status Bar colors
+\"statusBar.background\": \"${base0D}\", //D
+\"statusBar.foreground\": \"${base07}\", //7
+\"statusBar.debuggingBackground\": \"${base09}\", //9
+\"statusBar.debuggingForeground\": \"${base07}\", //7
+\"statusBar.noFolderBackground\": \"${base0E}\", //E
+\"statusBar.noFolderForeground\": \"${base07}\", //7
+\"statusBarItem.activeBackground\": \"${base03}\", //3
+\"statusBarItem.hoverBackground\": \"${base02}\", //2
+\"statusBarItem.prominentForeground\": \"${base07}\", //7
+\"statusBarItem.prominentBackground\": \"${base0E}\", //E
+\"statusBarItem.prominentHoverBackground\": \"${base08}\", //8F}\", //F
+
+// Panel colors
+\"panel.background\": \"${base00}\", //0
+\"panel.dropBorder\": \"${base01}\", //1
+\"panelTitle.activeForeground\": \"${base05}\", //5
+\"panelTitle.inactiveForeground\": \"${base03}\", //3
+
+// Status Bar colors
+\"statusBar.background\": \"${base0D}\", //D
+\"statusBar.foreground\": \"${base07}\", //7
+\"statusBar.debuggingBackground\": \"${base09}\", //9
+\"statusBar.debuggingForeground\": \"${base07}\", //7
+\"statusBar.noFolderBackground\": \"${base0E}\", //E
+\"statusBar.noFolderForeground\": \"${base07}\", //7
+\"statusBarItem.activeBackground\": \"${base03}\", //3
+\"statusBarItem.hoverBackground\": \"${base02}\", //2
+\"statusBarItem.prominentForeground\": \"${base07}\", //7
+\"statusBarItem.prominentBackground\": \"${base0E}\", //E
+\"statusBarItem.prominentHoverBackground\": \"${base08}\", //8F}\", //F
+
+// Panel colors
+\"panel.background\": \"${base00}\", //0
+\"panel.dropBorder\": \"${base01}\", //1
+\"panelTitle.activeForeground\": \"${base05}\", //5
+\"panelTitle.inactiveForeground\": \"${base03}\", //3
+
+// Status Bar colors
+\"statusBar.background\": \"${base0D}\", //D
+\"statusBar.foreground\": \"${base07}\", //7
+\"statusBar.debuggingBackground\": \"${base09}\", //9
+\"statusBar.debuggingForeground\": \"${base07}\", //7
+\"statusBar.noFolderBackground\": \"${base0E}\", //E
+\"statusBar.noFolderForeground\": \"${base07}\", //7
+\"statusBarItem.activeBackground\": \"${base03}\", //3
+\"statusBarItem.hoverBackground\": \"${base02}\", //2
+\"statusBarItem.prominentForeground\": \"${base07}\", //7
+\"statusBarItem.prominentBackground\": \"${base0E}\", //E
+\"statusBarItem.prominentHoverBackground\": \"${base08}\", //8F}\", //F
+
+// Panel colors
+\"panel.background\": \"${base00}\", //0
+\"panel.dropBorder\": \"${base01}\", //1
+\"panelTitle.activeForeground\": \"${base05}\", //5
+\"panelTitle.inactiveForeground\": \"${base03}\", //3
+
+// Status Bar colors
+\"statusBar.background\": \"${base0D}\", //D
+\"statusBar.foreground\": \"${base07}\", //7
+\"statusBar.debuggingBackground\": \"${base09}\", //9
+\"statusBar.debuggingForeground\": \"${base07}\", //7
+\"statusBar.noFolderBackground\": \"${base0E}\", //E
+\"statusBar.noFolderForeground\": \"${base07}\", //7
+\"statusBarItem.activeBackground\": \"${base03}\", //3
+\"statusBarItem.hoverBackground\": \"${base02}\", //2
+\"statusBarItem.prominentForeground\": \"${base07}\", //7
+\"statusBarItem.prominentBackground\": \"${base0E}\", //E
+\"statusBarItem.prominentHoverBackground\": \"${base08}\", //8F}\", //F
+
+// Panel colors
+\"panel.background\": \"${base00}\", //0
+\"panel.dropBorder\": \"${base01}\", //1
+\"panelTitle.activeForeground\": \"${base05}\", //5
+\"panelTitle.inactiveForeground\": \"${base03}\", //3
+
+// Status Bar colors
+\"statusBar.background\": \"${base0D}\", //D
+\"statusBar.foreground\": \"${base07}\", //7
+\"statusBar.debuggingBackground\": \"${base09}\", //9
+\"statusBar.debuggingForeground\": \"${base07}\", //7
+\"statusBar.noFolderBackground\": \"${base0E}\", //E
+\"statusBar.noFolderForeground\": \"${base07}\", //7
+\"statusBarItem.activeBackground\": \"${base03}\", //3
+\"statusBarItem.hoverBackground\": \"${base02}\", //2
+\"statusBarItem.prominentForeground\": \"${base07}\", //7
+\"statusBarItem.prominentBackground\": \"${base0E}\", //E
+\"statusBarItem.prominentHoverBackground\": \"${base08}\", //8F}\", //F
+
+// Panel colors
+\"panel.background\": \"${base00}\", //0
+\"panel.dropBorder\": \"${base01}\", //1
+\"panelTitle.activeForeground\": \"${base05}\", //5
+\"panelTitle.inactiveForeground\": \"${base03}\", //3
+
+// Status Bar colors
+\"statusBar.background\": \"${base0D}\", //D
+\"statusBar.foreground\": \"${base07}\", //7
+\"statusBar.debuggingBackground\": \"${base09}\", //9
+\"statusBar.debuggingForeground\": \"${base07}\", //7
+\"statusBar.noFolderBackground\": \"${base0E}\", //E
+\"statusBar.noFolderForeground\": \"${base07}\", //7
+\"statusBarItem.activeBackground\": \"${base03}\", //3
+\"statusBarItem.hoverBackground\": \"${base02}\", //2
+\"statusBarItem.prominentForeground\": \"${base07}\", //7
+\"statusBarItem.prominentBackground\": \"${base0E}\", //E
+\"statusBarItem.prominentHoverBackground\": \"${base08}\", //8F}\", //F
+
+// Panel colors
+\"panel.background\": \"${base00}\", //0
+\"panel.dropBorder\": \"${base01}\", //1
+\"panelTitle.activeForeground\": \"${base05}\", //5
+\"panelTitle.inactiveForeground\": \"${base03}\", //3
+
+// Status Bar colors
+\"statusBar.background\": \"${base0D}\", //D
+\"statusBar.foreground\": \"${base07}\", //7
+\"statusBar.debuggingBackground\": \"${base09}\", //9
+\"statusBar.debuggingForeground\": \"${base07}\", //7
+\"statusBar.noFolderBackground\": \"${base0E}\", //E
+\"statusBar.noFolderForeground\": \"${base07}\", //7
+\"statusBarItem.activeBackground\": \"${base03}\", //3
+\"statusBarItem.hoverBackground\": \"${base02}\", //2
+\"statusBarItem.prominentForeground\": \"${base07}\", //7
+\"statusBarItem.prominentBackground\": \"${base0E}\", //E
+\"statusBarItem.prominentHoverBackground\": \"${base08}\", //8F}\", //F
+
+// Panel colors
+\"panel.background\": \"${base00}\", //0
+\"panel.dropBorder\": \"${base01}\", //1
+\"panelTitle.activeForeground\": \"${base05}\", //5
+\"panelTitle.inactiveForeground\": \"${base03}\", //3
+
+// Status Bar colors
+\"statusBar.background\": \"${base0D}\", //D
+\"statusBar.foreground\": \"${base07}\", //7
+\"statusBar.debuggingBackground\": \"${base09}\", //9
+\"statusBar.debuggingForeground\": \"${base07}\", //7
+\"statusBar.noFolderBackground\": \"${base0E}\", //E
+\"statusBar.noFolderForeground\": \"${base07}\", //7
+\"statusBarItem.activeBackground\": \"${base03}\", //3
+\"statusBarItem.hoverBackground\": \"${base02}\", //2
+\"statusBarItem.prominentForeground\": \"${base07}\", //7
+\"statusBarItem.prominentBackground\": \"${base0E}\", //E
+\"statusBarItem.prominentHoverBackground\": \"${base08}\", //8F}\", //F
+
+// Panel colors
+\"panel.background\": \"${base00}\", //0
+\"panel.dropBorder\": \"${base01}\", //1
+\"panelTitle.activeForeground\": \"${base05}\", //5
+\"panelTitle.inactiveForeground\": \"${base03}\", //3
+
+// Status Bar colors
+\"statusBar.background\": \"${base0D}\", //D
+\"statusBar.foreground\": \"${base07}\", //7
+\"statusBar.debuggingBackground\": \"${base09}\", //9
+\"statusBar.debuggingForeground\": \"${base07}\", //7
+\"statusBar.noFolderBackground\": \"${base0E}\", //E
+\"statusBar.noFolderForeground\": \"${base07}\", //7
+\"statusBarItem.activeBackground\": \"${base03}\", //3
+\"statusBarItem.hoverBackground\": \"${base02}\", //2
+\"statusBarItem.prominentForeground\": \"${base07}\", //7
+\"statusBarItem.prominentBackground\": \"${base0E}\", //E
+\"statusBarItem.prominentHoverBackground\": \"${base08}\", //8F}\", //F
+
+// Panel colors
+\"panel.background\": \"${base00}\", //0
+\"panel.dropBorder\": \"${base01}\", //1
+\"panelTitle.activeForeground\": \"${base05}\", //5
+\"panelTitle.inactiveForeground\": \"${base03}\", //3
+
+// Status Bar colors
+\"statusBar.background\": \"${base0D}\", //D
+\"statusBar.foreground\": \"${base07}\", //7
+\"statusBar.debuggingBackground\": \"${base09}\", //9
+\"statusBar.debuggingForeground\": \"${base07}\", //7
+\"statusBar.noFolderBackground\": \"${base0E}\", //E
+\"statusBar.noFolderForeground\": \"${base07}\", //7
+\"statusBarItem.activeBackground\": \"${base03}\", //3
+\"statusBarItem.hoverBackground\": \"${base02}\", //2
+\"statusBarItem.prominentForeground\": \"${base07}\", //7
+\"statusBarItem.prominentBackground\": \"${base0E}\", //E
+\"statusBarItem.prominentHoverBackground\": \"${base08}\", //8F}\", //F
+
+// Panel colors
+\"panel.background\": \"${base00}\", //0
+\"panel.dropBorder\": \"${base01}\", //1
+\"panelTitle.activeForeground\": \"${base05}\", //5
+\"panelTitle.inactiveForeground\": \"${base03}\", //3
+
+// Status Bar colors
+\"statusBar.background\": \"${base0D}\", //D
+\"statusBar.foreground\": \"${base07}\", //7
+\"statusBar.debuggingBackground\": \"${base09}\", //9
+\"statusBar.debuggingForeground\": \"${base07}\", //7
+\"statusBar.noFolderBackground\": \"${base0E}\", //E
+\"statusBar.noFolderForeground\": \"${base07}\", //7
+\"statusBarItem.activeBackground\": \"${base03}\", //3
+\"statusBarItem.hoverBackground\": \"${base02}\", //2
+\"statusBarItem.prominentForeground\": \"${base07}\", //7
+\"statusBarItem.prominentBackground\": \"${base0E}\", //E
+\"statusBarItem.prominentHoverBackground\": \"${base08}\", //8F}\", //F
+
+// Panel colors
+\"panel.background\": \"${base00}\", //0
+\"panel.dropBorder\": \"${base01}\", //1
+\"panelTitle.activeForeground\": \"${base05}\", //5
+\"panelTitle.inactiveForeground\": \"${base03}\", //3
+
+// Status Bar colors
+\"statusBar.background\": \"${base0D}\", //D
+\"statusBar.foreground\": \"${base07}\", //7
+\"statusBar.debuggingBackground\": \"${base09}\", //9
+\"statusBar.debuggingForeground\": \"${base07}\", //7
+\"statusBar.noFolderBackground\": \"${base0E}\", //E
+\"statusBar.noFolderForeground\": \"${base07}\", //7
+\"statusBarItem.activeBackground\": \"${base03}\", //3
+\"statusBarItem.hoverBackground\": \"${base02}\", //2
+\"statusBarItem.prominentForeground\": \"${base07}\", //7
+\"statusBarItem.prominentBackground\": \"${base0E}\", //E
+\"statusBarItem.prominentHoverBackground\": \"${base08}\", //8F}\", //F
+
+// Panel colors
+\"panel.background\": \"${base00}\", //0
+\"panel.dropBorder\": \"${base01}\", //1
+\"panelTitle.activeForeground\": \"${base05}\", //5
+\"panelTitle.inactiveForeground\": \"${base03}\", //3
+
+// Status Bar colors
+\"statusBar.background\": \"${base0D}\", //D
+\"statusBar.foreground\": \"${base07}\", //7
+\"statusBar.debuggingBackground\": \"${base09}\", //9
+\"statusBar.debuggingForeground\": \"${base07}\", //7
+\"statusBar.noFolderBackground\": \"${base0E}\", //E
+\"statusBar.noFolderForeground\": \"${base07}\", //7
+\"statusBarItem.activeBackground\": \"${base03}\", //3
+\"statusBarItem.hoverBackground\": \"${base02}\", //2
+\"statusBarItem.prominentForeground\": \"${base07}\", //7
+\"statusBarItem.prominentBackground\": \"${base0E}\", //E
+\"statusBarItem.prominentHoverBackground\": \"${base08}\", //8F}\", //F
+
+// Panel colors
+\"panel.background\": \"${base00}\", //0
+\"panel.dropBorder\": \"${base01}\", //1
+\"panelTitle.activeForeground\": \"${base05}\", //5
+\"panelTitle.inactiveForeground\": \"${base03}\", //3
+
+// Status Bar colors
+\"statusBar.background\": \"${base0D}\", //D
+\"statusBar.foreground\": \"${base07}\", //7
+\"statusBar.debuggingBackground\": \"${base09}\", //9
+\"statusBar.debuggingForeground\": \"${base07}\", //7
+\"statusBar.noFolderBackground\": \"${base0E}\", //E
+\"statusBar.noFolderForeground\": \"${base07}\", //7
+\"statusBarItem.activeBackground\": \"${base03}\", //3
+\"statusBarItem.hoverBackground\": \"${base02}\", //2
+\"statusBarItem.prominentForeground\": \"${base07}\", //7
+\"statusBarItem.prominentBackground\": \"${base0E}\", //E
+\"statusBarItem.prominentHoverBackground\": \"${base08}\", //8F}\", //F
+
+// Panel colors
+\"panel.background\": \"${base00}\", //0
+\"panel.dropBorder\": \"${base01}\", //1
+\"panelTitle.activeForeground\": \"${base05}\", //5
+\"panelTitle.inactiveForeground\": \"${base03}\", //3
+
+// Status Bar colors
+\"statusBar.background\": \"${base0D}\", //D
+\"statusBar.foreground\": \"${base07}\", //7
+\"statusBar.debuggingBackground\": \"${base09}\", //9
+\"statusBar.debuggingForeground\": \"${base07}\", //7
+\"statusBar.noFolderBackground\": \"${base0E}\", //E
+\"statusBar.noFolderForeground\": \"${base07}\", //7
+\"statusBarItem.activeBackground\": \"${base03}\", //3
+\"statusBarItem.hoverBackground\": \"${base02}\", //2
+\"statusBarItem.prominentForeground\": \"${base07}\", //7
+\"statusBarItem.prominentBackground\": \"${base0E}\", //E
+\"statusBarItem.prominentHoverBackground\": \"${base08}\", //8F}\", //F
+
+// Panel colors
+\"panel.background\": \"${base00}\", //0
+\"panel.dropBorder\": \"${base01}\", //1
+\"panelTitle.activeForeground\": \"${base05}\", //5
+\"panelTitle.inactiveForeground\": \"${base03}\", //3
+
+// Status Bar colors
+\"statusBar.background\": \"${base0D}\", //D
+\"statusBar.foreground\": \"${base07}\", //7
+\"statusBar.debuggingBackground\": \"${base09}\", //9
+\"statusBar.debuggingForeground\": \"${base07}\", //7
+\"statusBar.noFolderBackground\": \"${base0E}\", //E
+\"statusBar.noFolderForeground\": \"${base07}\", //7
+\"statusBarItem.activeBackground\": \"${base03}\", //3
+\"statusBarItem.hoverBackground\": \"${base02}\", //2
+\"statusBarItem.prominentForeground\": \"${base07}\", //7
+\"statusBarItem.prominentBackground\": \"${base0E}\", //E
+\"statusBarItem.prominentHoverBackground\": \"${base08}\", //8F}\", //F
+
+// Panel colors
+\"panel.background\": \"${base00}\", //0
+\"panel.dropBorder\": \"${base01}\", //1
+\"panelTitle.activeForeground\": \"${base05}\", //5
+\"panelTitle.inactiveForeground\": \"${base03}\", //3
+
+// Status Bar colors
+\"statusBar.background\": \"${base0D}\", //D
+\"statusBar.foreground\": \"${base07}\", //7
+\"statusBar.debuggingBackground\": \"${base09}\", //9
+\"statusBar.debuggingForeground\": \"${base07}\", //7
+\"statusBar.noFolderBackground\": \"${base0E}\", //E
+\"statusBar.noFolderForeground\": \"${base07}\", //7
+\"statusBarItem.activeBackground\": \"${base03}\", //3
+\"statusBarItem.hoverBackground\": \"${base02}\", //2
+\"statusBarItem.prominentForeground\": \"${base07}\", //7
+\"statusBarItem.prominentBackground\": \"${base0E}\", //E
+\"statusBarItem.prominentHoverBackground\": \"${base08}\", //8F}\", //F
+
+// Panel colors
+\"panel.background\": \"${base00}\", //0
+\"panel.dropBorder\": \"${base01}\", //1
+\"panelTitle.activeForeground\": \"${base05}\", //5
+\"panelTitle.inactiveForeground\": \"${base03}\", //3
+
+// Status Bar colors
+\"statusBar.background\": \"${base0D}\", //D
+\"statusBar.foreground\": \"${base07}\", //7
+\"statusBar.debuggingBackground\": \"${base09}\", //9
+\"statusBar.debuggingForeground\": \"${base07}\", //7
+\"statusBar.noFolderBackground\": \"${base0E}\", //E
+\"statusBar.noFolderForeground\": \"${base07}\", //7
+\"statusBarItem.activeBackground\": \"${base03}\", //3
+\"statusBarItem.hoverBackground\": \"${base02}\", //2
+\"statusBarItem.prominentForeground\": \"${base07}\", //7
+\"statusBarItem.prominentBackground\": \"${base0E}\", //E
+\"statusBarItem.prominentHoverBackground\": \"${base08}\", //8F}\", //F
+
+// Panel colors
+\"panel.background\": \"${base00}\", //0
+\"panel.dropBorder\": \"${base01}\", //1
+\"panelTitle.activeForeground\": \"${base05}\", //5
+\"panelTitle.inactiveForeground\": \"${base03}\", //3
+
+// Status Bar colors
+\"statusBar.background\": \"${base0D}\", //D
+\"statusBar.foreground\": \"${base07}\", //7
+\"statusBar.debuggingBackground\": \"${base09}\", //9
+\"statusBar.debuggingForeground\": \"${base07}\", //7
+\"statusBar.noFolderBackground\": \"${base0E}\", //E
+\"statusBar.noFolderForeground\": \"${base07}\", //7
+\"statusBarItem.activeBackground\": \"${base03}\", //3
+\"statusBarItem.hoverBackground\": \"${base02}\", //2
+\"statusBarItem.prominentForeground\": \"${base07}\", //7
+\"statusBarItem.prominentBackground\": \"${base0E}\", //E
+\"statusBarItem.prominentHoverBackground\": \"${base08}\", //8F}\", //F
+
+// Panel colors
+\"panel.background\": \"${base00}\", //0
+\"panel.dropBorder\": \"${base01}\", //1
+\"panelTitle.activeForeground\": \"${base05}\", //5
+\"panelTitle.inactiveForeground\": \"${base03}\", //3
+
+// Status Bar colors
+\"statusBar.background\": \"${base0D}\", //D
+\"statusBar.foreground\": \"${base07}\", //7
+\"statusBar.debuggingBackground\": \"${base09}\", //9
+\"statusBar.debuggingForeground\": \"${base07}\", //7
+\"statusBar.noFolderBackground\": \"${base0E}\", //E
+\"statusBar.noFolderForeground\": \"${base07}\", //7
+\"statusBarItem.activeBackground\": \"${base03}\", //3
+\"statusBarItem.hoverBackground\": \"${base02}\", //2
+\"statusBarItem.prominentForeground\": \"${base07}\", //7
+\"statusBarItem.prominentBackground\": \"${base0E}\", //E
+\"statusBarItem.prominentHoverBackground\": \"${base08}\", //8F}\", //F
+
+// Panel colors
+\"panel.background\": \"${base00}\", //0
+\"panel.dropBorder\": \"${base01}\", //1
+\"panelTitle.activeForeground\": \"${base05}\", //5
+\"panelTitle.inactiveForeground\": \"${base03}\", //3
+
+// Status Bar colors
+\"statusBar.background\": \"${base0D}\", //D
+\"statusBar.foreground\": \"${base07}\", //7
+\"statusBar.debuggingBackground\": \"${base09}\", //9
+\"statusBar.debuggingForeground\": \"${base07}\", //7
+\"statusBar.noFolderBackground\": \"${base0E}\", //E
+\"statusBar.noFolderForeground\": \"${base07}\", //7
+\"statusBarItem.activeBackground\": \"${base03}\", //3
+\"statusBarItem.hoverBackground\": \"${base02}\", //2
+\"statusBarItem.prominentForeground\": \"${base07}\", //7
+\"statusBarItem.prominentBackground\": \"${base0E}\", //E
+\"statusBarItem.prominentHoverBackground\": \"${base08}\", //8F}\", //F
+
+// Panel colors
+\"panel.background\": \"${base00}\", //0
+\"panel.dropBorder\": \"${base01}\", //1
+\"panelTitle.activeForeground\": \"${base05}\", //5
+\"panelTitle.inactiveForeground\": \"${base03}\", //3
+
+// Status Bar colors
+\"statusBar.background\": \"${base0D}\", //D
+\"statusBar.foreground\": \"${base07}\", //7
+\"statusBar.debuggingBackground\": \"${base09}\", //9
+\"statusBar.debuggingForeground\": \"${base07}\", //7
+\"statusBar.noFolderBackground\": \"${base0E}\", //E
+\"statusBar.noFolderForeground\": \"${base07}\", //7
+\"statusBarItem.activeBackground\": \"${base03}\", //3
+\"statusBarItem.hoverBackground\": \"${base02}\", //2
+\"statusBarItem.prominentForeground\": \"${base07}\", //7
+\"statusBarItem.prominentBackground\": \"${base0E}\", //E
+\"statusBarItem.prominentHoverBackground\": \"${base08}\", //8F}\", //F
+
+// Panel colors
+\"panel.background\": \"${base00}\", //0
+\"panel.dropBorder\": \"${base01}\", //1
+\"panelTitle.activeForeground\": \"${base05}\", //5
+\"panelTitle.inactiveForeground\": \"${base03}\", //3
+
+// Status Bar colors
+\"statusBar.background\": \"${base0D}\", //D
+\"statusBar.foreground\": \"${base07}\", //7
+\"statusBar.debuggingBackground\": \"${base09}\", //9
+\"statusBar.debuggingForeground\": \"${base07}\", //7
+\"statusBar.noFolderBackground\": \"${base0E}\", //E
+\"statusBar.noFolderForeground\": \"${base07}\", //7
+\"statusBarItem.activeBackground\": \"${base03}\", //3
+\"statusBarItem.hoverBackground\": \"${base02}\", //2
+\"statusBarItem.prominentForeground\": \"${base07}\", //7
+\"statusBarItem.prominentBackground\": \"${base0E}\", //E
+\"statusBarItem.prominentHoverBackground\": \"${base08}\", //8F}\", //F
+
+// Panel colors
+\"panel.background\": \"${base00}\", //0
+\"panel.dropBorder\": \"${base01}\", //1
+\"panelTitle.activeForeground\": \"${base05}\", //5
+\"panelTitle.inactiveForeground\": \"${base03}\", //3
+
+// Status Bar colors
+\"statusBar.background\": \"${base0D}\", //D
+\"statusBar.foreground\": \"${base07}\", //7
+\"statusBar.debuggingBackground\": \"${base09}\", //9
+\"statusBar.debuggingForeground\": \"${base07}\", //7
+\"statusBar.noFolderBackground\": \"${base0E}\", //E
+\"statusBar.noFolderForeground\": \"${base07}\", //7
+\"statusBarItem.activeBackground\": \"${base03}\", //3
+\"statusBarItem.hoverBackground\": \"${base02}\", //2
+\"statusBarItem.prominentForeground\": \"${base07}\", //7
+\"statusBarItem.prominentBackground\": \"${base0E}\", //E
+\"statusBarItem.prominentHoverBackground\": \"${base08}\", //8F}\", //F
+
+// Panel colors
+\"panel.background\": \"${base00}\", //0
+\"panel.dropBorder\": \"${base01}\", //1
+\"panelTitle.activeForeground\": \"${base05}\", //5
+\"panelTitle.inactiveForeground\": \"${base03}\", //3
+
+// Status Bar colors
+\"statusBar.background\": \"${base0D}\", //D
+\"statusBar.foreground\": \"${base07}\", //7
+\"statusBar.debuggingBackground\": \"${base09}\", //9
+\"statusBar.debuggingForeground\": \"${base07}\", //7
+\"statusBar.noFolderBackground\": \"${base0E}\", //E
+\"statusBar.noFolderForeground\": \"${base07}\", //7
+\"statusBarItem.activeBackground\": \"${base03}\", //3
+\"statusBarItem.hoverBackground\": \"${base02}\", //2
+\"statusBarItem.prominentForeground\": \"${base07}\", //7
+\"statusBarItem.prominentBackground\": \"${base0E}\", //E
+\"statusBarItem.prominentHoverBackground\": \"${base08}\", //8F}\", //F
+
+// Panel colors
+\"panel.background\": \"${base00}\", //0
+\"panel.dropBorder\": \"${base01}\", //1
+\"panelTitle.activeForeground\": \"${base05}\", //5
+\"panelTitle.inactiveForeground\": \"${base03}\", //3
+
+// Status Bar colors
+\"statusBar.background\": \"${base0D}\", //D
+\"statusBar.foreground\": \"${base07}\", //7
+\"statusBar.debuggingBackground\": \"${base09}\", //9
+\"statusBar.debuggingForeground\": \"${base07}\", //7
+\"statusBar.noFolderBackground\": \"${base0E}\", //E
+\"statusBar.noFolderForeground\": \"${base07}\", //7
+\"statusBarItem.activeBackground\": \"${base03}\", //3
+\"statusBarItem.hoverBackground\": \"${base02}\", //2
+\"statusBarItem.prominentForeground\": \"${base07}\", //7
+\"statusBarItem.prominentBackground\": \"${base0E}\", //E
+\"statusBarItem.prominentHoverBackground\": \"${base08}\", //8F}\", //F
+
+// Panel colors
+\"panel.background\": \"${base00}\", //0
+\"panel.dropBorder\": \"${base01}\", //1
+\"panelTitle.activeForeground\": \"${base05}\", //5
+\"panelTitle.inactiveForeground\": \"${base03}\", //3
+
+// Status Bar colors
+\"statusBar.background\": \"${base0D}\", //D
+\"statusBar.foreground\": \"${base07}\", //7
+\"statusBar.debuggingBackground\": \"${base09}\", //9
+\"statusBar.debuggingForeground\": \"${base07}\", //7
+\"statusBar.noFolderBackground\": \"${base0E}\", //E
+\"statusBar.noFolderForeground\": \"${base07}\", //7
+\"statusBarItem.activeBackground\": \"${base03}\", //3
+\"statusBarItem.hoverBackground\": \"${base02}\", //2
+\"statusBarItem.prominentForeground\": \"${base07}\", //7
+\"statusBarItem.prominentBackground\": \"${base0E}\", //E
+\"statusBarItem.prominentHoverBackground\": \"${base08}\", //8F}\", //F
+
+// Panel colors
+\"panel.background\": \"${base00}\", //0
+\"panel.dropBorder\": \"${base01}\", //1
+\"panelTitle.activeForeground\": \"${base05}\", //5
+\"panelTitle.inactiveForeground\": \"${base03}\", //3
+
+// Status Bar colors
+\"statusBar.background\": \"${base0D}\", //D
+\"statusBar.foreground\": \"${base07}\", //7
+\"statusBar.debuggingBackground\": \"${base09}\", //9
+\"statusBar.debuggingForeground\": \"${base07}\", //7
+\"statusBar.noFolderBackground\": \"${base0E}\", //E
+\"statusBar.noFolderForeground\": \"${base07}\", //7
+\"statusBarItem.activeBackground\": \"${base03}\", //3
+\"statusBarItem.hoverBackground\": \"${base02}\", //2
+\"statusBarItem.prominentForeground\": \"${base07}\", //7
+\"statusBarItem.prominentBackground\": \"${base0E}\", //E
+\"statusBarItem.prominentHoverBackground\": \"${base08}\", //8F}\", //F
+
+// Panel colors
+\"panel.background\": \"${base00}\", //0
+\"panel.dropBorder\": \"${base01}\", //1
+\"panelTitle.activeForeground\": \"${base05}\", //5
+\"panelTitle.inactiveForeground\": \"${base03}\", //3
+
+// Status Bar colors
+\"statusBar.background\": \"${base0D}\", //D
+\"statusBar.foreground\": \"${base07}\", //7
+\"statusBar.debuggingBackground\": \"${base09}\", //9
+\"statusBar.debuggingForeground\": \"${base07}\", //7
+\"statusBar.noFolderBackground\": \"${base0E}\", //E
+\"statusBar.noFolderForeground\": \"${base07}\", //7
+\"statusBarItem.activeBackground\": \"${base03}\", //3
+\"statusBarItem.hoverBackground\": \"${base02}\", //2
+\"statusBarItem.prominentForeground\": \"${base07}\", //7
+\"statusBarItem.prominentBackground\": \"${base0E}\", //E
+\"statusBarItem.prominentHoverBackground\": \"${base08}\", //8F}\", //F
+
+// Panel colors
+\"panel.background\": \"${base00}\", //0
+\"panel.dropBorder\": \"${base01}\", //1
+\"panelTitle.activeForeground\": \"${base05}\", //5
+\"panelTitle.inactiveForeground\": \"${base03}\", //3
+
+// Status Bar colors
+\"statusBar.background\": \"${base0D}\", //D
+\"statusBar.foreground\": \"${base07}\", //7
+\"statusBar.debuggingBackground\": \"${base09}\", //9
+\"statusBar.debuggingForeground\": \"${base07}\", //7
+\"statusBar.noFolderBackground\": \"${base0E}\", //E
+\"statusBar.noFolderForeground\": \"${base07}\", //7
+\"statusBarItem.activeBackground\": \"${base03}\", //3
+\"statusBarItem.hoverBackground\": \"${base02}\", //2
+\"statusBarItem.prominentForeground\": \"${base07}\", //7
+\"statusBarItem.prominentBackground\": \"${base0E}\", //E
+\"statusBarItem.prominentHoverBackground\": \"${base08}\", //8F}\", //F
+
+// Panel colors
+\"panel.background\": \"${base00}\", //0
+\"panel.dropBorder\": \"${base01}\", //1
+\"panelTitle.activeForeground\": \"${base05}\", //5
+\"panelTitle.inactiveForeground\": \"${base03}\", //3
+
+// Status Bar colors
+\"statusBar.background\": \"${base0D}\", //D
+\"statusBar.foreground\": \"${base07}\", //7
+\"statusBar.debuggingBackground\": \"${base09}\", //9
+\"statusBar.debuggingForeground\": \"${base07}\", //7
+\"statusBar.noFolderBackground\": \"${base0E}\", //E
+\"statusBar.noFolderForeground\": \"${base07}\", //7
+\"statusBarItem.activeBackground\": \"${base03}\", //3
+\"statusBarItem.hoverBackground\": \"${base02}\", //2
+\"statusBarItem.prominentForeground\": \"${base07}\", //7
+\"statusBarItem.prominentBackground\": \"${base0E}\", //E
+\"statusBarItem.prominentHoverBackground\": \"${base08}\", //8F}\", //F
+
+// Panel colors
+\"panel.background\": \"${base00}\", //0
+\"panel.dropBorder\": \"${base01}\", //1
+\"panelTitle.activeForeground\": \"${base05}\", //5
+\"panelTitle.inactiveForeground\": \"${base03}\", //3
+
+// Status Bar colors
+\"statusBar.background\": \"${base0D}\", //D
+\"statusBar.foreground\": \"${base07}\", //7
+\"statusBar.debuggingBackground\": \"${base09}\", //9
+\"statusBar.debuggingForeground\": \"${base07}\", //7
+\"statusBar.noFolderBackground\": \"${base0E}\", //E
+\"statusBar.noFolderForeground\": \"${base07}\", //7
+\"statusBarItem.activeBackground\": \"${base03}\", //3
+\"statusBarItem.hoverBackground\": \"${base02}\", //2
+\"statusBarItem.prominentForeground\": \"${base07}\", //7
+\"statusBarItem.prominentBackground\": \"${base0E}\", //E
+\"statusBarItem.prominentHoverBackground\": \"${base08}\", //8F}\", //F
+
+// Panel colors
+\"panel.background\": \"${base00}\", //0
+\"panel.dropBorder\": \"${base01}\", //1
+\"panelTitle.activeForeground\": \"${base05}\", //5
+\"panelTitle.inactiveForeground\": \"${base03}\", //3
+
+// Status Bar colors
+\"statusBar.background\": \"${base0D}\", //D
+\"statusBar.foreground\": \"${base07}\", //7
+\"statusBar.debuggingBackground\": \"${base09}\", //9
+\"statusBar.debuggingForeground\": \"${base07}\", //7
+\"statusBar.noFolderBackground\": \"${base0E}\", //E
+\"statusBar.noFolderForeground\": \"${base07}\", //7
+\"statusBarItem.activeBackground\": \"${base03}\", //3
+\"statusBarItem.hoverBackground\": \"${base02}\", //2
+\"statusBarItem.prominentForeground\": \"${base07}\", //7
+\"statusBarItem.prominentBackground\": \"${base0E}\", //E
+\"statusBarItem.prominentHoverBackground\": \"${base08}\", //8F}\", //F
+
+// Panel colors
+\"panel.background\": \"${base00}\", //0
+\"panel.dropBorder\": \"${base01}\", //1
+\"panelTitle.activeForeground\": \"${base05}\", //5
+\"panelTitle.inactiveForeground\": \"${base03}\", //3
+
+// Status Bar colors
+\"statusBar.background\": \"${base0D}\", //D
+\"statusBar.foreground\": \"${base07}\", //7
+\"statusBar.debuggingBackground\": \"${base09}\", //9
+\"statusBar.debuggingForeground\": \"${base07}\", //7
+\"statusBar.noFolderBackground\": \"${base0E}\", //E
+\"statusBar.noFolderForeground\": \"${base07}\", //7
+\"statusBarItem.activeBackground\": \"${base03}\", //3
+\"statusBarItem.hoverBackground\": \"${base02}\", //2
+\"statusBarItem.prominentForeground\": \"${base07}\", //7
+\"statusBarItem.prominentBackground\": \"${base0E}\", //E
+\"statusBarItem.prominentHoverBackground\": \"${base08}\", //8F}\", //F
+
+// Panel colors
+\"panel.background\": \"${base00}\", //0
+\"panel.dropBorder\": \"${base01}\", //1
+\"panelTitle.activeForeground\": \"${base05}\", //5
+\"panelTitle.inactiveForeground\": \"${base03}\", //3
+
+// Status Bar colors
+\"statusBar.background\": \"${base0D}\", //D
+\"statusBar.foreground\": \"${base07}\", //7
+\"statusBar.debuggingBackground\": \"${base09}\", //9
+\"statusBar.debuggingForeground\": \"${base07}\", //7
+\"statusBar.noFolderBackground\": \"${base0E}\", //E
+\"statusBar.noFolderForeground\": \"${base07}\", //7
+\"statusBarItem.activeBackground\": \"${base03}\", //3
+\"statusBarItem.hoverBackground\": \"${base02}\", //2
+\"statusBarItem.prominentForeground\": \"${base07}\", //7
+\"statusBarItem.prominentBackground\": \"${base0E}\", //E
+\"statusBarItem.prominentHoverBackground\": \"${base08}\", //8F}\", //F
+
+// Panel colors
+\"panel.background\": \"${base00}\", //0
+\"panel.dropBorder\": \"${base01}\", //1
+\"panelTitle.activeForeground\": \"${base05}\", //5
+\"panelTitle.inactiveForeground\": \"${base03}\", //3
+
+// Status Bar colors
+\"statusBar.background\": \"${base0D}\", //D
+\"statusBar.foreground\": \"${base07}\", //7
+\"statusBar.debuggingBackground\": \"${base09}\", //9
+\"statusBar.debuggingForeground\": \"${base07}\", //7
+\"statusBar.noFolderBackground\": \"${base0E}\", //E
+\"statusBar.noFolderForeground\": \"${base07}\", //7
+\"statusBarItem.activeBackground\": \"${base03}\", //3
+\"statusBarItem.hoverBackground\": \"${base02}\", //2
+\"statusBarItem.prominentForeground\": \"${base07}\", //7
+\"statusBarItem.prominentBackground\": \"${base0E}\", //E
+\"statusBarItem.prominentHoverBackground\": \"${base08}\", //8F}\", //F
+
+// Panel colors
+\"panel.background\": \"${base00}\", //0
+\"panel.dropBorder\": \"${base01}\", //1
+\"panelTitle.activeForeground\": \"${base05}\", //5
+\"panelTitle.inactiveForeground\": \"${base03}\", //3
+
+// Status Bar colors
+\"statusBar.background\": \"${base0D}\", //D
+\"statusBar.foreground\": \"${base07}\", //7
+\"statusBar.debuggingBackground\": \"${base09}\", //9
+\"statusBar.debuggingForeground\": \"${base07}\", //7
+\"statusBar.noFolderBackground\": \"${base0E}\", //E
+\"statusBar.noFolderForeground\": \"${base07}\", //7
+\"statusBarItem.activeBackground\": \"${base03}\", //3
+\"statusBarItem.hoverBackground\": \"${base02}\", //2
+\"statusBarItem.prominentForeground\": \"${base07}\", //7
+\"statusBarItem.prominentBackground\": \"${base0E}\", //E
+\"statusBarItem.prominentHoverBackground\": \"${base08}\", //8F}\", //F
+
+// Panel colors
+\"panel.background\": \"${base00}\", //0
+\"panel.dropBorder\": \"${base01}\", //1
+\"panelTitle.activeForeground\": \"${base05}\", //5
+\"panelTitle.inactiveForeground\": \"${base03}\", //3
+
+// Status Bar colors
+\"statusBar.background\": \"${base0D}\", //D
+\"statusBar.foreground\": \"${base07}\", //7
+\"statusBar.debuggingBackground\": \"${base09}\", //9
+\"statusBar.debuggingForeground\": \"${base07}\", //7
+\"statusBar.noFolderBackground\": \"${base0E}\", //E
+\"statusBar.noFolderForeground\": \"${base07}\", //7
+\"statusBarItem.activeBackground\": \"${base03}\", //3
+\"statusBarItem.hoverBackground\": \"${base02}\", //2
+\"statusBarItem.prominentForeground\": \"${base07}\", //7
+\"statusBarItem.prominentBackground\": \"${base0E}\", //E
+\"statusBarItem.prominentHoverBackground\": \"${base08}\", //8F}\", //F
+
+// Panel colors
+\"panel.background\": \"${base00}\", //0
+\"panel.dropBorder\": \"${base01}\", //1
+\"panelTitle.activeForeground\": \"${base05}\", //5
+\"panelTitle.inactiveForeground\": \"${base03}\", //3
+
+// Status Bar colors
+\"statusBar.background\": \"${base0D}\", //D
+\"statusBar.foreground\": \"${base07}\", //7
+\"statusBar.debuggingBackground\": \"${base09}\", //9
+\"statusBar.debuggingForeground\": \"${base07}\", //7
+\"statusBar.noFolderBackground\": \"${base0E}\", //E
+\"statusBar.noFolderForeground\": \"${base07}\", //7
+\"statusBarItem.activeBackground\": \"${base03}\", //3
+\"statusBarItem.hoverBackground\": \"${base02}\", //2
+\"statusBarItem.prominentForeground\": \"${base07}\", //7
+\"statusBarItem.prominentBackground\": \"${base0E}\", //E
+\"statusBarItem.prominentHoverBackground\": \"${base08}\", //8F}\", //F
+
+// Panel colors
+\"panel.background\": \"${base00}\", //0
+\"panel.dropBorder\": \"${base01}\", //1
+\"panelTitle.activeForeground\": \"${base05}\", //5
+\"panelTitle.inactiveForeground\": \"${base03}\", //3
+
+// Status Bar colors
+\"statusBar.background\": \"${base0D}\", //D
+\"statusBar.foreground\": \"${base07}\", //7
+\"statusBar.debuggingBackground\": \"${base09}\", //9
+\"statusBar.debuggingForeground\": \"${base07}\", //7
+\"statusBar.noFolderBackground\": \"${base0E}\", //E
+\"statusBar.noFolderForeground\": \"${base07}\", //7
+\"statusBarItem.activeBackground\": \"${base03}\", //3
+\"statusBarItem.hoverBackground\": \"${base02}\", //2
+\"statusBarItem.prominentForeground\": \"${base07}\", //7
+\"statusBarItem.prominentBackground\": \"${base0E}\", //E
+\"statusBarItem.prominentHoverBackground\": \"${base08}\", //8F}\", //F
+
+// Panel colors
+\"panel.background\": \"${base00}\", //0
+\"panel.dropBorder\": \"${base01}\", //1
+\"panelTitle.activeForeground\": \"${base05}\", //5
+\"panelTitle.inactiveForeground\": \"${base03}\", //3
+
+// Status Bar colors
+\"statusBar.background\": \"${base0D}\", //D
+\"statusBar.foreground\": \"${base07}\", //7
+\"statusBar.debuggingBackground\": \"${base09}\", //9
+\"statusBar.debuggingForeground\": \"${base07}\", //7
+\"statusBar.noFolderBackground\": \"${base0E}\", //E
+\"statusBar.noFolderForeground\": \"${base07}\", //7
+\"statusBarItem.activeBackground\": \"${base03}\", //3
+\"statusBarItem.hoverBackground\": \"${base02}\", //2
+\"statusBarItem.prominentForeground\": \"${base07}\", //7
+\"statusBarItem.prominentBackground\": \"${base0E}\", //E
+\"statusBarItem.prominentHoverBackground\": \"${base08}\", //8F}\", //F
+
+// Panel colors
+\"panel.background\": \"${base00}\", //0
+\"panel.dropBorder\": \"${base01}\", //1
+\"panelTitle.activeForeground\": \"${base05}\", //5
+\"panelTitle.inactiveForeground\": \"${base03}\", //3
+
+// Status Bar colors
+\"statusBar.background\": \"${base0D}\", //D
+\"statusBar.foreground\": \"${base07}\", //7
+\"statusBar.debuggingBackground\": \"${base09}\", //9
+\"statusBar.debuggingForeground\": \"${base07}\", //7
+\"statusBar.noFolderBackground\": \"${base0E}\", //E
+\"statusBar.noFolderForeground\": \"${base07}\", //7
+\"statusBarItem.activeBackground\": \"${base03}\", //3
+\"statusBarItem.hoverBackground\": \"${base02}\", //2
+\"statusBarItem.prominentForeground\": \"${base07}\", //7
+\"statusBarItem.prominentBackground\": \"${base0E}\", //E
+\"statusBarItem.prominentHoverBackground\": \"${base08}\", //8F}\", //F
+
+// Panel colors
+\"panel.background\": \"${base00}\", //0
+\"panel.dropBorder\": \"${base01}\", //1
+\"panelTitle.activeForeground\": \"${base05}\", //5
+\"panelTitle.inactiveForeground\": \"${base03}\", //3
+
+// Status Bar colors
+\"statusBar.background\": \"${base0D}\", //D
+\"statusBar.foreground\": \"${base07}\", //7
+\"statusBar.debuggingBackground\": \"${base09}\", //9
+\"statusBar.debuggingForeground\": \"${base07}\", //7
+\"statusBar.noFolderBackground\": \"${base0E}\", //E
+\"statusBar.noFolderForeground\": \"${base07}\", //7
+\"statusBarItem.activeBackground\": \"${base03}\", //3
+\"statusBarItem.hoverBackground\": \"${base02}\", //2
+\"statusBarItem.prominentForeground\": \"${base07}\", //7
+\"statusBarItem.prominentBackground\": \"${base0E}\", //E
+\"statusBarItem.prominentHoverBackground\": \"${base08}\", //8F}\", //F
+
+// Panel colors
+\"panel.background\": \"${base00}\", //0
+\"panel.dropBorder\": \"${base01}\", //1
+\"panelTitle.activeForeground\": \"${base05}\", //5
+\"panelTitle.inactiveForeground\": \"${base03}\", //3
+
+// Status Bar colors
+\"statusBar.background\": \"${base0D}\", //D
+\"statusBar.foreground\": \"${base07}\", //7
+\"statusBar.debuggingBackground\": \"${base09}\", //9
+\"statusBar.debuggingForeground\": \"${base07}\", //7
+\"statusBar.noFolderBackground\": \"${base0E}\", //E
+\"statusBar.noFolderForeground\": \"${base07}\", //7
+\"statusBarItem.activeBackground\": \"${base03}\", //3
+\"statusBarItem.hoverBackground\": \"${base02}\", //2
+\"statusBarItem.prominentForeground\": \"${base07}\", //7
+\"statusBarItem.prominentBackground\": \"${base0E}\", //E
+\"statusBarItem.prominentHoverBackground\": \"${base08}\", //8F}\", //F
+
+// Panel colors
+\"panel.background\": \"${base00}\", //0
+\"panel.dropBorder\": \"${base01}\", //1
+\"panelTitle.activeForeground\": \"${base05}\", //5
+\"panelTitle.inactiveForeground\": \"${base03}\", //3
+
+// Status Bar colors
+\"statusBar.background\": \"${base0D}\", //D
+\"statusBar.foreground\": \"${base07}\", //7
+\"statusBar.debuggingBackground\": \"${base09}\", //9
+\"statusBar.debuggingForeground\": \"${base07}\", //7
+\"statusBar.noFolderBackground\": \"${base0E}\", //E
+\"statusBar.noFolderForeground\": \"${base07}\", //7
+\"statusBarItem.activeBackground\": \"${base03}\", //3
+\"statusBarItem.hoverBackground\": \"${base02}\", //2
+\"statusBarItem.prominentForeground\": \"${base07}\", //7
+\"statusBarItem.prominentBackground\": \"${base0E}\", //E
+\"statusBarItem.prominentHoverBackground\": \"${base08}\", //8F}\", //F
+
+// Panel colors
+\"panel.background\": \"${base00}\", //0
+\"panel.dropBorder\": \"${base01}\", //1
+\"panelTitle.activeForeground\": \"${base05}\", //5
+\"panelTitle.inactiveForeground\": \"${base03}\", //3
+
+// Status Bar colors
+\"statusBar.background\": \"${base0D}\", //D
+\"statusBar.foreground\": \"${base07}\", //7
+\"statusBar.debuggingBackground\": \"${base09}\", //9
+\"statusBar.debuggingForeground\": \"${base07}\", //7
+\"statusBar.noFolderBackground\": \"${base0E}\", //E
+\"statusBar.noFolderForeground\": \"${base07}\", //7
+\"statusBarItem.activeBackground\": \"${base03}\", //3
+\"statusBarItem.hoverBackground\": \"${base02}\", //2
+\"statusBarItem.prominentForeground\": \"${base07}\", //7
+\"statusBarItem.prominentBackground\": \"${base0E}\", //E
+\"statusBarItem.prominentHoverBackground\": \"${base08}\", //8F}\", //F
+
+// Panel colors
+\"panel.background\": \"${base00}\", //0
+\"panel.dropBorder\": \"${base01}\", //1
+\"panelTitle.activeForeground\": \"${base05}\", //5
+\"panelTitle.inactiveForeground\": \"${base03}\", //3
+
+// Status Bar colors
+\"statusBar.background\": \"${base0D}\", //D
+\"statusBar.foreground\": \"${base07}\", //7
+\"statusBar.debuggingBackground\": \"${base09}\", //9
+\"statusBar.debuggingForeground\": \"${base07}\", //7
+\"statusBar.noFolderBackground\": \"${base0E}\", //E
+\"statusBar.noFolderForeground\": \"${base07}\", //7
+\"statusBarItem.activeBackground\": \"${base03}\", //3
+\"statusBarItem.hoverBackground\": \"${base02}\", //2
+\"statusBarItem.prominentForeground\": \"${base07}\", //7
+\"statusBarItem.prominentBackground\": \"${base0E}\", //E
+\"statusBarItem.prominentHoverBackground\": \"${base08}\", //8F}\", //F
+
+// Panel colors
+\"panel.background\": \"${base00}\", //0
+\"panel.dropBorder\": \"${base01}\", //1
+\"panelTitle.activeForeground\": \"${base05}\", //5
+\"panelTitle.inactiveForeground\": \"${base03}\", //3
+
+// Status Bar colors
+\"statusBar.background\": \"${base0D}\", //D
+\"statusBar.foreground\": \"${base07}\", //7
+\"statusBar.debuggingBackground\": \"${base09}\", //9
+\"statusBar.debuggingForeground\": \"${base07}\", //7
+\"statusBar.noFolderBackground\": \"${base0E}\", //E
+\"statusBar.noFolderForeground\": \"${base07}\", //7
+\"statusBarItem.activeBackground\": \"${base03}\", //3
+\"statusBarItem.hoverBackground\": \"${base02}\", //2
+\"statusBarItem.prominentForeground\": \"${base07}\", //7
+\"statusBarItem.prominentBackground\": \"${base0E}\", //E
+\"statusBarItem.prominentHoverBackground\": \"${base08}\", //8F}\", //F
+
+// Panel colors
+\"panel.background\": \"${base00}\", //0
+\"panel.dropBorder\": \"${base01}\", //1
+\"panelTitle.activeForeground\": \"${base05}\", //5
+\"panelTitle.inactiveForeground\": \"${base03}\", //3
+
+// Status Bar colors
+\"statusBar.background\": \"${base0D}\", //D
+\"statusBar.foreground\": \"${base07}\", //7
+\"statusBar.debuggingBackground\": \"${base09}\", //9
+\"statusBar.debuggingForeground\": \"${base07}\", //7
+\"statusBar.noFolderBackground\": \"${base0E}\", //E
+\"statusBar.noFolderForeground\": \"${base07}\", //7
+\"statusBarItem.activeBackground\": \"${base03}\", //3
+\"statusBarItem.hoverBackground\": \"${base02}\", //2
+\"statusBarItem.prominentForeground\": \"${base07}\", //7
+\"statusBarItem.prominentBackground\": \"${base0E}\", //E
+\"statusBarItem.prominentHoverBackground\": \"${base08}\", //8F}\", //F
+
+// Panel colors
+\"panel.background\": \"${base00}\", //0
+\"panel.dropBorder\": \"${base01}\", //1
+\"panelTitle.activeForeground\": \"${base05}\", //5
+\"panelTitle.inactiveForeground\": \"${base03}\", //3
+
+// Status Bar colors
+\"statusBar.background\": \"${base0D}\", //D
+\"statusBar.foreground\": \"${base07}\", //7
+\"statusBar.debuggingBackground\": \"${base09}\", //9
+\"statusBar.debuggingForeground\": \"${base07}\", //7
+\"statusBar.noFolderBackground\": \"${base0E}\", //E
+\"statusBar.noFolderForeground\": \"${base07}\", //7
+\"statusBarItem.activeBackground\": \"${base03}\", //3
+\"statusBarItem.hoverBackground\": \"${base02}\", //2
+\"statusBarItem.prominentForeground\": \"${base07}\", //7
+\"statusBarItem.prominentBackground\": \"${base0E}\", //E
+\"statusBarItem.prominentHoverBackground\": \"${base08}\", //8F}\", //F
+
+// Panel colors
+\"panel.background\": \"${base00}\", //0
+\"panel.dropBorder\": \"${base01}\", //1
+\"panelTitle.activeForeground\": \"${base05}\", //5
+\"panelTitle.inactiveForeground\": \"${base03}\", //3
+
+// Status Bar colors
+\"statusBar.background\": \"${base0D}\", //D
+\"statusBar.foreground\": \"${base07}\", //7
+\"statusBar.debuggingBackground\": \"${base09}\", //9
+\"statusBar.debuggingForeground\": \"${base07}\", //7
+\"statusBar.noFolderBackground\": \"${base0E}\", //E
+\"statusBar.noFolderForeground\": \"${base07}\", //7
+\"statusBarItem.activeBackground\": \"${base03}\", //3
+\"statusBarItem.hoverBackground\": \"${base02}\", //2
+\"statusBarItem.prominentForeground\": \"${base07}\", //7
+\"statusBarItem.prominentBackground\": \"${base0E}\", //E
+\"statusBarItem.prominentHoverBackground\": \"${base08}\", //8F}\", //F
+
+// Panel colors
+\"panel.background\": \"${base00}\", //0
+\"panel.dropBorder\": \"${base01}\", //1
+\"panelTitle.activeForeground\": \"${base05}\", //5
+\"panelTitle.inactiveForeground\": \"${base03}\", //3
+
+// Status Bar colors
+\"statusBar.background\": \"${base0D}\", //D
+\"statusBar.foreground\": \"${base07}\", //7
+\"statusBar.debuggingBackground\": \"${base09}\", //9
+\"statusBar.debuggingForeground\": \"${base07}\", //7
+\"statusBar.noFolderBackground\": \"${base0E}\", //E
+\"statusBar.noFolderForeground\": \"${base07}\", //7
+\"statusBarItem.activeBackground\": \"${base03}\", //3
+\"statusBarItem.hoverBackground\": \"${base02}\", //2
+\"statusBarItem.prominentForeground\": \"${base07}\", //7
+\"statusBarItem.prominentBackground\": \"${base0E}\", //E
+\"statusBarItem.prominentHoverBackground\": \"${base08}\", //8F}\", //F
+
+// Panel colors
+\"panel.background\": \"${base00}\", //0
+\"panel.dropBorder\": \"${base01}\", //1
+\"panelTitle.activeForeground\": \"${base05}\", //5
+\"panelTitle.inactiveForeground\": \"${base03}\", //3
+
+// Status Bar colors
+\"statusBar.background\": \"${base0D}\", //D
+\"statusBar.foreground\": \"${base07}\", //7
+\"statusBar.debuggingBackground\": \"${base09}\", //9
+\"statusBar.debuggingForeground\": \"${base07}\", //7
+\"statusBar.noFolderBackground\": \"${base0E}\", //E
+\"statusBar.noFolderForeground\": \"${base07}\", //7
+\"statusBarItem.activeBackground\": \"${base03}\", //3
+\"statusBarItem.hoverBackground\": \"${base02}\", //2
+\"statusBarItem.prominentForeground\": \"${base07}\", //7
+\"statusBarItem.prominentBackground\": \"${base0E}\", //E
+\"statusBarItem.prominentHoverBackground\": \"${base08}\", //8F}\", //F
+
+// Panel colors
+\"panel.background\": \"${base00}\", //0
+\"panel.dropBorder\": \"${base01}\", //1
+\"panelTitle.activeForeground\": \"${base05}\", //5
+\"panelTitle.inactiveForeground\": \"${base03}\", //3
+
+// Status Bar colors
+\"statusBar.background\": \"${base0D}\", //D
+\"statusBar.foreground\": \"${base07}\", //7
+\"statusBar.debuggingBackground\": \"${base09}\", //9
+\"statusBar.debuggingForeground\": \"${base07}\", //7
+\"statusBar.noFolderBackground\": \"${base0E}\", //E
+\"statusBar.noFolderForeground\": \"${base07}\", //7
+\"statusBarItem.activeBackground\": \"${base03}\", //3
+\"statusBarItem.hoverBackground\": \"${base02}\", //2
+\"statusBarItem.prominentForeground\": \"${base07}\", //7
+\"statusBarItem.prominentBackground\": \"${base0E}\", //E
+\"statusBarItem.prominentHoverBackground\": \"${base08}\", //8F}\", //F
+
+// Panel colors
+\"panel.background\": \"${base00}\", //0
+\"panel.dropBorder\": \"${base01}\", //1
+\"panelTitle.activeForeground\": \"${base05}\", //5
+\"panelTitle.inactiveForeground\": \"${base03}\", //3
+
+// Status Bar colors
+\"statusBar.background\": \"${base0D}\", //D
+\"statusBar.foreground\": \"${base07}\", //7
+\"statusBar.debuggingBackground\": \"${base09}\", //9
+\"statusBar.debuggingForeground\": \"${base07}\", //7
+\"statusBar.noFolderBackground\": \"${base0E}\", //E
+\"statusBar.noFolderForeground\": \"${base07}\", //7
+\"statusBarItem.activeBackground\": \"${base03}\", //3
+\"statusBarItem.hoverBackground\": \"${base02}\", //2
+\"statusBarItem.prominentForeground\": \"${base07}\", //7
+\"statusBarItem.prominentBackground\": \"${base0E}\", //E
+\"statusBarItem.prominentHoverBackground\": \"${base08}\", //8F}\", //F
+
+// Panel colors
+\"panel.background\": \"${base00}\", //0
+\"panel.dropBorder\": \"${base01}\", //1
+\"panelTitle.activeForeground\": \"${base05}\", //5
+\"panelTitle.inactiveForeground\": \"${base03}\", //3
+
+// Status Bar colors
+\"statusBar.background\": \"${base0D}\", //D
+\"statusBar.foreground\": \"${base07}\", //7
+\"statusBar.debuggingBackground\": \"${base09}\", //9
+\"statusBar.debuggingForeground\": \"${base07}\", //7
+\"statusBar.noFolderBackground\": \"${base0E}\", //E
+\"statusBar.noFolderForeground\": \"${base07}\", //7
+\"statusBarItem.activeBackground\": \"${base03}\", //3
+\"statusBarItem.hoverBackground\": \"${base02}\", //2
+\"statusBarItem.prominentForeground\": \"${base07}\", //7
+\"statusBarItem.prominentBackground\": \"${base0E}\", //E
+\"statusBarItem.prominentHoverBackground\": \"${base08}\", //8F}\", //F
+
+// Panel colors
+\"panel.background\": \"${base00}\", //0
+\"panel.dropBorder\": \"${base01}\", //1
+\"panelTitle.activeForeground\": \"${base05}\", //5
+\"panelTitle.inactiveForeground\": \"${base03}\", //3
+
+// Status Bar colors
+\"statusBar.background\": \"${base0D}\", //D
+\"statusBar.foreground\": \"${base07}\", //7
+\"statusBar.debuggingBackground\": \"${base09}\", //9
+\"statusBar.debuggingForeground\": \"${base07}\", //7
+\"statusBar.noFolderBackground\": \"${base0E}\", //E
+\"statusBar.noFolderForeground\": \"${base07}\", //7
+\"statusBarItem.activeBackground\": \"${base03}\", //3
+\"statusBarItem.hoverBackground\": \"${base02}\", //2
+\"statusBarItem.prominentForeground\": \"${base07}\", //7
+\"statusBarItem.prominentBackground\": \"${base0E}\", //E
+\"statusBarItem.prominentHoverBackground\": \"${base08}\", //8F}\", //F
+
+// Panel colors
+\"panel.background\": \"${base00}\", //0
+\"panel.dropBorder\": \"${base01}\", //1
+\"panelTitle.activeForeground\": \"${base05}\", //5
+\"panelTitle.inactiveForeground\": \"${base03}\", //3
+
+// Status Bar colors
+\"statusBar.background\": \"${base0D}\", //D
+\"statusBar.foreground\": \"${base07}\", //7
+\"statusBar.debuggingBackground\": \"${base09}\", //9
+\"statusBar.debuggingForeground\": \"${base07}\", //7
+\"statusBar.noFolderBackground\": \"${base0E}\", //E
+\"statusBar.noFolderForeground\": \"${base07}\", //7
+\"statusBarItem.activeBackground\": \"${base03}\", //3
+\"statusBarItem.hoverBackground\": \"${base02}\", //2
+\"statusBarItem.prominentForeground\": \"${base07}\", //7
+\"statusBarItem.prominentBackground\": \"${base0E}\", //E
+\"statusBarItem.prominentHoverBackground\": \"${base08}\", //8F}\", //F
+
+// Panel colors
+\"panel.background\": \"${base00}\", //0
+\"panel.dropBorder\": \"${base01}\", //1
+\"panelTitle.activeForeground\": \"${base05}\", //5
+\"panelTitle.inactiveForeground\": \"${base03}\", //3
+
+// Status Bar colors
+\"statusBar.background\": \"${base0D}\", //D
+\"statusBar.foreground\": \"${base07}\", //7
+\"statusBar.debuggingBackground\": \"${base09}\", //9
+\"statusBar.debuggingForeground\": \"${base07}\", //7
+\"statusBar.noFolderBackground\": \"${base0E}\", //E
+\"statusBar.noFolderForeground\": \"${base07}\", //7
+\"statusBarItem.activeBackground\": \"${base03}\", //3
+\"statusBarItem.hoverBackground\": \"${base02}\", //2
+\"statusBarItem.prominentForeground\": \"${base07}\", //7
+\"statusBarItem.prominentBackground\": \"${base0E}\", //E
+\"statusBarItem.prominentHoverBackground\": \"${base08}\", //8F}\", //F
+
+// Panel colors
+\"panel.background\": \"${base00}\", //0
+\"panel.dropBorder\": \"${base01}\", //1
+\"panelTitle.activeForeground\": \"${base05}\", //5
+\"panelTitle.inactiveForeground\": \"${base03}\", //3
+
+// Status Bar colors
+\"statusBar.background\": \"${base0D}\", //D
+\"statusBar.foreground\": \"${base07}\", //7
+\"statusBar.debuggingBackground\": \"${base09}\", //9
+\"statusBar.debuggingForeground\": \"${base07}\", //7
+\"statusBar.noFolderBackground\": \"${base0E}\", //E
+\"statusBar.noFolderForeground\": \"${base07}\", //7
+\"statusBarItem.activeBackground\": \"${base03}\", //3
+\"statusBarItem.hoverBackground\": \"${base02}\", //2
+\"statusBarItem.prominentForeground\": \"${base07}\", //7
+\"statusBarItem.prominentBackground\": \"${base0E}\", //E
+\"statusBarItem.prominentHoverBackground\": \"${base08}\", //8F}\", //F
+
+// Panel colors
+\"panel.background\": \"${base00}\", //0
+\"panel.dropBorder\": \"${base01}\", //1
+\"panelTitle.activeForeground\": \"${base05}\", //5
+\"panelTitle.inactiveForeground\": \"${base03}\", //3
+
+// Status Bar colors
+\"statusBar.background\": \"${base0D}\", //D
+\"statusBar.foreground\": \"${base07}\", //7
+\"statusBar.debuggingBackground\": \"${base09}\", //9
+\"statusBar.debuggingForeground\": \"${base07}\", //7
+\"statusBar.noFolderBackground\": \"${base0E}\", //E
+\"statusBar.noFolderForeground\": \"${base07}\", //7
+\"statusBarItem.activeBackground\": \"${base03}\", //3
+\"statusBarItem.hoverBackground\": \"${base02}\", //2
+\"statusBarItem.prominentForeground\": \"${base07}\", //7
+\"statusBarItem.prominentBackground\": \"${base0E}\", //E
+\"statusBarItem.prominentHoverBackground\": \"${base08}\", //8F}\", //F
+
+// Panel colors
+\"panel.background\": \"${base00}\", //0
+\"panel.dropBorder\": \"${base01}\", //1
+\"panelTitle.activeForeground\": \"${base05}\", //5
+\"panelTitle.inactiveForeground\": \"${base03}\", //3
+
+// Status Bar colors
+\"statusBar.background\": \"${base0D}\", //D
+\"statusBar.foreground\": \"${base07}\", //7
+\"statusBar.debuggingBackground\": \"${base09}\", //9
+\"statusBar.debuggingForeground\": \"${base07}\", //7
+\"statusBar.noFolderBackground\": \"${base0E}\", //E
+\"statusBar.noFolderForeground\": \"${base07}\", //7
+\"statusBarItem.activeBackground\": \"${base03}\", //3
+\"statusBarItem.hoverBackground\": \"${base02}\", //2
+\"statusBarItem.prominentForeground\": \"${base07}\", //7
+\"statusBarItem.prominentBackground\": \"${base0E}\", //E
+\"statusBarItem.prominentHoverBackground\": \"${base08}\", //8F}\", //F
+
+// Panel colors
+\"panel.background\": \"${base00}\", //0
+\"panel.dropBorder\": \"${base01}\", //1
+\"panelTitle.activeForeground\": \"${base05}\", //5
+\"panelTitle.inactiveForeground\": \"${base03}\", //3
+
+// Status Bar colors
+\"statusBar.background\": \"${base0D}\", //D
+\"statusBar.foreground\": \"${base07}\", //7
+\"statusBar.debuggingBackground\": \"${base09}\", //9
+\"statusBar.debuggingForeground\": \"${base07}\", //7
+\"statusBar.noFolderBackground\": \"${base0E}\", //E
+\"statusBar.noFolderForeground\": \"${base07}\", //7
+\"statusBarItem.activeBackground\": \"${base03}\", //3
+\"statusBarItem.hoverBackground\": \"${base02}\", //2
+\"statusBarItem.prominentForeground\": \"${base07}\", //7
+\"statusBarItem.prominentBackground\": \"${base0E}\", //E
+\"statusBarItem.prominentHoverBackground\": \"${base08}\", //8F}\", //F
+
+// Panel colors
+\"panel.background\": \"${base00}\", //0
+\"panel.dropBorder\": \"${base01}\", //1
+\"panelTitle.activeForeground\": \"${base05}\", //5
+\"panelTitle.inactiveForeground\": \"${base03}\", //3
+
+// Status Bar colors
+\"statusBar.background\": \"${base0D}\", //D
+\"statusBar.foreground\": \"${base07}\", //7
+\"statusBar.debuggingBackground\": \"${base09}\", //9
+\"statusBar.debuggingForeground\": \"${base07}\", //7
+\"statusBar.noFolderBackground\": \"${base0E}\", //E
+\"statusBar.noFolderForeground\": \"${base07}\", //7
+\"statusBarItem.activeBackground\": \"${base03}\", //3
+\"statusBarItem.hoverBackground\": \"${base02}\", //2
+\"statusBarItem.prominentForeground\": \"${base07}\", //7
+\"statusBarItem.prominentBackground\": \"${base0E}\", //E
+\"statusBarItem.prominentHoverBackground\": \"${base08}\", //8F}\", //F
+
+// Panel colors
+\"panel.background\": \"${base00}\", //0
+\"panel.dropBorder\": \"${base01}\", //1
+\"panelTitle.activeForeground\": \"${base05}\", //5
+\"panelTitle.inactiveForeground\": \"${base03}\", //3
+
+// Status Bar colors
+\"statusBar.background\": \"${base0D}\", //D
+\"statusBar.foreground\": \"${base07}\", //7
+\"statusBar.debuggingBackground\": \"${base09}\", //9
+\"statusBar.debuggingForeground\": \"${base07}\", //7
+\"statusBar.noFolderBackground\": \"${base0E}\", //E
+\"statusBar.noFolderForeground\": \"${base07}\", //7
+\"statusBarItem.activeBackground\": \"${base03}\", //3
+\"statusBarItem.hoverBackground\": \"${base02}\", //2
+\"statusBarItem.prominentForeground\": \"${base07}\", //7
+\"statusBarItem.prominentBackground\": \"${base0E}\", //E
+\"statusBarItem.prominentHoverBackground\": \"${base08}\", //8F}\", //F
+
+// Panel colors
+\"panel.background\": \"${base00}\", //0
+\"panel.dropBorder\": \"${base01}\", //1
+\"panelTitle.activeForeground\": \"${base05}\", //5
+\"panelTitle.inactiveForeground\": \"${base03}\", //3
+
+// Status Bar colors
+\"statusBar.background\": \"${base0D}\", //D
+\"statusBar.foreground\": \"${base07}\", //7
+\"statusBar.debuggingBackground\": \"${base09}\", //9
+\"statusBar.debuggingForeground\": \"${base07}\", //7
+\"statusBar.noFolderBackground\": \"${base0E}\", //E
+\"statusBar.noFolderForeground\": \"${base07}\", //7
+\"statusBarItem.activeBackground\": \"${base03}\", //3
+\"statusBarItem.hoverBackground\": \"${base02}\", //2
+\"statusBarItem.prominentForeground\": \"${base07}\", //7
+\"statusBarItem.prominentBackground\": \"${base0E}\", //E
 \"statusBarItem.prominentHoverBackground\": \"${base08}\", //8
 \"statusBarItem.remoteBackground\": \"${base0B}\", //B
 \"statusBarItem.remoteForeground\": \"${base07}\", //7
@@ -1055,6 +2464,6 @@ vswindowconfig="// Base colors
 \"charts.purple\": \"${base0E}\", //E
 
 // Ports Colors
-\"ports.iconRunningProcessForeground\": \"${base09}\" //9"
 
+\"ports.iconRunningProcessForeground\": \"${base09}\" //9"
 printf "${vswindowconfig}" > vscode
