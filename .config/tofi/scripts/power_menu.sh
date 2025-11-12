@@ -30,7 +30,7 @@ case "$choice" in
         hyprctl dispatch exit 1
         ;;
       niri)
-        niri msg action quit
+        niri msg action quit -s
         ;;
       sway)
         swaymsg exit

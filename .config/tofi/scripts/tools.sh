@@ -25,7 +25,7 @@ case "$choice" in
     $HOME/.config/tofi/scripts/wifi_menu.sh
     ;;
   "change colour scheme")
-    $HOME/scripts/colourschemescript
+    $HOME/scripts/colour_scheme_script.sh
     ;;
   "remmina connections")
     $HOME/.config/tofi/scripts/remote_connections.sh

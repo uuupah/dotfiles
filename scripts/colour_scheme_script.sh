@@ -239,9 +239,13 @@ notify-send -u normal "dunst test" "normal urgency"
 notify-send -t 10000 -u critical "dunst test" "critical urgency"
 
 # sddm
-sddmconfig="background=\"${background}\"
-foreground=\"${foreground}\"
-dim=\"${black}\""
+# sddmconfig="background=\"${background}\"
+# foreground=\"${foreground}\"
+# dim=\"${black}\""
+
+sddmconfig="background=\"#000000\"
+foreground=\"#888888\"
+dim=\"#888888\""
 
 cat ${homedir}/.config/sddm/themerules.conf > /usr/share/sddm/themes/uuusddm/theme.conf
 printf "${sddmconfig}" >> /usr/share/sddm/themes/uuusddm/theme.conf
@@ -249,7 +253,21 @@ printf "${sddmconfig}" >> /usr/share/sddm/themes/uuusddm/theme.conf
 echo basethemecolor "$basethemecolor"
 
 # gtk
-gtkconfig="@define-color base00 ${base00};
+gtk2config="gtk-color-scheme = \"text_color:${foreground}
+base_color:${dimbackground}
+fg_color:${foreground}
+bg_color:${dimbackground}
+selected_fg_color:${foreground}
+selected_bg_color:${basethemecolor}
+titlebar_fg_color:${foreground}
+titlebar_bg_color:${background}
+menu_color:${lightbackground}
+tooltip_fg_color:${foreground}
+tooltip_bg_color:${black}
+link_color:${cyan}
+visited_link_color:${magenta}\""
+
+gtk3config="@define-color base00 ${base00};
 @define-color base01 ${base01};
 @define-color base02 ${base02};
 @define-color base03 ${base03};
@@ -268,7 +286,8 @@ gtkconfig="@define-color base00 ${base00};
 
 @define-color theme_color ${basethemecolor};"
 
-printf "${gtkconfig}" > "${homedir}/.themes/uuu/colors.css"
+printf "${gtk2config}" > "${homedir}/.themes/uuu/colorsrc"
+printf "${gtk3config}" > "${homedir}/.themes/uuu/colors.css"
 
 theme=$(gsettings get org.gnome.desktop.interface gtk-theme)
 gsettings set org.gnome.desktop.interface gtk-theme ''

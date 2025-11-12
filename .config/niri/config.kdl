@@ -60,7 +60,7 @@ layout {
     default-column-width { proportion 0.5; }
 
     border {
-        width 1
+        width 2
         active-color "#a7c080"
         inactive-color "#2d353b"
         urgent-color "#e67e80"
@@ -105,7 +105,7 @@ window-rule {
     open-floating true
 }
 
-window-rule {
+/-window-rule {
     match is-active=false
     opacity 0.9
 }
@@ -115,6 +115,13 @@ window-rule {
 	default-floating-position x=0 y=0 relative-to="bottom-right"
 }
 
+window-rule {
+	match app-id="xdg-desktop-portal-gtk" title="Open Folder"
+	open-floating true
+	max-height 800
+	max-width 1000
+}
+
 workspace "1" {}
 workspace "2" {}
 workspace "3" {}
@@ -122,14 +129,16 @@ workspace "3" {}
 binds {
     Mod+Space { spawn "tofi-drun" "--drun-launch=true"; }
     Mod+Slash { spawn "~/.config/tofi/scripts/tools.sh"; }
+    Mod+A { spawn "librewolf"; }
+    Mod+S { spawn-sh "/usr/bin/flatpak run --branch=stable --arch=x86_64 --command=obsidian.sh --file-forwarding md.obsidian.Obsidian @@u %U @@"; }
+    Mod+D { spawn "zed"; }
+    Mod+Shift+S { spawn "~/scripts/grim_save_screenshot_and_copy_to_clipboard.sh"; }
+    Mod+Shift+C { spawn "hyprpicker -a"; }
+    Mod+E { spawn "nemo"; }
+    Mod+L hotkey-overlay-title="Lock the Screen: hyprlock" { spawn "hyprlock"; }
     Mod+M { spawn "~/.config/tofi/scripts/power_menu.sh"; }
     Mod+Q hotkey-overlay-title="Open a Terminal: alacritty" { spawn "alacritty"; }
-    Mod+L hotkey-overlay-title="Lock the Screen: hyprlock" { spawn "hyprlock"; }
-    Mod+Shift+C { spawn "~/scripts/grim_save_screenshot_and_copy_to_clipboard.sh"; }
-    Mod+period { spawn-sh "~/.config/tofi/scripts/bemoji.sh -t -f /home/uuu/.config/bemoji/emojis.txt
-    "; }
-
-
+    Mod+period { spawn-sh "~/.config/tofi/scripts/bemoji.sh -t -f /home/uuu/.config/bemoji/emojis.txt"; }
 
     // Most actions that you can bind here can also be invoked programmatically with
     // `niri msg action do-something`.
