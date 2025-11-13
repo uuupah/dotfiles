@@ -7,7 +7,8 @@ fi
 
 options="toggle external monitors
 change audio profile
-wifi
+connect to wifi
+disconnect from wifi
 change colour scheme
 remmina connections"
 
@@ -21,8 +22,12 @@ case "$choice" in
   "change audio profile")
     $HOME/.config/tofi/scripts/change_pulse_audio_profile.sh
     ;;
-  "wifi")
+  "connect to wifi")
     $HOME/.config/tofi/scripts/wifi_menu.sh
+    ;;
+  "disconnect from wifi")
+    nmcli device disconnect wlp0s20f3
+    notify-send "wi-fi disconnected" "disconnected from wi-fi on device wlp0s20f3"
     ;;
   "change colour scheme")
     $HOME/scripts/colour_scheme_script.sh
