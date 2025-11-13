@@ -14,12 +14,13 @@ hsltohex() {
 #TODO check that the schemes folder is here and if not clone it in
 #TODO allow for pywal or tinty to generate colours
 
-base16schemes=$(ls -w 1 "${homedir}/scripts/schemes/base16" | sed 's/\.yaml//g')
-base24schemes=$(ls -w 1 "${homedir}/scripts/schemes/base24" | sed 's/\.yaml//g')
-customschemes=$(ls -w 1 "${homedir}/.config/colours/custom_base16" | sed 's/\.yaml//g')
+base16schemes=$(ls -w 1 "${homedir}/scripts/schemes/base16" | sed 's/\.yaml//g' | sed 's/^/[bs16] /g')
+base24schemes=$(ls -w 1 "${homedir}/scripts/schemes/base24" | sed 's/\.yaml//g' | sed 's/^/[bs24] /g')
+customschemes=$(ls -w 1 "${homedir}/.config/colours/custom_base16" | sed 's/\.yaml//g' | sed 's/^/[cstm] /g')
 
 # TODO this requires a little more fuss to make custom schemes work
 schemes="${base16schemes}
+${base24schemes}
 ${customschemes}"
 
 selectedscheme=$(printf '%s/n' "$schemes" | tofi) || exit 0
@@ -42,23 +43,41 @@ height=$(($((12*16))+10))
 
 themecolor=$(printf "%s\n" "$themecoloroptions" | tofi --prompt-text "sel: " --height "$height" --num-results "13")
 
+# TODO set a default themecolour if one isnt selected - probably just blue
 
-base00=$(cat "${homedir}/scripts/schemes/base16/${selectedscheme}.yaml" | yq .palette.base00)
-base01=$(cat "${homedir}/scripts/schemes/base16/${selectedscheme}.yaml" | yq .palette.base01)
-base02=$(cat "${homedir}/scripts/schemes/base16/${selectedscheme}.yaml" | yq .palette.base02)
-base03=$(cat "${homedir}/scripts/schemes/base16/${selectedscheme}.yaml" | yq .palette.base03)
-base04=$(cat "${homedir}/scripts/schemes/base16/${selectedscheme}.yaml" | yq .palette.base04)
-base05=$(cat "${homedir}/scripts/schemes/base16/${selectedscheme}.yaml" | yq .palette.base05)
-base06=$(cat "${homedir}/scripts/schemes/base16/${selectedscheme}.yaml" | yq .palette.base06)
-base07=$(cat "${homedir}/scripts/schemes/base16/${selectedscheme}.yaml" | yq .palette.base07)
-base08=$(cat "${homedir}/scripts/schemes/base16/${selectedscheme}.yaml" | yq .palette.base08)
-base09=$(cat "${homedir}/scripts/schemes/base16/${selectedscheme}.yaml" | yq .palette.base09)
-base0A=$(cat "${homedir}/scripts/schemes/base16/${selectedscheme}.yaml" | yq .palette.base0A)
-base0B=$(cat "${homedir}/scripts/schemes/base16/${selectedscheme}.yaml" | yq .palette.base0B)
-base0C=$(cat "${homedir}/scripts/schemes/base16/${selectedscheme}.yaml" | yq .palette.base0C)
-base0D=$(cat "${homedir}/scripts/schemes/base16/${selectedscheme}.yaml" | yq .palette.base0D)
-base0E=$(cat "${homedir}/scripts/schemes/base16/${selectedscheme}.yaml" | yq .palette.base0E)
-base0F=$(cat "${homedir}/scripts/schemes/base16/${selectedscheme}.yaml" | yq .palette.base0F)
+themetype=$(echo ${selectedscheme} | cut -c1-6)
+echo themetype ${themetype}
+
+case "$themetype" in
+  "[bs16]")
+  themelocation=${homedir}/scripts/schemes/base16/$(echo $selectedscheme | cut -c 8-).yaml
+  ;;
+  "[bs24]")
+  themelocation=${homedir}/scripts/schemes/base24/$(echo $selectedscheme | cut -c 8-).yaml
+  ;;
+  "[cstm]")
+  themelocation=${homedir}/.config/colours/custom_base16/$(echo $selectedscheme | cut -c 8-).yaml
+  ;;
+esac
+
+echo themelocation ${themelocation}
+
+base00=$(cat "${themelocation}" | yq .palette.base00)
+base01=$(cat "${themelocation}" | yq .palette.base01)
+base02=$(cat "${themelocation}" | yq .palette.base02)
+base03=$(cat "${themelocation}" | yq .palette.base03)
+base04=$(cat "${themelocation}" | yq .palette.base04)
+base05=$(cat "${themelocation}" | yq .palette.base05)
+base06=$(cat "${themelocation}" | yq .palette.base06)
+base07=$(cat "${themelocation}" | yq .palette.base07)
+base08=$(cat "${themelocation}" | yq .palette.base08)
+base09=$(cat "${themelocation}" | yq .palette.base09)
+base0A=$(cat "${themelocation}" | yq .palette.base0A)
+base0B=$(cat "${themelocation}" | yq .palette.base0B)
+base0C=$(cat "${themelocation}" | yq .palette.base0C)
+base0D=$(cat "${themelocation}" | yq .palette.base0D)
+base0E=$(cat "${themelocation}" | yq .palette.base0E)
+base0F=$(cat "${themelocation}" | yq .palette.base0F)
 
 IFS=',' read -r -a blackhsl <<< "$(hextohsl "$black")"
 
@@ -244,7 +263,7 @@ notify-send -t 10000 -u critical "dunst test" "critical urgency"
 # dim=\"${black}\""
 
 sddmconfig="background=\"#000000\"
-foreground=\"#888888\"
+foreground=\"#D3D3D3\"
 dim=\"#888888\""
 
 cat ${homedir}/.config/sddm/themerules.conf > /usr/share/sddm/themes/uuusddm/theme.conf
