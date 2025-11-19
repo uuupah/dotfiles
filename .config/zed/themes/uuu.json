@@ -8,6 +8,7 @@
       "appearance": "dark",
       "style": {
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
         "border": "#1F2229",
         "border.variant": "#1F2229",
         "border.focused": "#282c34",
@@ -36,6 +37,8 @@
         "text": "#abb2bf",
         "text.muted": "#545862",
 =======
+=======
+>>>>>>> Stashed changes
         "border": "#23292E",
         "border.variant": "#23292E",
         "border.focused": "#2d353b",
@@ -63,6 +66,9 @@
 
         "text": "#d3c6aa",
         "text.muted": "#859289",
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
         "text.placeholder": null,
         "text.disabled": null,
@@ -74,6 +80,7 @@
         "icon.placeholder": null,
         "icon.accent": null,
 
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
         "status_bar.background": "#1F2229",
 
@@ -170,6 +177,8 @@
         "modified.border": null,
         "predictive": "#545862",
 =======
+=======
+>>>>>>> Stashed changes
         "status_bar.background": "#23292E",
 
         "title_bar.background": "#2d353b",
@@ -264,6 +273,9 @@
         "modified.background": null,
         "modified.border": null,
         "predictive": "#859289",
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
         "predictive.background": null,
         "predictive.border": null,
@@ -277,7 +289,11 @@
         "unreachable.background": null,
         "unreachable.border": null,
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
         "warning": "#d19a66",
+=======
+        "warning": "#e69875",
+>>>>>>> Stashed changes
 =======
         "warning": "#e69875",
 >>>>>>> Stashed changes
@@ -286,9 +302,15 @@
         "players": [
           {
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
             "cursor": "#abb2bf",
             "selection": "#3e4451",
             "background": "#3e4451"
+=======
+            "cursor": "#d3c6aa",
+            "selection": "#475258",
+            "background": "#475258"
+>>>>>>> Stashed changes
 =======
             "cursor": "#d3c6aa",
             "selection": "#475258",
@@ -299,7 +321,11 @@
         "syntax": {
           "attribute": {
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
             "color": "#e5c07b",
+=======
+            "color": "#dbbc7f",
+>>>>>>> Stashed changes
 =======
             "color": "#dbbc7f",
 >>>>>>> Stashed changes
@@ -308,7 +334,11 @@
           },
           "constant": {
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
             "color": "#c678dd",
+=======
+            "color": "#d699b6",
+>>>>>>> Stashed changes
 =======
             "color": "#d699b6",
 >>>>>>> Stashed changes
@@ -317,7 +347,11 @@
           },
           "constructor": {
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
             "color": "#c678dd",
+=======
+            "color": "#d699b6",
+>>>>>>> Stashed changes
 =======
             "color": "#d699b6",
 >>>>>>> Stashed changes
@@ -326,7 +360,11 @@
           },
           "comment": {
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
             "color": "#545862a0",
+=======
+            "color": "#859289a0",
+>>>>>>> Stashed changes
 =======
             "color": "#859289a0",
 >>>>>>> Stashed changes
@@ -335,7 +373,11 @@
           },
           "function": {
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
             "color": "#98c379",
+=======
+            "color": "#a7c080",
+>>>>>>> Stashed changes
 =======
             "color": "#a7c080",
 >>>>>>> Stashed changes
@@ -344,7 +386,11 @@
           },
           "keyword": {
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
             "color": "#e06c75",
+=======
+            "color": "#e67e80",
+>>>>>>> Stashed changes
 =======
             "color": "#e67e80",
 >>>>>>> Stashed changes
@@ -353,7 +399,11 @@
           },
           "number": {
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
             "color": "#c678dd",
+=======
+            "color": "#d699b6",
+>>>>>>> Stashed changes
 =======
             "color": "#d699b6",
 >>>>>>> Stashed changes
@@ -362,7 +412,11 @@
           },
           "operator": {
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
             "color": "#d19a66",
+=======
+            "color": "#e69875",
+>>>>>>> Stashed changes
 =======
             "color": "#e69875",
 >>>>>>> Stashed changes
@@ -371,7 +425,11 @@
           },
           "property": {
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
             "color": "#56b6c2",
+=======
+            "color": "#83c092",
+>>>>>>> Stashed changes
 =======
             "color": "#83c092",
 >>>>>>> Stashed changes
@@ -380,7 +438,11 @@
           },
           "string": {
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
             "color": "#e5c07b",
+=======
+            "color": "#dbbc7f",
+>>>>>>> Stashed changes
 =======
             "color": "#dbbc7f",
 >>>>>>> Stashed changes
@@ -389,7 +451,11 @@
           },
           "string.escape": {
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
             "color": "#98c379",
+=======
+            "color": "#a7c080",
+>>>>>>> Stashed changes
 =======
             "color": "#a7c080",
 >>>>>>> Stashed changes
@@ -398,7 +464,11 @@
           },
           "type": {
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
             "color": "#61afef",
+=======
+            "color": "#7fbbb3",
+>>>>>>> Stashed changes
 =======
             "color": "#7fbbb3",
 >>>>>>> Stashed changes
@@ -410,7 +480,11 @@
     }
   ]
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 }
+=======
+}
+>>>>>>> Stashed changes
 =======
 }
 >>>>>>> Stashed changes
