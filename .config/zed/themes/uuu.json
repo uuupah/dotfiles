@@ -7,6 +7,7 @@
       "name": "uuu",
       "appearance": "dark",
       "style": {
+<<<<<<< Updated upstream
         "border": "#1F2229",
         "border.variant": "#1F2229",
         "border.focused": "#282c34",
@@ -34,6 +35,35 @@
 
         "text": "#abb2bf",
         "text.muted": "#545862",
+=======
+        "border": "#23292E",
+        "border.variant": "#23292E",
+        "border.focused": "#2d353b",
+        "border.selected": "#23292E",
+        "border.transparent": "#23292E",
+        "border.disabled": "#23292E",
+
+        "elevated_surface.background": "#475258",
+        "surface.background": "#2d353b",
+        "background": "#2d353b",
+
+        "element.background": "#444F43",
+        "element.hover": "#2d353b",
+        "element.active": null,
+        "element.selected": "#343f44",
+        "element.disabled": null,
+
+        "drop_target.background": "#475258",
+
+        "ghost_element.background": null,
+        "ghost_element.hover": "#2d353b00",
+        "ghost_element.active": null,
+        "ghost_element.selected": "#343f4480",
+        "ghost_element.disabled": null,
+
+        "text": "#d3c6aa",
+        "text.muted": "#859289",
+>>>>>>> Stashed changes
         "text.placeholder": null,
         "text.disabled": null,
         "text.accent": null,
@@ -44,6 +74,7 @@
         "icon.placeholder": null,
         "icon.accent": null,
 
+<<<<<<< Updated upstream
         "status_bar.background": "#1F2229",
 
         "title_bar.background": "#282c34",
@@ -138,6 +169,102 @@
         "modified.background": null,
         "modified.border": null,
         "predictive": "#545862",
+=======
+        "status_bar.background": "#23292E",
+
+        "title_bar.background": "#2d353b",
+        "title_bar.inactive_background": "#2d353b",
+
+        "toolbar.background": "#2d353b",
+
+        "tab_bar.background": "#23292E",
+        "tab.inactive_background": "#23292E",
+        "tab.active_background": "#2d353b",
+
+        "search.match_background": null,
+
+        "panel.background": "#2d353b",
+        "panel.focused_border": null,
+        "pane.focused_border": null,
+
+        "scrollbar.thumb.background": "#343f4480",
+        "scrollbar.thumb.hover_background": "#343f44",
+        "scrollbar.thumb.border": "#343f4480",
+        "scrollbar.track.background": "#2d353b",
+        "scrollbar.track.border": "#2d353b00",
+
+        "editor.foreground": "#d3c6aa",
+        "editor.background": "#2d353b",
+        "editor.gutter.background": "#2d353b",
+        "editor.subheader.background": null,
+        "editor.active_line.background": "#343f4490",
+        "editor.highlighted_line.background": null,
+        "editor.line_number": "#859289a0",
+        "editor.active_line_number": "#d3c6aa",
+        "editor.invisible": null,
+        "editor.wrap_guide": "#23292E",
+        "editor.active_wrap_guide": "#23292E",
+        "editor.document_highlight.read_background": null,
+        "editor.document_highlight.write_background": null,
+
+        "terminal.background": "#2d353b",
+        "terminal.foreground": "#d3c6aa",
+        "terminal.bright_foreground": "#e6e2cc",
+        "terminal.dim_foreground": "#e6e2cc",
+        "terminal.ansi.black": "#475258",
+        "terminal.ansi.bright_black": "#475258",
+        "terminal.ansi.dim_black": "#475258",
+        "terminal.ansi.red": "#e67e80",
+        "terminal.ansi.bright_red": "#e67e80",
+        "terminal.ansi.dim_red": "#543E43",
+        "terminal.ansi.green": "#a7c080",
+        "terminal.ansi.bright_green": "#a7c080",
+        "terminal.ansi.dim_green": "#444F43",
+        "terminal.ansi.yellow": "#dbbc7f",
+        "terminal.ansi.bright_yellow": "#dbbc7f",
+        "terminal.ansi.dim_yellow": "#514E42",
+        "terminal.ansi.blue": "#7fbbb3",
+        "terminal.ansi.bright_blue": "#7fbbb3",
+        "terminal.ansi.dim_blue": "#3A4E4F",
+        "terminal.ansi.magenta": "#d699b6",
+        "terminal.ansi.bright_magenta": "#d699b6",
+        "terminal.ansi.dim_magenta": "#3A4E4F",
+        "terminal.ansi.cyan": "#83c092",
+        "terminal.ansi.bright_cyan": "#83c092",
+        "terminal.ansi.dim_cyan": "#3A4E4F",
+        "terminal.ansi.white": "#d3c6aa",
+        "terminal.ansi.bright_white": "#e6e2cc",
+        "terminal.ansi.dim_white": "#e6e2cc",
+        "link_text.hover": "#a7c080c0",
+        "conflict": "#d699b6a0",
+        "conflict.background": null,
+        "conflict.border": null,
+        "created": "#a7c080a0",
+        "created.background": null,
+        "created.border": null,
+        "deleted": "#e67e80a0",
+        "deleted.background": null,
+        "deleted.border": null,
+        "error": "#e67e80",
+        "error.background": "#543E43",
+        "error.border": null,
+        "hidden": "#859289",
+        "hidden.background": null,
+        "hidden.border": null,
+        "hint": "#859289a0",
+        "hint.background": null,
+        "hint.border": null,
+        "ignored": "#343f44",
+        "ignored.background": null,
+        "ignored.border": null,
+        "info": "#7fbbb3",
+        "info.background": "#7fbbb320",
+        "info.border": null,
+        "modified": "#7fbbb3a0",
+        "modified.background": null,
+        "modified.border": null,
+        "predictive": "#859289",
+>>>>>>> Stashed changes
         "predictive.background": null,
         "predictive.border": null,
         "renamed": null,
@@ -149,74 +276,132 @@
         "unreachable": null,
         "unreachable.background": null,
         "unreachable.border": null,
+<<<<<<< Updated upstream
         "warning": "#d19a66",
+=======
+        "warning": "#e69875",
+>>>>>>> Stashed changes
         "warning.background": "",
         "warning.border": null,
         "players": [
           {
+<<<<<<< Updated upstream
             "cursor": "#abb2bf",
             "selection": "#3e4451",
             "background": "#3e4451"
+=======
+            "cursor": "#d3c6aa",
+            "selection": "#475258",
+            "background": "#475258"
+>>>>>>> Stashed changes
           }
         ],
         "syntax": {
           "attribute": {
+<<<<<<< Updated upstream
             "color": "#e5c07b",
+=======
+            "color": "#dbbc7f",
+>>>>>>> Stashed changes
             "font_style": null,
             "font_weight": null
           },
           "constant": {
+<<<<<<< Updated upstream
             "color": "#c678dd",
+=======
+            "color": "#d699b6",
+>>>>>>> Stashed changes
             "font_style": null,
             "font_weight": null
           },
           "constructor": {
+<<<<<<< Updated upstream
             "color": "#c678dd",
+=======
+            "color": "#d699b6",
+>>>>>>> Stashed changes
             "font_style": null,
             "font_weight": null
           },
           "comment": {
+<<<<<<< Updated upstream
             "color": "#545862a0",
+=======
+            "color": "#859289a0",
+>>>>>>> Stashed changes
             "font_style": "italic",
             "font_weight": null
           },
           "function": {
+<<<<<<< Updated upstream
             "color": "#98c379",
+=======
+            "color": "#a7c080",
+>>>>>>> Stashed changes
             "font_style": null,
             "font_weight": null
           },
           "keyword": {
+<<<<<<< Updated upstream
             "color": "#e06c75",
+=======
+            "color": "#e67e80",
+>>>>>>> Stashed changes
             "font_style": null,
             "font_weight": null
           },
           "number": {
+<<<<<<< Updated upstream
             "color": "#c678dd",
+=======
+            "color": "#d699b6",
+>>>>>>> Stashed changes
             "font_style": null,
             "font_weight": null
           },
           "operator": {
+<<<<<<< Updated upstream
             "color": "#d19a66",
+=======
+            "color": "#e69875",
+>>>>>>> Stashed changes
             "font_style": null,
             "font_weight": null
           },
           "property": {
+<<<<<<< Updated upstream
             "color": "#56b6c2",
+=======
+            "color": "#83c092",
+>>>>>>> Stashed changes
             "font_style": null,
             "font_weight": null
           },
           "string": {
+<<<<<<< Updated upstream
             "color": "#e5c07b",
+=======
+            "color": "#dbbc7f",
+>>>>>>> Stashed changes
             "font_style": null,
             "font_weight": null
           },
           "string.escape": {
+<<<<<<< Updated upstream
             "color": "#98c379",
+=======
+            "color": "#a7c080",
+>>>>>>> Stashed changes
             "font_style": null,
             "font_weight": null
           },
           "type": {
+<<<<<<< Updated upstream
             "color": "#61afef",
+=======
+            "color": "#7fbbb3",
+>>>>>>> Stashed changes
             "font_style": null,
             "font_weight": null
           }
@@ -224,4 +409,8 @@
       }
     }
   ]
+<<<<<<< Updated upstream
 }
+=======
+}
+>>>>>>> Stashed changes
