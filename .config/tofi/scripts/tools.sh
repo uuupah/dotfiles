@@ -9,6 +9,8 @@ options="toggle external monitors
 change audio profile
 connect to wifi
 disconnect from wifi
+next wallpaper
+previous wallpaper
 change colour scheme
 remmina connections"
 
@@ -31,6 +33,12 @@ case "$choice" in
     ;;
   "change colour scheme")
     $HOME/scripts/colour_scheme_script.sh
+    ;;
+  "next wallpaper")
+    wpaperctl next
+    ;;
+  "previous wallpaper")
+    wpaperctl previous
     ;;
   "remmina connections")
     $HOME/.config/tofi/scripts/remote_connections.sh

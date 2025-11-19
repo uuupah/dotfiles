@@ -5,9 +5,11 @@
   "spacing": 0, // Gaps between modules (4px)
   "margin":0,
   "modules-left": [
+    "niri/workspaces",
     "hyprland/workspaces",
     "hyprland/scratchpad",
     "custom/pipe-divider",
+    "niri/window",
     "hyprland/window",
     "custom/window-state"
   ],
@@ -37,10 +39,12 @@
     //"custom/power"
   ],
   "custom/spacer": {
-    "format": "        "
+    "format": "        ",
+    "tooltip": false,
   },
   "custom/pipe-divider": {
-    "format": "|"
+    "format": "|",
+    "tooltip": false,
   },
   "custom/hyphen-divider": {
   	"format": " - "
@@ -64,6 +68,16 @@
     },
     "show-special": true
   },
+  "niri/workspaces": {
+    "persistent-workspaces": {
+      "*": [1, 2, 3, 4]
+    },
+    "format": "{index}",
+    "show-special": true
+  },
+  "niri/window": {
+  	"tooltip": false
+  },  
   "keyboard-state": {
     "numlock": true,
     "capslock": true,
