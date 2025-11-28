@@ -313,11 +313,17 @@ gsettings set org.gnome.desktop.interface gtk-theme ''
 sleep 1
 gsettings set org.gnome.desktop.interface gtk-theme $theme
 
+# slurp
+slurpconfig="#!/usr/bin/env bash
+marquee=${foreground:1}
+background=${foreground:1}55
+text=${foreground:1}"
+
+printf "${slurpconfig}" > "${homedir}/.config/slurp/colours.sh"
+
 #TODO hyprlock
 
 #TODO hyprland borders
-
-#TODO grim screenshotscript
 
 #TODO firefox / librewolf
 # # "theme color" overused
@@ -557,6 +563,99 @@ zedconfig="{
 
 printf "${zedconfig}" > "${homedir}/.config/zed/themes/uuu.json"
 
+# yazi
+yaziconfig="[mgr]
+cwd = { fg = \"${base0C}\" }
+
+hovered = { reversed = true }
+preview_hoverd = { underline = true }
+
+find_keyword = { bold = true, fg = \"${base0A}\" }
+find_position = { fg = \"${base0E}\" }
+
+marker_copied = { fg = \"${base0B}\", bg = \"${base0B}\" }
+marker_cut = { fg = \"${base08}\", bg = \"${base08}\" }
+marker_selected = { fg = \"${base0A}\", bg = \"${base0A}\" }
+
+tab_inactive = { fg = \"${base05}\" }
+tab_active = { fg = \"${base00}\", bg = \"${base05}\"}
+
+count_copied = { fg = \"${base00}\", bg = \"${base0B}\" }
+count_cut = { fg = \"${base00}\", bg = \"${base08}\" }
+count_selected = { fg = \"${base00}\", bg = \"${base0A}\" }
+
+border_style = { fg = \"${base0D}\" }
+
+[mode]
+normal_main = { fg = \"${base00}\", bg = \"${base0D}\", bold = true }
+normal_alt = { fg = \"${base0D}\", bg = \"${base02}\" }
+
+select_alt = { fg = \"${base0E}\", bg = \"${base02}\" }
+select_main = { fg = \"${base00}\", bg = \"${base0E}\", bold = true }
+
+unset_main = { fg = \"${base00}\", bg = \"${base08}\", bold = true }
+unset_alt = { fg = \"${base08}\", bg = \"${base02}\" }
+
+[status]
+perm_exec = { fg = \"${base0B}\" }
+perm_read = { fg = \"${base0A}\" }
+perm_sep = { fg = \"${base0C}\" }
+perm_type = { fg = \"${base0D}\" }
+perm_write = { fg = \"${base08}\" }
+
+progress_error = { fg = \"${base08}\", bg = \"${base00}\" }
+progress_label = { fg = \"${base05}\", bg = \"${base00}\" }
+progress_normal = { fg = \"${base05}\", bg = \"${base00}\" }
+
+[pick]
+active = { fg = \"${base0E}\" }
+border = { fg = \"${base0D}\" }
+inactive = { fg = \"${base05}\" }
+
+[task]
+title = { fg = \"${base0D}\" }
+border = { fg = \"${base0D}\" }
+hovered = { fg = \"${base05}\", bg = \"${base02}\" }
+
+[input]
+border = { fg = \"${base0D}\" }
+selected = { bg = \"${base02}\" }
+
+[help]
+desc = { fg = \"${base05}\" }
+on = { fg = \"${base0C}\" }
+run = { fg = \"${base0E}\" }
+hovered = { reversed = true, bold = true }
+footer = { fg = \"${base02}\", bg = \"${base05}\" }
+
+[which]
+mask = { bg = \"${base02}\" }
+desc = { fg = \"${base05}\" }
+cand = { fg = \"${base0C}\" }
+rest = { fg = \"${base0F}\" }
+
+separator_style = { fg = \"${base04}\" }
+
+[notify]
+title_info = { fg = \"${base0C}\" }
+title_warn = { fg = \"${base0A}\" }
+title_error = { fg = \"${base08}\" }
+
+[filetype]
+rules = [
+  { mime = \"image/*\", fg = \"${base0C}\" },
+  { mime = \"{audio, video}/*\", fg = \"${base0A}\" },
+
+  { mime = \"application/{pdf,doc,rtf}\", fg = \"${base0B}\" },
+
+  { mime = \"application/{{zip,rar,7z*,tar,gzip,xz,zstd,bzip*,lzma,compress,archive,cpio,arj,xar,ms-cab*},\", fg = \"${base0E}\" },
+
+  { mime = \"inode/directory\", fg = \"${base0D}\" },
+  { mime = \"*\", fg = \"${base05}\" },
+]"
+
+printf "${yaziconfig}" > "${homedir}/.config/yazi/flavors/theme.toml"
+
 #TODO vscode
 # 🚨 EXTREMELY BAD CODE ALERT 🚨
 # cat $HOME/.config/VSCodium/User/settings.json | \
@@ -580,7 +679,7 @@ vswindowconfig="// Base colors
 \"textLink.activeForeground\": \"${base0C}\", //C
 \"textLink.foreground\": \"${base0D}\", //D
 \"textPreformat.foreground\": \"${base0D}\", //D
-"textSeparator.foreground": "#f0f",
+\"textSeparator.foreground\": \"#f0f\",
 
 // Action colors
 \"toolbar.hoverBackground\": \"${base02}\", //2
@@ -781,8 +880,8 @@ vswindowconfig="// Base colors
 \"editorGutter.foldingControlForeground\": \"${base05}\", //5
 
 // Diff editor colors
-"diffEditor.insertedTextBackground": "#bcdf5920",
-"diffEditor.removedTextBackground": "#ff727220",
+\"diffEditor.insertedTextBackground\": \"#bcdf5920\",
+\"diffEditor.removedTextBackground\": \"#ff727220\",
 \"diffEditor.diagonalFill\": \"${base02}\", //2
 
 // Editor widget colors
