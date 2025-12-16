@@ -1,17 +1,17 @@
 // -*- mode: jsonc -*-
 {
   "reload_style_on_change": true,
-  "height": 16, // Waybar height (to be removed for auto height)
+  "height": 24, // Waybar height (to be removed for auto height)
   "spacing": 0, // Gaps between modules (4px)
   "margin":0,
   "modules-left": [
     "niri/workspaces",
-    "hyprland/workspaces",
-    "hyprland/scratchpad",
+//    "hyprland/workspaces",
+//    "hyprland/scratchpad",
     "custom/pipe-divider",
-    "niri/window",
-    "hyprland/window",
-    "custom/window-state"
+    "niri/window"
+//    "hyprland/window",
+//    "custom/window-state"
   ],
   //"modules-center": [
     // "custom/media"
@@ -31,7 +31,7 @@
     "cpu",
     "custom/pipe-divider",
     "memory",
-    "sway/language",
+    //"sway/language",
     //        "backlight",
     "custom/pipe-divider",
     "clock",
@@ -76,7 +76,8 @@
     "show-special": true
   },
   "niri/window": {
-  	"tooltip": false
+  	"tooltip": false,
+  	"swap-icon-label": false
   },  
   "keyboard-state": {
     "numlock": true,
