@@ -1,0 +1,14 @@
+[Unit]
+Description=Waybar autostart (user only)
+
+[Service]
+ExecStart=/usr/bin/waybar
+Restart=on-failure
+RestartSec=0.01
+
+# redirects all logs to journald
+StandardError=journal
+StandardOutput=journal
+
+[Install]
+WantedBy=default.target

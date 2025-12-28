@@ -5,7 +5,8 @@ if pgrep -x tofi >/dev/null; then
   exit
 fi
 
-options="toggle external monitors
+options="calculator
+toggle external monitors
 change audio profile
 connect to wifi
 disconnect from wifi
@@ -18,6 +19,9 @@ choice=$(printf "%s\n" "$options" | tofi --prompt="sel: ") || exit 0
 
 # TODO change this choice to indexes instead of words
 case "$choice" in
+  "calculator")
+    $HOME/.config/tofi/scripts/calc.sh
+    ;;
   "toggle external monitors")
     $HOME/.config/tofi/scripts/set_hyprland_monitors.sh
     ;;

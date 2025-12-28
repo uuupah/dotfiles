@@ -51,6 +51,10 @@ output "eDP-1" {
     position x=0 y=0
 }
 
+output "dp-5" {
+	off
+}
+
 layout {
     gaps 4
 
@@ -252,6 +256,7 @@ binds {
     Mod+BracketRight { consume-or-expel-window-right; }
 
     Mod+R { switch-preset-column-width; }
+    Mod+Shift+R { switch-preset-column-width-back; }
     // Mod+Shift+R { switch-preset-window-height; }
     // Mod+Ctrl+R { reset-window-height; }
     Mod+F { maximize-column; }
@@ -285,14 +290,13 @@ binds {
     Mod+Shift+P { power-off-monitors; }
 }
 
-// TODO add this when niri 25.11 is out on fedora
 // TODO find the best place for this once i've got a config that i like
-//recent-windows {
-//	binds {
-//		Alt+Tab { next-window; } 
-//		Alt+Shift+Tab { previous-window; } 
-//	}
-//}
+recent-windows {
+	binds {
+		Alt+Tab { next-window; } 
+		Alt+Shift+Tab { previous-window; } 
+	}
+}
 
 
 //include "colors.kdl"
