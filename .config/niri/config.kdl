@@ -106,7 +106,7 @@ layout {
 spawn-at-startup "plasma-polkit-agent"
 spawn-at-startup "dunst"
 spawn-at-startup "hypridle"
-spawn-at-startup "~/.local/bin/wpaperd" "-d"
+spawn-at-startup "wpaperd" "-d"
 // spawn-sh-at-startup "~/.config/waybar/scripts/startandwatchwaybar"
 // moved this to a systemd unit
 spawn-sh-at-startup "tailscale up"

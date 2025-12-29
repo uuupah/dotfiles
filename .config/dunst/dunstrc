@@ -223,19 +223,19 @@
     new_icon = task-due
 
 [global]
-    frame_color = "#d8dee9"
+    frame_color = "#abb2bf"
 
 [urgency_low]
-    background = "#2e3440"
-    foreground = "#d8dee9"
-    highlight = "#a3be8c"
+    background = "#282c34"
+    foreground = "#abb2bf"
+    highlight = "#98c379"
 
 [urgency_normal]
-    background = "#2e3440"
-    foreground = "#d8dee9"
-    highlight = "#a3be8c"
+    background = "#282c34"
+    foreground = "#abb2bf"
+    highlight = "#98c379"
 
 [urgency_critical]
-	background = "#4B3537"
-    foreground = "#d8dee9"
-    highlight = "#bf616a"
+    background = "#4F353C"
+    foreground = "#abb2bf"
+    highlight = "#e06c75"

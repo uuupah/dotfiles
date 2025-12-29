@@ -6,16 +6,9 @@
   "margin":0,
   "modules-left": [
     "niri/workspaces",
-//    "hyprland/workspaces",
-//    "hyprland/scratchpad",
     "custom/pipe-divider",
     "niri/window"
-//    "hyprland/window",
-//    "custom/window-state"
   ],
-  //"modules-center": [
-    // "custom/media"
-  //],
   "modules-right": [
     "custom/spacer",
     "custom/pomodoro",
@@ -69,11 +62,8 @@
     "show-special": true
   },
   "niri/workspaces": {
-    "persistent-workspaces": {
-      "*": [1, 2, 3, 4]
-    },
-    "format": "{index}",
-    "show-special": true
+  	"format": "{value}",
+  	"disable-markup": true
   },
   "niri/window": {
   	"tooltip": false,
