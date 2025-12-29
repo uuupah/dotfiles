@@ -69,6 +69,9 @@ output "HDMI-A-1" {
 	scale 1
 	transform "270"
 	position x=2561 y=0
+	layout {
+		default-column-width { proportion 1.0; }
+	}
 }
 
 layout {
@@ -158,10 +161,6 @@ window-rule {
 	}
 	clip-to-geometry true
 }
-
-workspace "1" {}
-workspace "2" {}
-workspace "3" {}
 
 binds {
     Mod+Space { spawn "tofi-drun" "--drun-launch=true"; }

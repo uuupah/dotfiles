@@ -52,19 +52,6 @@
     "return-type": "text",
     "interval": 60
   },
-  "hyprland/workspaces": {
-    "persistent-workspaces": {
-      "*": [1, 2, 3, 4]
-    },
-    "format": {
-      "special": "s"
-    },
-    "show-special": true
-  },
-  "niri/workspaces": {
-  	"format": "{value}",
-  	"disable-markup": true
-  },
   "niri/window": {
   	"tooltip": false,
   	"swap-icon-label": false
