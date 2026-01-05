@@ -109,7 +109,8 @@ layout {
 spawn-at-startup "plasma-polkit-agent"
 spawn-at-startup "dunst"
 spawn-at-startup "hypridle"
-spawn-at-startup "wpaperd" "-d"
+// spawn-sh-at-startup "swaybg --image /home/uuu/.config/colours/wallpapers/classical/hermanus-koekkoek-ii-sailing-boats-on-rough-seas.jpg --mode fill -o *"
+//spawn-at-startup "wpaperd" "-d"
 // spawn-sh-at-startup "~/.config/waybar/scripts/startandwatchwaybar"
 // moved this to a systemd unit
 spawn-sh-at-startup "tailscale up"
@@ -141,6 +142,16 @@ window-rule {
 }
 
 window-rule {
+	match is-floating=true
+	shadow {
+		on
+		softness 7
+		spread 5
+		offset x=0 y=0
+	}
+}
+
+window-rule {
 	match app-id="steam" title=r#"^notificationtoasts_\d+_desktop$"#
 	default-floating-position x=0 y=0 relative-to="bottom-right"
 }
@@ -160,6 +171,13 @@ window-rule {
 		off
 	}
 	clip-to-geometry true
+}
+
+recent-windows {
+	binds {
+		Alt+Tab { next-window; } 
+		Alt+Shift+Tab { previous-window; } 
+	}
 }
 
 binds {
@@ -304,15 +322,6 @@ binds {
 
     Mod+Shift+P { power-off-monitors; }
 }
-
-// TODO find the best place for this once i've got a config that i like
-recent-windows {
-	binds {
-		Alt+Tab { next-window; } 
-		Alt+Shift+Tab { previous-window; } 
-	}
-}
-
 
 //include "colors.kdl"
 output "eDP-1" {

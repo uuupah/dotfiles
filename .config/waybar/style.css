@@ -140,8 +140,10 @@ button {
   font-family: "Unifont-jp";
 }
 
-tooltip {
+tooltip,
+#tray menu {
   background-color: @background;
   color: @foreground;
   border: 1px solid @foreground;
+  margin-bottom: 3px;
 }

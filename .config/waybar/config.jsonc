@@ -28,6 +28,7 @@
     //        "backlight",
     "custom/pipe-divider",
     "clock",
+    "custom/pipe-divider",
     "tray"
     //"custom/power"
   ],
