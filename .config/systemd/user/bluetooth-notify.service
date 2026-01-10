@@ -1,9 +1,0 @@
-[Unit]
-Description=Bluetooth notification listener (bash)
-
-[Service]
-ExecStart=%h/scripts/bluetooth-notifications.sh
-Restart=on-failure
-
-[Install]
-WantedBy=default.target
