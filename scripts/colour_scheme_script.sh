@@ -368,7 +368,7 @@ zedconfig="{
         \"ghost_element.disabled\": null,
 
         \"text\": \"${foreground}\",
-        \"text.muted\": \"${grey}\",
+        \"text.muted\": \"${foreground}60\",
         \"text.placeholder\": null,
         \"text.disabled\": null,
         \"text.accent\": null,
@@ -394,7 +394,10 @@ zedconfig="{
 
         \"panel.background\": \"${background}\",
         \"panel.focused_border\": null,
-        \"pane.focused_border\": null,
+        \"pane.focused_border_hover\": null,
+        \"panel.indent_guide\": \"${grey}\",        
+        \"panel.indent_guide_active\": \"${grey}\",        
+        \"panel.indent_guide_hover\": \"${grey}\",        
 
         \"scrollbar.thumb.background\": \"${lightbackground}80\",
         \"scrollbar.thumb.hover_background\": \"${lightbackground}\",
@@ -408,13 +411,15 @@ zedconfig="{
         \"editor.subheader.background\": null,
         \"editor.active_line.background\": \"${lightbackground}90\",
         \"editor.highlighted_line.background\": null,
-        \"editor.line_number\": \"${grey}a0\",
+        \"editor.line_number\": \"${grey}\",
         \"editor.active_line_number\": \"${foreground}\",
         \"editor.invisible\": null,
         \"editor.wrap_guide\": \"${backgrounddim}\",
         \"editor.active_wrap_guide\": \"${backgrounddim}\",
         \"editor.document_highlight.read_background\": null,
         \"editor.document_highlight.write_background\": null,
+        \"editor.indent_guide\": \"${grey}\",
+        \"editor.indent_guide_active\": \"${grey}\",
 
         \"terminal.background\": \"${background}\",
         \"terminal.foreground\": \"${foreground}\",
@@ -463,7 +468,7 @@ zedconfig="{
         \"hint\": \"${grey}a0\",
         \"hint.background\": null,
         \"hint.border\": null,
-        \"ignored\": \"${lightbackground}\",
+        \"ignored\": \"${foreground}20\",
         \"ignored.background\": null,
         \"ignored.border\": null,
         \"info\": \"${blue}\",
@@ -655,31 +660,6 @@ rules = [
 ]"
 
 printf "${yaziconfig}" > "${homedir}/.config/yazi/flavors/theme.toml"
-
-# obsidian
-obsidianconfig=":root {
-  --dimbackground: ${base00};
-  --base00: ${base00};
-  --base01: ${base01};
-  --base02: ${base02};
-  --base03: ${base03};
-  --base04: ${base04}; /* yeah i know */
-  --base05: ${base05};
-  --base06: ${base06};
-  --base07: ${base07};
-  --base08: ${base08};
-  --base09: ${base09};
-  --base0A: ${base0A};
-  --base0B: ${base0B};
-  --base0C: ${base0C};
-  --base0D: ${base0D};
-  --base0E: ${base0E};
-}
-
-"
-
-printf "${obsidianconfig}" > "${homedir}/sync-obsidian/.obsidian/themes/uuu/themecolors.css"
-${homedir}/sync-obsidian/.obsidian/themes/uuu/theme_combiner.sh
 
 #TODO vscode
 # 🚨 EXTREMELY BAD CODE ALERT 🚨
