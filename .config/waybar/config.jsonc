@@ -12,7 +12,7 @@
   "modules-right": [
     "custom/spacer",
     "custom/pomodoro",
-    "custom/pipe-divider",
+    //"custom/pipe-divider",
     "battery",
     "custom/pipe-divider",
     "pulseaudio",
@@ -155,11 +155,11 @@
 //      "warning": 30,
 //      "critical": 15
 //    },
-    "format": "bat {capacity}% {time}",
-    "format-time": "({H}:{m})",
-    "format-full": "bat {capacity}%",
-    "format-charging": "chg {capacity}% {time}",
-    "format-plugged": "chg {capacity}% {time}",
+    "format": "| bat {capacity}% {time}",
+    "format-time": "| ({H}:{m})",
+    "format-full": "| bat {capacity}%",
+    "format-charging": "| chg {capacity}% {time}",
+    "format-plugged": "| chg {capacity}% {time}",
   },
   "battery#bat2": {
     "bat": "BAT2"
