@@ -173,6 +173,14 @@ window-rule {
 	clip-to-geometry true
 }
 
+window-rule {
+	match app-id="org.gnome.Calculator"
+	open-floating true
+	max-height 620
+	max-width 364
+	default-floating-position x=60 y=60 relative-to="bottom-right"
+}
+
 recent-windows {
 	binds {
 		Alt+Tab { next-window; } 
