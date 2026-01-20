@@ -219,6 +219,25 @@ waybarconfig="@define-color bg ${background};
 
 printf "${waybarconfig}" | tee ${homedir}/.config/colours/uuuwaybar.css > /dev/null
 
+# niri
+niriconfig="output \"*\" {
+	background-color \"${background}\"
+} 
+
+layout {
+	border {
+		active-color \"${green}\"
+		inactive-color \"${background}\"
+		urgent-color \"${red}\"
+	}
+}
+
+overview {
+	backdrop-color \"${background}\"
+}"
+
+printf "${niriconfig}" > ${homedir}/.config/niri/colors.kdl
+
 # tofi
 toficonfig="background-color=${background}
 text-color=${foreground}

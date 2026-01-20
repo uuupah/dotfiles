@@ -1,7 +1,15 @@
-output "eDP-1" {
-    background-color "#232a2e"
+output "*" {
+	background-color "#282c34"
+} 
+
+layout {
+	border {
+		active-color "#98c379"
+		inactive-color "#282c34"
+		urgent-color "#e06c75"
+	}
 }
 
 overview {
-    backdrop-color "#232a2e"
+	backdrop-color "#282c34"
 }

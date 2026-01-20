@@ -89,9 +89,9 @@ layout {
 
     border {
         width 2
-        active-color "#a7c080"
-        inactive-color "#2d353b"
-        urgent-color "#e67e80"
+        //active-color "#a7c080"
+        //inactive-color "#2d353b"
+        //urgent-color "#e67e80"
     }
 
     focus-ring {
@@ -145,7 +145,7 @@ window-rule {
 	match is-floating=true
 	shadow {
 		on
-		softness 7
+		softness 5
 		spread 5
 		offset x=0 y=0
 	}
@@ -188,6 +188,12 @@ recent-windows {
 	}
 }
 
+overview {
+    workspace-shadow {
+        off
+    }
+}
+
 binds {
     Mod+Space { spawn "tofi-drun" "--drun-launch=true"; }
     Mod+Slash { spawn "~/.config/tofi/scripts/tools.sh"; }
@@ -219,6 +225,8 @@ binds {
 
     XF86AudioNext allow-when-locked=true { spawn "~/.config/dunst/dunst-media-control" "next_track"; }
     XF86AudioPause allow-when-locked=true { spawn "~/.config/dunst/dunst-media-control" "play_pause"; }
+    XF86TouchpadOn allow-when-locked=true { spawn "~/.config/dunst/dunst-media-control" "play_pause"; }
+    XF86TouchpadOff allow-when-locked=true { spawn "~/.config/dunst/dunst-media-control" "play_pause"; }    
     XF86AudioPlay allow-when-locked=true { spawn "~/.config/dunst/dunst-media-control" "play_pause"; }
     XF86AudioPrev allow-when-locked=true { spawn "~/.config/dunst/dunst-media-control" "prev_track"; }
 
@@ -331,11 +339,4 @@ binds {
     Mod+Shift+P { power-off-monitors; }
 }
 
-//include "colors.kdl"
-output "eDP-1" {
-    background-color "#232a2e"
-}
-
-overview {
-    backdrop-color "#232a2e"
-}
+include "colors.kdl"
