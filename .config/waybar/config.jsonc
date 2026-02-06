@@ -11,10 +11,11 @@
   ],
   "modules-right": [
     "custom/spacer",
+    //"custom/pipe-divider",
     "custom/pomodoro",
     //"custom/pipe-divider",
-    "battery",
     "custom/pipe-divider",
+    "custom/nowplaying",
     "pulseaudio",
     "custom/pipe-divider",
     "bluetooth",
@@ -26,6 +27,7 @@
     "memory",
     //"sway/language",
     //        "backlight",
+    "battery",
     "custom/pipe-divider",
     "clock",
     "custom/pipe-divider",
@@ -73,24 +75,12 @@
     "on-click": "waybar-module-pomodoro toggle",
     "on-click-right": "waybar-module-pomodoro reset"
   },
-  "hyprland/window": {
-    "format": "{class}",
-    "icon": false,
-    "icon-size": 24,
-    "max-length": 30,
-    "rewrite": {
-      "(.*)LibreWolf": "librewolf",
-      "Alacritty": "alacritty",
-      "Microsoft-edge":"edge",
-      "dev.zed.Zed": "zed",
-      "org.pulseaudio.pavucontrol": "volume control",
-      "org.keepassxc.KeePassXC": "keepassxc",
-      "org.remmina.Remmina": "remmina",
-      "com.github.taiko2k.tauonmb": "tauon",
-      "Io.github.ungoogled_software.ungoogled_chromium": "ungoogled chromium",
-      "xdg-desktop-portal-gtk":"file explorer",
-      "Code":"vscode"
-    }
+  "custom/nowplaying": {
+  	"format":" {}",
+  	"return-type": "text",
+  	"exec": "/home/uuu/.config/waybar/scripts/quodlibet-now-playing.sh",
+  	"interval": 1,
+  	"on-click": "quodlibet --play-pause"
   },
   "cpu": {
     "format": "cpu {usage}%",
@@ -98,32 +88,6 @@
   },
   "memory": {
     "format": "mem {}%"
-  },
-  "mpd": {
-    "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ⸨{songPosition}|{queueLength}⸩ {volume}% ",
-    "format-disconnected": "Disconnected ",
-    "format-stopped": "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped ",
-    "unknown-tag": "N/A",
-    "interval": 5,
-    "consume-icons": {
-      "on": " "
-    },
-    "random-icons": {
-      "off": "<span color=\"#f53c3c\"></span> ",
-      "on": " "
-    },
-    "repeat-icons": {
-      "on": " "
-    },
-    "single-icons": {
-      "on": "1 "
-    },
-    "state-icons": {
-      "paused": "",
-      "playing": ""
-    },
-    "tooltip-format": "MPD (connected)",
-    "tooltip-format-disconnected": "MPD (disconnected)"
   },
   "idle_inhibitor": {
     "format": "{icon}",
@@ -156,7 +120,7 @@
 //      "critical": 15
 //    },
     "format": "| bat {capacity}% {time}",
-    "format-time": "| ({H}:{m})",
+    "format-time": "({H}:{m})",
     "format-full": "| bat {capacity}%",
     "format-charging": "| chg {capacity}% {time}",
     "format-plugged": "| chg {capacity}% {time}",

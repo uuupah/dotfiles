@@ -7,3 +7,5 @@ if ! [[ "$PATH" =~ "$HOME/.cargo/bin" ]]; then
 fi
 
 eval "$(starship init bash)"
+
+eval "$(direnv hook bash)"

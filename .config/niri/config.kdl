@@ -126,7 +126,7 @@ prefer-no-csd
 screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
 
 animations {
-    slowdown 0.5
+    slowdown 0.3
 }
 
 window-rule {
@@ -145,8 +145,8 @@ window-rule {
 	match is-floating=true
 	shadow {
 		on
-		softness 5
-		spread 5
+		softness 10
+		spread 2
 		offset x=0 y=0
 	}
 }
@@ -209,6 +209,7 @@ binds {
     Mod+Q hotkey-overlay-title="Open a Terminal: alacritty" { spawn "alacritty"; }
     Mod+comma { spawn-sh "~/scripts/screengrab_ocr.sh"; }
     Mod+period { spawn-sh "~/.config/tofi/scripts/bemoji.sh -t -f /home/uuu/.config/bemoji/emojis.txt"; }
+    Mod+apostrophe { spawn-sh "~/.config/tofi/scripts/search.sh"; }
 
     // Most actions that you can bind here can also be invoked programmatically with
     // `niri msg action do-something`.
