@@ -65,7 +65,7 @@ output "DP-1" {
     position x=0 y=0
 }
 
-output "HDMI-A-1" {
+output "LG Electronics LG FULL HD 0x01010101" {
 	scale 1
 	transform "270"
 	position x=2561 y=0
@@ -162,6 +162,11 @@ window-rule {
 }
 
 window-rule {
+	match app-id="steam_app_835960"
+	open-maximized true
+}
+
+window-rule {
 	match app-id="xdg-desktop-portal-gtk" title="Open Folder"
 	match app-id="org.inkscape.Inkscape" title="DXF Input"
 	open-floating true
@@ -179,6 +184,18 @@ window-rule {
 	max-height 620
 	max-width 364
 	default-floating-position x=60 y=60 relative-to="bottom-right"
+}
+
+window-rule {
+	match app-id="AppImageLauncher" title="Desktop Integration — AppImageLauncher"
+	open-floating true
+}
+
+window-rule {
+	match app-id="zenity"
+	open-floating true
+	max-height 840
+	max-width 1260
 }
 
 recent-windows {
@@ -224,12 +241,12 @@ binds {
     XF86MonBrightnessUp allow-when-locked=true { spawn "~/.config/dunst/dunst-media-control" "brightness_up"; }
     XF86MonBrightnessDown allow-when-locked=true { spawn "~/.config/dunst/dunst-media-control" "brightness_down"; }
 
-    XF86AudioNext allow-when-locked=true { spawn "~/.config/dunst/dunst-media-control" "next_track"; }
+    XF86AudioPrev allow-when-locked=true { spawn "~/.config/dunst/dunst-media-control" "prev"; }
+    XF86AudioNext allow-when-locked=true { spawn "~/.config/dunst/dunst-media-control" "next"; }
     XF86AudioPause allow-when-locked=true { spawn "~/.config/dunst/dunst-media-control" "play_pause"; }
     XF86TouchpadOn allow-when-locked=true { spawn "~/.config/dunst/dunst-media-control" "play_pause"; }
     XF86TouchpadOff allow-when-locked=true { spawn "~/.config/dunst/dunst-media-control" "play_pause"; }    
     XF86AudioPlay allow-when-locked=true { spawn "~/.config/dunst/dunst-media-control" "play_pause"; }
-    XF86AudioPrev allow-when-locked=true { spawn "~/.config/dunst/dunst-media-control" "prev_track"; }
 
     Mod+O repeat=false { toggle-overview; }
 
