@@ -186,6 +186,18 @@ window-rule {
 	default-floating-position x=60 y=60 relative-to="bottom-right"
 }
 
+window-rule {
+	match app-id="AppImageLauncher" title="Desktop Integration — AppImageLauncher"
+	open-floating true
+}
+
+window-rule {
+	match app-id="zenity"
+	open-floating true
+	max-height 840
+	max-width 1260
+}
+
 recent-windows {
 	binds {
 		Alt+Tab { next-window; } 
@@ -229,12 +241,12 @@ binds {
     XF86MonBrightnessUp allow-when-locked=true { spawn "~/.config/dunst/dunst-media-control" "brightness_up"; }
     XF86MonBrightnessDown allow-when-locked=true { spawn "~/.config/dunst/dunst-media-control" "brightness_down"; }
 
-    XF86AudioNext allow-when-locked=true { spawn "~/.config/dunst/dunst-media-control" "next_track"; }
+    XF86AudioPrev allow-when-locked=true { spawn "~/.config/dunst/dunst-media-control" "prev"; }
+    XF86AudioNext allow-when-locked=true { spawn "~/.config/dunst/dunst-media-control" "next"; }
     XF86AudioPause allow-when-locked=true { spawn "~/.config/dunst/dunst-media-control" "play_pause"; }
     XF86TouchpadOn allow-when-locked=true { spawn "~/.config/dunst/dunst-media-control" "play_pause"; }
     XF86TouchpadOff allow-when-locked=true { spawn "~/.config/dunst/dunst-media-control" "play_pause"; }    
     XF86AudioPlay allow-when-locked=true { spawn "~/.config/dunst/dunst-media-control" "play_pause"; }
-    XF86AudioPrev allow-when-locked=true { spawn "~/.config/dunst/dunst-media-control" "prev_track"; }
 
     Mod+O repeat=false { toggle-overview; }
 
