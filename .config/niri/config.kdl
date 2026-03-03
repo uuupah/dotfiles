@@ -65,7 +65,7 @@ output "DP-1" {
     position x=0 y=0
 }
 
-output "HDMI-A-1" {
+output "LG Electronics LG FULL HD 0x01010101" {
 	scale 1
 	transform "270"
 	position x=2561 y=0
@@ -159,6 +159,11 @@ window-rule {
 window-rule {
 	match app-id="steam" title="Friends List"
 	open-floating true
+}
+
+window-rule {
+	match app-id="steam_app_835960"
+	open-maximized true
 }
 
 window-rule {

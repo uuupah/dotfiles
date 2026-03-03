@@ -414,9 +414,9 @@ zedconfig="{
         \"panel.background\": \"${background}\",
         \"panel.focused_border\": null,
         \"pane.focused_border_hover\": null,
-        \"panel.indent_guide\": \"${grey}\",        
-        \"panel.indent_guide_active\": \"${grey}\",        
-        \"panel.indent_guide_hover\": \"${grey}\",        
+        \"panel.indent_guide\": \"${grey}\",
+        \"panel.indent_guide_active\": \"${grey}\",
+        \"panel.indent_guide_hover\": \"${grey}\",
 
         \"scrollbar.thumb.background\": \"${lightbackground}80\",
         \"scrollbar.thumb.hover_background\": \"${lightbackground}\",

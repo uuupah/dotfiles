@@ -1,5 +1,6 @@
 #! /bin/bash
 # TODO set defaults
+# TODO make a screenshots folder if it doesnt exist
 source ~/.config/slurp/colours.sh
 
 SCREENSHOTFILE=$(xdg-user-dir PICTURES)/screenshots/screenshot_$(date +%Y_%m_%d_%H_%M_%S).png
