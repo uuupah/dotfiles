@@ -13,12 +13,14 @@ environment {
 input {
     keyboard {
         xkb {
-			options "caps:ctrl_modifier"
+            // you can find all of the options for this in `man xkeyboard-config 7`
+			options "caps:ctrl_modifier, altwin:swap_lalt_lwin"
         }
         numlock
     }
 
     touchpad {
+    	dwt
         tap
         drag true
         natural-scroll
@@ -48,7 +50,7 @@ output "eDP-1" {
     focus-at-startup
 //    mode "1920x1200@60.026"
     mode "2560x1600@60.000"
-    scale 1.15
+    scale 1
     transform "normal"
     position x=0 y=0
 }
@@ -107,8 +109,8 @@ layout {
     }
 }
 
-spawn-at-startup "plasma-polkit-agent"
-spawn-at-startup "dunst"
+spawn-at-startup "/usr/libexec/polkit-mate-authentication-agent-1"
+// spawn-at-startup "dunst"
 spawn-at-startup "hypridle"
 // spawn-sh-at-startup "swaybg --image /home/uuu/.config/colours/wallpapers/classical/hermanus-koekkoek-ii-sailing-boats-on-rough-seas.jpg --mode fill -o *"
 //spawn-at-startup "wpaperd" "-d"

@@ -1,5 +1,5 @@
-font = unifont
-font-size = 12
+font = terminus
+font-size = 14
 hint-font = false
 ascii-input = true
 late-keyboard-init = true

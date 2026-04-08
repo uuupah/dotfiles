@@ -1,4 +1,4 @@
-font = terminus
+font = /home/uuu/.local/share/fonts/TerminessNerdFontMono-Regular.ttf
 font-size = 14
 hint-font = false
 ascii-input = true
@@ -21,8 +21,8 @@ padding-bottom = 4
 padding-left = 4
 padding-right = 4
 
-width = 308
-height = 186
+width = 370
+height = 224
 num-results = 10
 
 include = /home/uuu/.config/tofi/themes/uuu

@@ -8,7 +8,7 @@ normal = { family = "terminus", style = "Regular" }
 bold  = { family = "terminus", style = "Bold" }
 italic = { family = "terminus", style = "Italic" }
 bold_italic = { family = "terminus", style = "Bold Italic" }
-size = 14
+size = 12
 
 [general]
 import = [

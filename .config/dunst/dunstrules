@@ -34,7 +34,8 @@
 
     idle_threshold = 0
 
-    font = "Unifont-JP 12"
+#    font = "Unifont-JP 12"
+	font = "Terminus 13"
     line_height = 0
 
     markup = full

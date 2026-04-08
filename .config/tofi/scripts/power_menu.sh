@@ -25,16 +25,6 @@ case "$choice" in
     hyprlock
     ;;
   "log out")
-    case "$DESKTOP_SESSION" in
-      hyprland | hyprland-uwsm)
-        hyprctl dispatch exit 1
-        ;;
-      niri)
-        niri msg action quit -s
-        ;;
-      sway)
-        swaymsg exit
-        ;;
-    esac
+    niri msg action quit -s
     ;;
 esac
