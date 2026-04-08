@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+# run checks for required programs - magick, yq, etc
+
 homedir="/home/uuu"
 
 hextohsl() {
@@ -245,6 +247,7 @@ border-color=${foreground}
 selection-color=${background}
 selection-background=${foreground}"
 
+# TODO make sure that the themes folder exists - it doesnt get made by tofi
 rm ${homedir}/.config/tofi/themes/uuu
 touch ${homedir}/.config/tofi/themes/uuu
 printf "${toficonfig}" >> ${homedir}/.config/tofi/themes/uuu

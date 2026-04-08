@@ -102,7 +102,8 @@
   "clock": {
     "interval": 1,
     "tooltip-format": "{calendar}",
-    "format": "{:%Y年%m月%d日 %H:%M:%S}"
+//    "format": "{:%Y年%m月%d日 %H:%M:%S}"
+    "format": "{:%Y-%m-%d %H:%M:%S}"
   },
   "temperature": {
     "critical-threshold": 80,
