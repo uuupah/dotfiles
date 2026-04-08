@@ -224,7 +224,7 @@ binds {
     Mod+Shift+C { spawn "hyprpicker -a"; }
     Mod+E { spawn "nemo"; }
     Mod+J { spawn "~/.config/tofi/scripts/search_wikipedia.sh"; }
-    Mod+L hotkey-overlay-title="Lock the Screen: hyprlock" { spawn "hyprlock"; }
+    Mod+L { spawn "swaylock"; }
     Mod+M { spawn "~/.config/tofi/scripts/power_menu.sh"; }
     Mod+Q hotkey-overlay-title="Open a Terminal: alacritty" { spawn "alacritty"; }
     Mod+comma { spawn-sh "~/scripts/screengrab_ocr.sh"; }
@@ -358,6 +358,11 @@ binds {
     Mod+Escape allow-inhibiting=false { toggle-keyboard-shortcuts-inhibit; }
 
     Mod+Shift+P { power-off-monitors; }
+}
+
+switch-events {
+    lid-close { spawn "swaylock"; }
+    //lid-open { spawn "notify-send" "The laptop lid is open!"; }
 }
 
 include "colors.kdl"
