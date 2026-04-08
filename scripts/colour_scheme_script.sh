@@ -284,14 +284,14 @@ notify-send -t 10000 -u critical "dunst test" "critical urgency"
 # foreground=\"${foreground}\"
 # dim=\"${black}\""
 
-sddmconfig="background=\"#000000\"
-foreground=\"#D3D3D3\"
-dim=\"#888888\""
+# sddmconfig="background=\"#000000\"
+# foreground=\"#D3D3D3\"
+# dim=\"#888888\""
 
-cat ${homedir}/.config/sddm/themerules.conf > /usr/share/sddm/themes/uuusddm/theme.conf
-printf "${sddmconfig}" >> /usr/share/sddm/themes/uuusddm/theme.conf
+# cat ${homedir}/.config/sddm/themerules.conf > /usr/share/sddm/themes/uuusddm/theme.conf
+# printf "${sddmconfig}" >> /usr/share/sddm/themes/uuusddm/theme.conf
 
-echo basethemecolor "$basethemecolor"
+# echo basethemecolor "$basethemecolor"
 
 # gtk
 gtk2config="gtk-color-scheme = \"text_color:${foreground}

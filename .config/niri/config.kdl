@@ -48,7 +48,7 @@ output "eDP-1" {
     focus-at-startup
 //    mode "1920x1200@60.026"
     mode "2560x1600@60.000"
-    scale 1
+    scale 1.15
     transform "normal"
     position x=0 y=0
 }
