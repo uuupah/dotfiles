@@ -18,7 +18,6 @@ input {
 
     touchpad {
     	dwt
-        tap
         drag true
         natural-scroll
         accel-speed 0.0

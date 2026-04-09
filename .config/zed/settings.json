@@ -7,61 +7,66 @@
 // custom settings, run `zed: open default settings` from the
 // command palette
 {
+  "icon_theme": {
+    "mode": "dark",
+    "light": "Zed (Default)",
+    "dark": "Zed (Default)",
+  },
   "title_bar": {
     // "show_menus": true
   },
   "telemetry": {
     "metrics": false,
-    "diagnostics": false
+    "diagnostics": false,
   },
   "ui_font_size": 14,
   "unstable.ui_density": "compact",
-  "ui_font_family": "ProggyDotted",
-  "buffer_font_family": "ProggyClean Nerd Font Mono",
+  "ui_font_family": "JetBrains Mono",
+  "buffer_font_family": "JetBrains Mono",
   "buffer_font_size": 16,
-  "buffer_line_height": {
-    "custom": 1
-  },
+  // "buffer_line_height": {
+  //   "custom": 1,
+  // },
   "theme": {
     "mode": "dark",
     "light": "One Light",
-    "dark": "uuu"
+    "dark": "One Dark",
   },
   "terminal": {
-    "font_family": "ProggyClean Nerd Font Mono",
+    "font_family": "JetBrains Mono",
     "font_size": 16,
-    "line_height": {
-      "custom": 1
-    }
+    // "line_height": {
+    //   "custom": 1,
+    // },
   },
   "tab_size": 2,
   "languages": {
     "Markdown": {
       "remove_trailing_whitespace_on_save": false,
       "soft_wrap": "editor_width",
-      "show_completions_on_input": false
+      "show_completions_on_input": false,
     },
     "HTML": {
-      "format_on_save": "off"
-    }
+      "format_on_save": "off",
+    },
   },
   // hide all the ai nonsense
   "features": {
     "copilot": false,
-    "edit_prediction_provider": "none"
+    "edit_prediction_provider": "none",
   },
   "collaboration_panel": {
-    "button": false
+    "button": false,
   },
   "chat_panel": {
-    "button": "never"
+    "button": "never",
   },
   "agent": {
     "enabled": false,
-    "button": false
+    "button": false,
   },
   "assistant_v2": {
-    "enabled": false
+    "enabled": false,
   },
-  "soft_wrap": "editor_width"
+  "soft_wrap": "editor_width",
 }
