@@ -12,9 +12,9 @@ style = 'red'
 disabled = true
 
 [character]
-success_symbol = "[>](green)"
-error_symbol = "[x](red)"
-vicmd_symbol = "[<](green)"
+success_symbol = "[>{>](green)"
+error_symbol = "[>{x>](red)"
+vicmd_symbol = "[<}<](green)"
 
 [git_status]
 ahead = ">"

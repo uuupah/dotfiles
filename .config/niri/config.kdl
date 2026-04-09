@@ -3,9 +3,6 @@
 // Check the wiki for a full description of the configuration:
 // https://yalter.github.io/niri/Configuration:-Introduction
 
-// Input device configuration.
-// Find the full list of options on the wiki:
-// https://yalter.github.io/niri/Configuration:-Input
 environment {
 	ELECTRON_OZONE_PLATFORM_HINT "auto"
 }
@@ -86,6 +83,7 @@ layout {
         proportion 0.33333
         proportion 0.5
         proportion 0.66667
+        proportion 1.0
     }
 
     default-column-width { proportion 0.5; }
@@ -218,7 +216,7 @@ binds {
     Mod+Space { spawn "tofi-drun" "--drun-launch=true"; }
     Mod+Slash { spawn "~/.config/tofi/scripts/tools.sh"; }
     Mod+A { spawn "librewolf"; }
-    Mod+S { spawn-sh "/usr/bin/flatpak run --branch=stable --arch=x86_64 --command=obsidian.sh --file-forwarding md.obsidian.Obsidian @@u %U @@"; }
+    Mod+S { spawn-sh "/usr/bin/flatpak run --branch=stable --command=obsidian.sh --file-forwarding md.obsidian.Obsidian @@u %U @@"; }
     Mod+D { spawn "zed"; }
     Mod+Shift+S { spawn "~/scripts/grim_save_screenshot_and_copy_to_clipboard.sh"; }
     Mod+Shift+C { spawn "hyprpicker -a"; }
@@ -230,9 +228,6 @@ binds {
     Mod+comma { spawn-sh "~/scripts/screengrab_ocr.sh"; }
     Mod+period { spawn-sh "~/.config/tofi/scripts/bemoji.sh -t -f /home/uuu/.config/bemoji/emojis.txt"; }
     Mod+apostrophe { spawn-sh "~/.config/tofi/scripts/search.sh"; }
-
-    // Most actions that you can bind here can also be invoked programmatically with
-    // `niri msg action do-something`.
 
     Mod+Shift+Slash { show-hotkey-overlay; }
 
@@ -325,9 +320,8 @@ binds {
     Mod+BracketLeft  { consume-or-expel-window-left; }
     Mod+BracketRight { consume-or-expel-window-right; }
 
-    Mod+R { switch-preset-column-width; }
-    Mod+Shift+R { switch-preset-column-width-back; }
-    // Mod+Shift+R { switch-preset-window-height; }
+    Mod+R { switch-preset-column-width-back; }
+    Mod+Shift+R { switch-preset-column-width; }
     // Mod+Ctrl+R { reset-window-height; }
     Mod+F { maximize-column; }
     Mod+Shift+F { fullscreen-window; }
@@ -362,7 +356,7 @@ binds {
 
 switch-events {
     lid-close { spawn "swaylock"; }
-    //lid-open { spawn "notify-send" "The laptop lid is open!"; }
+//    lid-open { spawn "swaylock"; }
 }
 
 include "colors.kdl"

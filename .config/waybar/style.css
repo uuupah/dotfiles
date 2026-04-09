@@ -72,7 +72,8 @@ tooltip {
   font-family:
   "Terminus", "Unifont", "Unifont-JP", "ProggyClean Nerd Font", "Noto Sans Mono", "Font Awesome 6 Free",
     "Font Awesome 6 Brands", monospace;
-  font-size: 18px;
+  font-size: 22px;
+  /* font-weight: bold; */
   transition: none;
   box-shadow: none;
   text-shadow: none;

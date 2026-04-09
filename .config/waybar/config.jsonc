@@ -115,7 +115,7 @@
     "format-icons": ["", "", ""]
   },
   "battery": {
-    "interval": 1,
+    "interval": 30,
 //    "states": {
 //      "warning": 30,
 //      "critical": 15

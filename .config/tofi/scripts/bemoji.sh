@@ -21,7 +21,7 @@ bm_private_mode=${BEMOJI_PRIVATE_MODE:-false}
 bm_limit_recent="$BEMOJI_LIMIT_RECENT"
 
 declare -A default_pickers=(
-    ["tofi"]="tofi --prompt-text 'sel: ' --selection-background-padding '0,-1,0,1' --width '404'"
+    ["tofi"]="tofi --prompt-text 'sel: ' --selection-background-padding '0,-1,0,1' --width '404' --height '260' --font 'terminessnerdfontmono' --font-size '14'"
     ["bemenu"]="bemenu -p 🔍 -i -l 20"
     ["wofi"]="wofi -p 🔍 -i --show dmenu"
     ["rofi"]="rofi -p 🔍 -i -dmenu --kb-custom-1 "Alt+1" --kb-custom-2 "Alt+2""
