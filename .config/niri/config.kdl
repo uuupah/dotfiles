@@ -66,6 +66,7 @@ output "DP-1" {
 }
 
 output "LG Electronics LG FULL HD 0x01010101" {
+    mode "1920x1080"
 	scale 1
 	transform "270"
 	position x=2561 y=0
@@ -75,7 +76,7 @@ output "LG Electronics LG FULL HD 0x01010101" {
 }
 
 layout {
-    gaps 4
+    gaps 2
 
     center-focused-column "never"
 
@@ -101,18 +102,12 @@ layout {
     struts {
         left 10
         right 10
-        // top 64
-        // bottom 64
     }
 }
 
 spawn-at-startup "plasma-polkit-agent"
 spawn-at-startup "dunst"
 spawn-at-startup "hypridle"
-// spawn-sh-at-startup "swaybg --image /home/uuu/.config/colours/wallpapers/classical/hermanus-koekkoek-ii-sailing-boats-on-rough-seas.jpg --mode fill -o *"
-//spawn-at-startup "wpaperd" "-d"
-// spawn-sh-at-startup "~/.config/waybar/scripts/startandwatchwaybar"
-// moved this to a systemd unit
 spawn-sh-at-startup "tailscale up"
 spawn-sh-at-startup "syncthing serve --no-browser"
 spawn-sh-at-startup "wl-paste --watch cliphist store"
@@ -145,8 +140,8 @@ window-rule {
 	match is-floating=true
 	shadow {
 		on
-		softness 10
-		spread 2
+		softness 8
+		spread 3
 		offset x=0 y=0
 	}
 }
@@ -221,12 +216,13 @@ binds {
     Mod+Shift+C { spawn "hyprpicker -a"; }
     Mod+E { spawn "nemo"; }
     Mod+J { spawn "~/.config/tofi/scripts/search_wikipedia.sh"; }
-    Mod+L hotkey-overlay-title="Lock the Screen: hyprlock" { spawn "hyprlock"; }
+    Mod+L { spawn "swaylock"; }
     Mod+M { spawn "~/.config/tofi/scripts/power_menu.sh"; }
     Mod+Q hotkey-overlay-title="Open a Terminal: alacritty" { spawn "alacritty"; }
     Mod+comma { spawn-sh "~/scripts/screengrab_ocr.sh"; }
     Mod+period { spawn-sh "~/.config/tofi/scripts/bemoji.sh -t -f /home/uuu/.config/bemoji/emojis.txt"; }
     Mod+apostrophe { spawn-sh "~/.config/tofi/scripts/search.sh"; }
+    Mod+0 { spawn-sh "dunstctl close-all"; }
 
     // Most actions that you can bind here can also be invoked programmatically with
     // `niri msg action do-something`.
@@ -322,8 +318,8 @@ binds {
     Mod+BracketLeft  { consume-or-expel-window-left; }
     Mod+BracketRight { consume-or-expel-window-right; }
 
-    Mod+R { switch-preset-column-width; }
-    Mod+Shift+R { switch-preset-column-width-back; }
+    Mod+R { switch-preset-column-width-back; }
+    Mod+Shift+R { switch-preset-column-width; }
     // Mod+Shift+R { switch-preset-window-height; }
     // Mod+Ctrl+R { reset-window-height; }
     Mod+F { maximize-column; }

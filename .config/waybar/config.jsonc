@@ -1,199 +1,181 @@
 // -*- mode: jsonc -*-
-{
-  "reload_style_on_change": true,
-  "height": 24, // Waybar height (to be removed for auto height)
-  "spacing": 0, // Gaps between modules (4px)
-  "margin":0,
-  "modules-left": [
-    "niri/workspaces",
-    "custom/pipe-divider",
-    "niri/window"
-  ],
-  "modules-right": [
-    "custom/spacer",
-    //"custom/pipe-divider",
-    "custom/pomodoro",
-    //"custom/pipe-divider",
-    "custom/pipe-divider",
-    "custom/nowplaying",
-    "pulseaudio",
-    "custom/pipe-divider",
-    "bluetooth",
-    "custom/pipe-divider",
-    "network",
-    "custom/pipe-divider",
-    "cpu",
-    "custom/pipe-divider",
-    "memory",
-    //"sway/language",
-    //        "backlight",
-    "battery",
-    "custom/pipe-divider",
-    "clock",
-    "custom/pipe-divider",
-    "tray"
-    //"custom/power"
-  ],
-  "custom/spacer": {
-    "format": "        ",
-    "tooltip": false,
-  },
-  "custom/pipe-divider": {
-    "format": "|",
-    "tooltip": false,
-  },
-  "custom/hyphen-divider": {
-  	"format": " - "
-  },
-  "custom/window-state": {
-    "exec": "bash -c '/home/uuu/.config/waybar/scripts/window-state.sh'",
-    "return-type": "json",
-    "interval": 1
-  },
-  "custom/weather": {
-    "exec": "bash -c 'cat /tmp/weather'",
-    "return-type": "text",
-    "interval": 60
-  },
-  "niri/window": {
-  	"tooltip": false,
-  	"swap-icon-label": false
-  },  
-  "keyboard-state": {
-    "numlock": true,
-    "capslock": true,
-    "format": "{name} {icon}",
-    "format-icons": {
-      "locked": "",
-      "unlocked": ""
-    }
-  },
-  "custom/pomodoro": {
-    "format": "pom {} ",
-    "return-type": "json",
-    "exec": "waybar-module-pomodoro --no-icons --no-work-icons --autow --autob",
-    "on-click": "waybar-module-pomodoro toggle",
-    "on-click-right": "waybar-module-pomodoro reset"
-  },
-  "custom/nowplaying": {
-  	"format":" {}",
-  	"return-type": "text",
-  	"exec": "/home/uuu/.config/waybar/scripts/quodlibet-now-playing.sh",
-  	"interval": 1,
-  	"on-click": "quodlibet --play-pause"
-  },
-  "cpu": {
-    "format": "cpu {usage}%",
-    "tooltip": false
-  },
-  "memory": {
-    "format": "mem {}%"
-  },
-  "idle_inhibitor": {
-    "format": "{icon}",
-    "format-icons": {
-      "activated": "",
-      "deactivated": ""
-    }
-  },
-  "tray": {
-    "spacing": 10
-  },
-  "clock": {
-    "interval": 1,
-    "tooltip-format": "{calendar}",
-    "format": "{:%Y年%m月%d日 %H:%M:%S}"
-  },
-  "temperature": {
-    "critical-threshold": 80,
-    "format": "{temperatureC}°C {icon}",
-    "format-icons": ["", "", ""]
-  },
-  "backlight": {
-    "format": "{percent}% {icon}",
-    "format-icons": ["", "", ""]
-  },
-  "battery": {
-    "interval": 1,
-//    "states": {
-//      "warning": 30,
-//      "critical": 15
-//    },
-    "format": "| bat {capacity}% {time}",
-    "format-time": "({H}:{m})",
-    "format-full": "| bat {capacity}%",
-    "format-charging": "| chg {capacity}% {time}",
-    "format-plugged": "| chg {capacity}% {time}",
-  },
-  "battery#bat2": {
-    "bat": "BAT2"
-  },
-  "power-profiles-daemon": {
-    "format": "{icon}",
-    "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
-    "tooltip": true,
-    "format-icons": {
-      "default": "",
-      "performance": "",
-      "balanced": "",
-      "power-saver": ""
-    }
-  },
-  "network": {
-    "format-wifi": "{essid:.10} {signalStrength}%",
-    "format-ethernet": "eth {ipaddr}/{cidr}",
-    "tooltip-format": "{essid}\n{ifname} via {gwaddr}",
-    "format-linked": " {ifname} (No IP)",
-    "format-disconnected": "no wifi",
-    "on-click": "alacritty -e nmcli device wifi rescan; alacritty -e nmtui",
-  },
-  "bluetooth": {
-    "format": "bt on",
-    "format-off": "bt off",
-    "format-disabled": "bt off",
-    "format-connected": "bt {num_connections}",
-    "on-click": "blueman-manager",
-    "tooltip-format": "{status}"
-  },
-  "pulseaudio": {
-    // "scroll-step": 1, // %, can be a float
-    "format": "vol {volume}% | {format_source}",
-    "format-muted": "mute | {format_source}",
-    "format-source": "mic on",
-    "format-source-muted": "mic off",
-    "format-icons": {
-      "headphone": "",
-      "hands-free": "",
-      "headset": "",
-      "phone": "",
-      "portable": "",
-      "car": "",
-      "default": ["", "", ""]
-    },
-    "on-click": "pavucontrol"
-  },
-  "custom/media": {
-    "format": "{icon} {}",
-    "return-type": "json",
-    "max-length": 40,
-    "format-icons": {
-      "spotify": "",
-      "default": "🎜"
-    },
-    "escape": true,
-    "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
-  },
-  "custom/power": {
-    "format": "⏻ ",
-    "tooltip": false,
-    "menu": "on-click",
-    "menu-file": "$HOME/.config/waybar/power_menu.xml", // Menu file in resources folder
-    "menu-actions": {
-      "shutdown": "shutdown",
-      "reboot": "reboot",
-      "suspend": "systemctl suspend",
-      "hibernate": "systemctl hibernate"
-    }
-  }
-}
-
+[
+	{
+		"output": "!HDMI-A-1",
+		"reload_style_on_change": true,
+		"height": 24, // Waybar height (to be removed for auto height)
+		"spacing": 0, // Gaps between modules (4px)
+		"margin": 0,
+		"modules-left": [
+			"niri/workspaces",
+			"custom/pipe-divider",
+			"niri/window"
+		],
+		"modules-right": [
+			"custom/nowplaying",
+			"pulseaudio",
+			"custom/pipe-divider",
+			"bluetooth",
+			"custom/pipe-divider",
+			"network",
+			"custom/pipe-divider",
+			"cpu",
+			"custom/pipe-divider",
+			"memory",
+			"battery",
+			"custom/pipe-divider",
+			"clock",
+			"custom/pipe-divider",
+			"tray"
+		],
+		"custom/spacer": {
+			"format": "        ",
+			"tooltip": false,
+		},
+		"custom/pipe-divider": {
+			"format": "|",
+			"tooltip": false,
+		},
+		"custom/hyphen-divider": {
+			"format": " - "
+		},
+		"niri/window": {
+			"tooltip": false,
+			"swap-icon-label": false
+		},
+		"custom/nowplaying": {
+			"format": " {}",
+			"return-type": "text",
+			"exec": "/home/uuu/.config/waybar/scripts/quodlibet-now-playing.sh",
+			"interval": 1,
+			"on-click": "quodlibet --play-pause"
+		},
+		"cpu": {
+			"format": "cpu {usage:02d}",
+			"tooltip": false
+		},
+		"memory": {
+			"format": "mem {percentage:02d}",
+			"tooltip": false
+		},
+		"idle_inhibitor": {
+			"format": "{icon}",
+			"format-icons": {
+				"activated": "",
+				"deactivated": ""
+			}
+		},
+		"tray": {
+			"spacing": 10
+		},
+		"clock": {
+			"interval": 1,
+			"tooltip-format": "{calendar}",
+			"format": "{:%Y年%m月%d日 %H:%M:%S}"
+		},
+		"temperature": {
+			"critical-threshold": 80,
+			"format": "{temperatureC}°C {icon}",
+			"format-icons": [
+				"",
+				"",
+				""
+			]
+		},
+		"backlight": {
+			"format": "{percent}% {icon}",
+			"format-icons": [
+				"",
+				"",
+				""
+			]
+		},
+		"battery": {
+			"interval": 30,
+			"format": "| bat {capacity}% {time}",
+			"format-time": "({H}:{m})",
+			"format-full": "| bat {capacity}%",
+			"format-charging": "| chg {capacity}% {time}",
+			"format-plugged": "| chg {capacity}% {time}",
+		},
+		"battery#bat2": {
+			"bat": "BAT2"
+		},
+		"power-profiles-daemon": {
+			"format": "{icon}",
+			"tooltip-format": "Power profile: {profile}\nDriver: {driver}",
+			"tooltip": true,
+			"format-icons": {
+				"default": "",
+				"performance": "",
+				"balanced": "",
+				"power-saver": ""
+			}
+		},
+		"network": {
+			"format-wifi": "{essid:.10} {signalStrength}%",
+			"format-ethernet": "eth {ipaddr}",
+			"tooltip-format": "{essid}\n{ifname} via {gwaddr}",
+			"format-linked": " {ifname} (No IP)",
+			"format-disconnected": "no wifi",
+			"on-click": "alacritty -e nmcli device wifi rescan; alacritty -e nmtui",
+		},
+		"bluetooth": {
+			"format": "bt on",
+			"format-off": "bt off",
+			"format-disabled": "bt off",
+			"format-connected": "bt {num_connections}",
+			"on-click": "blueman-manager",
+			"tooltip-format": "{status}"
+		},
+		"pulseaudio": {
+			// "scroll-step": 1, // %, can be a float
+			"format": "vol {volume} | {format_source}",
+			"format-muted": "mute | {format_source}",
+			"format-source": "mic on",
+			"format-source-muted": "mic off",
+			"format-icons": {
+				"headphone": "",
+				"hands-free": "",
+				"headset": "",
+				"phone": "",
+				"portable": "",
+				"car": "",
+				"default": [
+					"",
+					"",
+					""
+				]
+			},
+			"on-click": "pavucontrol"
+		}
+	},
+	{
+		"output": "HDMI-A-1",
+		"reload_style_on_change": true,
+		"height": 24, // Waybar height (to be removed for auto height)
+		"spacing": 0, // Gaps between modules (4px)
+		"margin": 0,
+		"modules-left": [
+			"niri/workspaces",
+			"custom/pipe-divider",
+			"niri/window"
+		],
+		"modules-right": [
+			"clock"
+		],
+		"custom/pipe-divider": {
+			"format": "|",
+			"tooltip": false,
+		},
+		"clock": {
+			"interval": 1,
+			"tooltip-format": "{calendar}",
+			"format": "{:%Y年%m月%d日 %H:%M:%S}"
+		},
+		"niri/window": {
+			"tooltip": false,
+			"swap-icon-label": false
+		}
+	}
+]
