@@ -40,6 +40,9 @@
       "remove_trailing_whitespace_on_save": false,
       "soft_wrap": "editor_width",
       "show_completions_on_input": false
+    },
+    "HTML": {
+      "format_on_save": "off"
     }
   },
   // hide all the ai nonsense

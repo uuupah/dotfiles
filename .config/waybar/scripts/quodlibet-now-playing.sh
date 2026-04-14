@@ -1,7 +1,7 @@
 #! /usr/bin/env bash
 
 PRINTPLAYING=$(quodlibet --print-playing 2> /dev/null)
-IFS='-' read -ra NOWPLAYING <<< $PRINTPLAYING
+IFS='-' read -ra NOWPLAYING <<< ${PRINTPLAYING}
 MARKER=${NOWPLAYING%% *}
 STATUS=$(quodlibet --status 2> /dev/null | awk '{print $1;}')
 STATUSICON=""
