@@ -52,11 +52,13 @@
 		},
 		"cpu": {
 			"format": "cpu {usage:02d}",
-			"tooltip": false
+			"tooltip": false,
+			"interval": 5
 		},
 		"memory": {
 			"format": "mem {percentage:02d}",
-			"tooltip": false
+			"tooltip": false,
+			"interval": 5
 		},
 		"idle_inhibitor": {
 			"format": "{icon}",
