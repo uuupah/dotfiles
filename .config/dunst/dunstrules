@@ -218,6 +218,10 @@
 #
 # vim: ft=cfg
 
+[teams]
+    body = "^mcas.ms$"
+    urgency = normal
+
 [pomodoro]
     summary = "Pomodoro"
     new_icon = task-due
