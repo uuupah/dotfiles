@@ -1,0 +1,5 @@
+{
+	// needs to be 26 instead of 24 so that emoji can be shown (from firefox tab titles)
+	// without waybar changing size
+	"height": 26
+}

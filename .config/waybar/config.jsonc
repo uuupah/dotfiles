@@ -3,7 +3,7 @@
 	{
 		"output": "!HDMI-A-1",
 		"reload_style_on_change": true,
-		"height": 24, // Waybar height (to be removed for auto height)
+		//"height": 24, // Waybar height (to be removed for auto height)
 		"spacing": 0, // Gaps between modules (4px)
 		"margin": 0,
 		"modules-left": [
@@ -150,7 +150,10 @@
 				]
 			},
 			"on-click": "pavucontrol"
-		}
+		},
+		"include": [
+			"~/.config/waybar/device.jsonc"
+		]
 	},
 	{
 		"output": "HDMI-A-1",
