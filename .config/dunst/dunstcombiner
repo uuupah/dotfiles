@@ -1,3 +1,4 @@
 #!/usr/bin/env bash
 cat $HOME/.config/dunst/dunstrules > $HOME/.config/dunst/dunstrc
+cat $HOME/.config/dunst/dunstdevice >> $HOME/.config/dunst/dunstrc
 cat $HOME/.config/dunst/dunstcolors >> $HOME/.config/dunst/dunstrc

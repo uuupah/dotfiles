@@ -13,3 +13,6 @@ sync-obsidian/.obsidian/themes/uuu/themecolors.css
 
 # device specific files
 .config/alacritty/device.toml
+.config/niri/device.kdl
+.config/dunst/dunstdevice
+.config/waybar/device.css

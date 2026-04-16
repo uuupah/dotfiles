@@ -217,7 +217,7 @@ waybarconfig="@define-color bg ${background};
 @define-color fg ${foreground};
 @define-color im ${red};"
 
-printf "${waybarconfig}" | tee ${homedir}/.config/colours/uuuwaybar.css > /dev/null
+printf "${waybarconfig}" | tee ${homedir}/.config/waybar/colors.css > /dev/null
 
 # niri
 niriconfig="output \"*\" {

@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
-marquee=abb2bf
-background=abb2bf55
-text=abb2bf
+marquee=d3c6aa
+background=d3c6aa55
+text=d3c6aa

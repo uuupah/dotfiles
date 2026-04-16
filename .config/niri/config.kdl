@@ -363,3 +363,4 @@ binds {
 }
 
 include "colors.kdl"
+include "device.kdl"

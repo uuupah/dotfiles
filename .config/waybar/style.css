@@ -1,4 +1,4 @@
-@import '/home/uuu/.config/colours/uuuwaybar.css';
+@import '/home/uuu/.config/waybar/colors.css';
 
 /* @define-color background #2d353b; */
 /* @define-color foreground #d3c6aa; */
@@ -71,7 +71,7 @@ tooltip {
 }
 
 /* other styles */
-
+/* note! the font size and family may get replaced in device.css */
 * {
   font-family:
     "Unifont-JP", "ProggyClean Nerd Font", "Noto Sans Mono", "Font Awesome 6 Free",
@@ -152,3 +152,5 @@ tooltip,
   border: 1px solid @foreground;
   margin-bottom: 3px;
 }
+
+@import '/home/uuu/.config/waybar/device.css';
