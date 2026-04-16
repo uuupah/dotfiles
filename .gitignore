@@ -10,3 +10,6 @@
 .config/tofi/themes/uuu
 sync-obsidian/.obsidian/themes/uuu/theme.css
 sync-obsidian/.obsidian/themes/uuu/themecolors.css
+
+# device specific files
+.config/alacritty/device.toml
