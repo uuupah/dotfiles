@@ -88,7 +88,7 @@ layout {
     default-column-width { proportion 0.5; }
 
     border {
-        width 2
+        width 3
         //active-color "#a7c080"
         //inactive-color "#2d353b"
         //urgent-color "#e67e80"
