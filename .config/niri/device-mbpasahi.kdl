@@ -1,0 +1,16 @@
+input {
+	keyboard {
+		xkb {
+			options "caps:ctrl_modifier, altwin:swap_lalt_lwin"
+		}
+	}
+	touchpad {
+		dwt	
+		natural-scroll
+		/// the below were on by default, but i dont know if theyre actually needed
+		// drag true
+		// accel-speed 0.0
+		// accel-profile "adaptive"
+		// scroll-method "two-finger"
+	}
+}
