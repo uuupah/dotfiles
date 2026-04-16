@@ -4,10 +4,9 @@ using `stow` technique a la [www.youtube.com/watch?v=y6XCebnB9gs](https://www.yo
 ## tools
 - wm - niri
 - bar - waybar
-- greeter - sddm
+- greeter - greetd
 - terminal - alacritty
-- shell - bash
-- shell theming - starship
+- shell - fish
 - notifications - dunst
 - launcher / picker - tofi
 - terminal editor - micro (unfortunately)
