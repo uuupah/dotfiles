@@ -1,15 +1,15 @@
 output "*" {
-	background-color "#2d353b"
+	background-color "#282c34"
 } 
 
 layout {
 	border {
-		active-color "#a7c080"
-		inactive-color "#2d353b"
-		urgent-color "#e67e80"
+		active-color "#98c379"
+		inactive-color "#282c34"
+		urgent-color "#e06c75"
 	}
 }
 
 overview {
-	backdrop-color "#2d353b"
+	backdrop-color "#282c34"
 }

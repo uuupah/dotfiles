@@ -1,18 +1,18 @@
 
 [global]
-    frame_color = "#d3c6aa"
+    frame_color = "#abb2bf"
 
 [urgency_low]
-    background = "#2d353b"
-    foreground = "#d3c6aa"
-    highlight = "#a7c080"
+    background = "#282c34"
+    foreground = "#abb2bf"
+    highlight = "#98c379"
 
 [urgency_normal]
-    background = "#2d353b"
-    foreground = "#d3c6aa"
-    highlight = "#a7c080"
+    background = "#282c34"
+    foreground = "#abb2bf"
+    highlight = "#98c379"
 
 [urgency_critical]
-    background = "#543E43"
-    foreground = "#d3c6aa"
-    highlight = "#e67e80"
+    background = "#4F353C"
+    foreground = "#abb2bf"
+    highlight = "#e06c75"
