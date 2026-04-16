@@ -14,3 +14,9 @@ using `stow` technique a la [www.youtube.com/watch?v=y6XCebnB9gs](https://www.yo
 - code editors - vscodium and zed
 - wallpapers - wpaperd
 - colour scheme management - custom bash script using tinted base16 themes
+
+## TODO
+- lock down idle behaviour
+	- set up hibernating for suspend then hibernate
+- set up do not disturb for notifications
+- figure out power profiles

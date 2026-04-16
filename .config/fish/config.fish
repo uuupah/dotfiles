@@ -58,5 +58,8 @@ function fish_prompt
     end
 end
 
+# set other-writable directory to yellow on black
+set -x LS_COLORS ":ow=01;33"
+
 # starship init fish | source
 set fish_greeting
