@@ -112,14 +112,18 @@ button {
 #pulseaudio,
 #wireplumber,
 #custom-media,
-#tray,
 #mode,
 #idle_inhibitor,
 #scratchpad,
 #power-profiles-daemon,
 #mpd,
-#custom-launcher {
-  padding: 0 5px 1px 5px; 
+#custom-launcher,
+#custom-pipe-divider {
+  padding: 0 0 1px 0; 
+}
+
+#tray {
+  padding: 0 10px 1px 0;	
 }
 
 #workspaces button{

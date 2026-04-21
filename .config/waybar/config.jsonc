@@ -13,29 +13,33 @@
 		],
 		"modules-right": [
 			"custom/nowplaying",
-			"pulseaudio",
-			"custom/pipe-divider",
+			// "custom/pipe-divider", // this divider is rendered by the script so it gets hidden when no music is playing
 		    "custom/idle",
-   			"custom/pipe-divider",
+   			"custom/spacer",
 			"bluetooth",
+			"custom/spacer",
+			"pulseaudio#mic",
 			"custom/pipe-divider",
 			"network",
 			"custom/pipe-divider",
+			"pulseaudio#vol",
+			"custom/spacer",
 			"cpu",
-			"custom/pipe-divider",
+			"custom/spacer",
 			"memory",
+			"custom/spacer",
 			"battery",
-			"custom/pipe-divider",
+			// "custom/pipe-divider", // as above, to allow battery to be hidden on desktops
 			"clock",
 			"custom/pipe-divider",
 			"tray"
 		],
 		"custom/spacer": {
-			"format": "        ",
+			"format": " ",
 			"tooltip": false,
 		},
 		"custom/pipe-divider": {
-			"format": "|",
+			"format": " | ",
 			"tooltip": false,
 		},
 		"custom/hyphen-divider": {
@@ -53,7 +57,7 @@
 			"on-click": "/home/uuu/.config/waybar/scripts/toggle_idle_inhibit.sh"
 		},
 		"custom/nowplaying": {
-			"format": " {}",
+			"format": "{}",
 			"return-type": "text",
 			"exec": "/home/uuu/.config/waybar/scripts/quodlibet-now-playing.sh",
 			"interval": 1,
@@ -110,11 +114,11 @@
 		},
 		"battery": {
 			"interval": 30,
-			"format": "| bat {capacity}% {time}",
+			"format": "bat {capacity} {time} | ",
 			"format-time": "({H}:{m})",
-			"format-full": "| bat {capacity}%",
-			"format-charging": "| chg {capacity}% {time}",
-			"format-plugged": "| chg {capacity}% {time}",
+			"format-full": "bat {capacity} | ",
+			"format-charging": "chg {capacity} {time} | ",
+			"format-plugged": "chg {capacity} {time} | ",
 		},
 		"battery#bat2": {
 			"bat": "BAT2"
@@ -131,7 +135,7 @@
 			}
 		},
 		"network": {
-			"format-wifi": "{essid:.10} {signalStrength}%",
+			"format-wifi": "{essid:.10} {signalStrength}",
 			"format-ethernet": "eth {ipaddr}",
 			"tooltip-format": "{essid}\n{ifname} via {gwaddr}",
 			"format-linked": " {ifname} (No IP)",
@@ -146,26 +150,16 @@
 			"on-click": "blueman-manager",
 			"tooltip-format": "{status}"
 		},
-		"pulseaudio": {
+		"pulseaudio#vol": {
 			// "scroll-step": 1, // %, can be a float
-			"format": "vol {volume} | {format_source}",
-			"format-muted": "mute | {format_source}",
+			"format": "vol {volume}",
+			"format-muted": "mute",
+			"on-click": "pavucontrol"
+		},
+		"pulseaudio#mic": {
+			"format": "{format_source}",
 			"format-source": "mic on",
 			"format-source-muted": "mic off",
-			"format-icons": {
-				"headphone": "",
-				"hands-free": "",
-				"headset": "",
-				"phone": "",
-				"portable": "",
-				"car": "",
-				"default": [
-					"",
-					"",
-					""
-				]
-			},
-			"on-click": "pavucontrol"
 		},
 		"include": [
 			"~/.config/waybar/device.jsonc"
