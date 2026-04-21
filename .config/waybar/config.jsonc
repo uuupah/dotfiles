@@ -61,7 +61,8 @@
 			"return-type": "text",
 			"exec": "/home/uuu/.config/waybar/scripts/quodlibet-now-playing.sh",
 			"interval": 1,
-			"on-click": "quodlibet --play-pause"
+			"on-click": "quodlibet --play-pause",
+			"tooltip": false
 		},
 		"cpu": {
 			"format": "cpu {usage:02d}",
@@ -160,6 +161,8 @@
 			"format": "{format_source}",
 			"format-source": "mic on",
 			"format-source-muted": "mic off",
+			"on-click": "pavucontrol -t 4",
+			"tooltip": false
 		},
 		"include": [
 			"~/.config/waybar/device.jsonc"
