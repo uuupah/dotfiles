@@ -1,5 +1,5 @@
-font = /home/uuu/.local/share/fonts/TerminessNerdFontMono-Regular.ttf
-font-size = 14
+font = /usr/local/share/fonts/iosevka/IosevkaCustom-Regular.ttf
+font-size = 13
 
 width = 370
-height = 224
+height = 244

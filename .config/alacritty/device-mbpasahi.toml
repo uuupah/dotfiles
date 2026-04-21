@@ -1,6 +1,8 @@
 [font]
-normal = { family = "Terminus", style = "Regular" }
-bold  = { family = "Terminus", style = "Bold" }
-italic = { family = "Terminus", style = "Italic" }
-bold_italic = { family = "Terminus", style = "Bold Italic" }
-size = 12
+normal = { family = "Iosevka Custom", style = "Regular" }
+bold  = { family = "Iosevka Custom", style = "Bold" }
+italic = { family = "Iosevka Custom", style = "Italic" }
+bold_italic = { family = "Iosevka Custom", style = "Bold Italic" }
+size = 11
+
+offset = { x = 0, y = -2 }

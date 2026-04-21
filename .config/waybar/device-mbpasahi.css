@@ -1,8 +1,9 @@
 * {
-  font-family: "Terminus", "Unifont-JP";
-  font-size: 16pt;
+  font-family: "Iosevka Custom", "Droid Sans Japanese", "Unifont-JP";
+  font-size: 12pt;
+  font-weight: 400;
 }
 
 #custom-notification {
-	font-family: "Terminus"
+	font-family: "Iosevka Custom", "Droid Sans Japanese", "Unifont-JP";
 }
