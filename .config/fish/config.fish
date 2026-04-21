@@ -61,5 +61,7 @@ end
 # set other-writable directory to yellow on black
 set -x LS_COLORS ":ow=01;33"
 
+fish_add_path --path ~/.local/bin
+
 # starship init fish | source
 set fish_greeting

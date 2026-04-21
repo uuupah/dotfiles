@@ -43,15 +43,6 @@ gestures {
     }
 }
 
-// laptop displays:
-output "eDP-1" {
-    focus-at-startup
-    mode "1920x1200@60.026"
-    scale 1
-    transform "normal"
-    position x=0 y=0
-}
-
 output "dp-5" {
 	off
 }
@@ -107,7 +98,6 @@ layout {
 
 spawn-at-startup "plasma-polkit-agent"
 spawn-at-startup "dunst"
-spawn-at-startup "hypridle"
 spawn-sh-at-startup "tailscale up"
 spawn-sh-at-startup "syncthing serve --no-browser"
 spawn-sh-at-startup "wl-paste --watch cliphist store"

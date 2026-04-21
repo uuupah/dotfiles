@@ -15,6 +15,8 @@
 			"custom/nowplaying",
 			"pulseaudio",
 			"custom/pipe-divider",
+		    "custom/idle",
+   			"custom/pipe-divider",
 			"bluetooth",
 			"custom/pipe-divider",
 			"network",
@@ -43,6 +45,13 @@
 			"tooltip": false,
 			"swap-icon-label": false
 		},
+		"custom/idle": {
+			"tooltip": false,
+			"return-type": "text",
+			"exec": "/home/uuu/.config/waybar/scripts/check_idle_inhibit.sh",
+			"interval": 60,
+			"on-click": "/home/uuu/.config/waybar/scripts/toggle_idle_inhibit.sh"
+		},
 		"custom/nowplaying": {
 			"format": " {}",
 			"return-type": "text",
@@ -66,6 +75,13 @@
 				"activated": "",
 				"deactivated": ""
 			}
+		},
+		"idle_inhibitor": {
+			"format-icons": {
+				"activated": "idle off",
+				"deactivated": "idle on"
+			},
+			"timeout": 180
 		},
 		"tray": {
 			"spacing": 10
