@@ -62,6 +62,7 @@ end
 set -x LS_COLORS ":ow=01;33"
 
 fish_add_path --path ~/.local/bin
+fish_add_path --path ~/.cargo/bin
 
 # starship init fish | source
 set fish_greeting

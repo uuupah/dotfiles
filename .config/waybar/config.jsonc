@@ -12,6 +12,7 @@
 			"niri/window"
 		],
 		"modules-right": [
+			"custom/gap",
 			"custom/nowplaying",
 			// "custom/pipe-divider", // this divider is rendered by the script so it gets hidden when no music is playing
 		    "custom/idle",
@@ -37,6 +38,10 @@
 		"custom/spacer": {
 			"format": " ",
 			"tooltip": false,
+		},
+		"custom/gap": {
+			"format": "      ",
+			"tooltip": false,	
 		},
 		"custom/pipe-divider": {
 			"format": " | ",

@@ -1,0 +1,22 @@
+#nav-bar ,
+.tab-background[selected],
+#urlbar-zoom-button,
+#urlbar-searchmode-switcher {
+  background-color: #3e4451 !important;
+}
+
+#urlbar-background,
+.tab-background,
+#urlbar > vbox.urlbarView {
+  background-color: #282c34 !important;
+}
+
+:root {
+	color: #b6bdca !important;
+}
+
+#navigator-toolbox {
+	--toolbox-textcolor-inactive: #b6bdca99 !important; /*idk if this is working*/
+	background-color: #282c34 !important;
+	border-bottom-color: #282c34 !important;
+}
