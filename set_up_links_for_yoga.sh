@@ -7,6 +7,7 @@ rm ~/.config/waybar/device.jsonc
 rm ~/.config/tofi/device
 rm ~/.config/tofi/deviceprompt
 rm ~/.config/tofi/devicebemoji
+rm ~/.config/tofi/devicepower
 
 ln -s ~/.config/niri/device-yoga.kdl ~/.config/niri/device.kdl
 ln -s ~/.config/dunst/dunstdeviceyoga ~/.config/dunst/dunstdevice
@@ -16,3 +17,4 @@ ln -s ~/.config/waybar/device-yoga.jsonc ~/.config/waybar/device.jsonc
 ln -s ~/.config/tofi/devicefiles/deviceyoga ~/.config/tofi/device
 ln -s ~/.config/tofi/devicefiles/devicepromptyoga ~/.config/tofi/deviceprompt
 ln -s ~/.config/tofi/devicefiles/devicebemojiyoga ~/.config/tofi/devicebemoji
+ln -s ~/.config/tofi/devicefiles/devicepoweryoga ~/.config/tofi/devicepower

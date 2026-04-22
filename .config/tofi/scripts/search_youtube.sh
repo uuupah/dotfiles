@@ -5,6 +5,6 @@ if pgrep -x tofi >/dev/null; then
   exit
 fi
 
-search_term=$(echo "" | tofi --require-match=false --prompt-text "youtube-search: " --height 26) || exit 0
+search_term=$(echo "" | tofi --config ~/.config/tofi/configprompt --prompt-text "youtube-search: " ) || exit 0
 formatted_search_term="${search_term// /+}"
 librewolf --new-tab "https://youtube.com/results?search_query=${formatted_search_term}"

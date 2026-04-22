@@ -16,4 +16,4 @@ sync-obsidian/.obsidian/themes/uuu/themecolors.css
 .config/niri/device.kdl
 .config/dunst/dunstdevice
 .config/waybar/device.css
-.config/tofi/device
+.config/tofi/device*

@@ -1,5 +1,7 @@
-font = /usr/local/share/fonts/iosevka/IosevkaCustom-Regular.ttf
-font-size = 13
+font = /usr/local/share/fonts/iosevka/IosevkaCustomNerdFont-Regular.ttf
+font-size = 12
 
 width = 370
-height = 244
+height = 230
+
+scale = true

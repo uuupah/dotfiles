@@ -1,33 +1,5 @@
-font = /usr/share/fonts/unifont/unifont.otf
-font-size = 12
-hint-font = false
-ascii-input = true
-late-keyboard-init = true
+include = /home/uuu/.config/tofi/config
 
-outline-width = 0
-border-width = 1
+font = "Unifont JP"
 
-background-color=#2D353B
-text-color=#D3C6AA
-border-color=#D3C6AA
-selection-color=#2D353B
-selection-background=#D3C6AA
-selection-background-padding=0,-1,0,2
-
-prompt-text="run: "
-
-padding-top = 4
-padding-bottom = 4
-padding-left = 4
-padding-right = 4
-
-width = 308
-height = 186
-num-results = 10
-
-include = /home/uuu/.config/tofi/themes/uuu
-include = /home/uuu/.config/tofi/device
-
-output = 
-
-scale = false
+include = /home/uuu/.config/tofi/devicebemoji

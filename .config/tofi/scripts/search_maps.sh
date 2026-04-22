@@ -5,6 +5,6 @@ if pgrep -x tofi >/dev/null; then
   exit
 fi
 
-search_term=$(echo "" | tofi --require-match=false --prompt-text "googlemaps-search: " --height 26) || exit 0
+search_term=$(echo "" | tofi --config ~/.config/tofi/configprompt --prompt-text "googlemaps-search: ") || exit 0
 formatted_search_term="${search_term// /+}"
 librewolf --new-tab "https://google.com/maps/search/${formatted_search_term}"

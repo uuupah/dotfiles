@@ -1,5 +1,9 @@
-font = /usr/local/share/fonts/iosevka/IosevkaCustom-Regular.ttf
-font-size = 13
+font = "IosevkaCustom Nerd Font"
+font-size = 12
 
-width = 370
-height = 244
+width = 480
+height = 230
+scale = true
+result-spacing = -1
+
+prompt-text = "sel: "

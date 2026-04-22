@@ -5,6 +5,6 @@ if pgrep -x tofi >/dev/null; then
   exit
 fi
 
-search_term=$(echo "" | tofi --require-match=false --prompt-text "sallys-baking-addiction-search: " --height 26 --width 450) || exit 0
+search_term=$(echo "" | tofi --config ~/.config/tofi/configprompt --prompt-text "sallys-baking-addiction-search: ") || exit 0
 formatted_search_term="${search_term// /+}"
 librewolf --new-tab "https://sallysbakingaddiction.com/?s=${formatted_search_term}"

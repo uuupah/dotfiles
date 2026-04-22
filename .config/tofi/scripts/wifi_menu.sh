@@ -14,9 +14,9 @@ fi
 
 echo $longest_wifi_name
 
-# +11 for the prompt, *8 for the character width, +10 for the padding and border on tofi
+# +11 for the prompt, *10 for the character width, +10 for the padding and border on tofi
 
-width=$(($(($(($longest_wifi_name+11))*8))+10))
+width=$(($(($(($longest_wifi_name+11))*10))+10))
 
 connected=$(nmcli -fields WIFI g)
 if [[ "$connected" =~ "enabled" ]]; then

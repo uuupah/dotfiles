@@ -22,9 +22,6 @@ case "$choice" in
   "calculator")
     $HOME/.config/tofi/scripts/calc.sh
     ;;
-  "toggle external monitors")
-    $HOME/.config/tofi/scripts/set_hyprland_monitors.sh
-    ;;
   "change audio profile")
     $HOME/.config/tofi/scripts/change_pulse_audio_profile.sh
     ;;
