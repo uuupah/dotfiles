@@ -1,5 +1,7 @@
 font = /usr/local/share/fonts/iosevka/IosevkaCustom-Regular.ttf
-font-size = 13
+font-size = 12
 
-width = 370
-height = 244
+width = 600
+height = 30
+
+require-match = false

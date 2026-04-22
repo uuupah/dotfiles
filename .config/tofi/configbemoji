@@ -1,0 +1,5 @@
+include = /home/uuu/.config/tofi/config
+
+font = "Unifont JP"
+
+include = /home/uuu/.config/tofi/devicebemoji

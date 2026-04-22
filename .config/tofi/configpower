@@ -1,0 +1,7 @@
+include = /home/uuu/.config/tofi/config
+
+prompt = "sel: "
+height = 122
+width = 130
+
+include = /home/uuu/.config/tofi/devicepower

@@ -18,3 +18,6 @@ sync-obsidian/.obsidian/themes/uuu/themecolors.css
 .config/dunst/dunstdevice
 .config/waybar/device.css
 .config/tofi/device
+.config/tofi/devicepower
+.config/tofi/devicebemoji
+.config/tofi/deviceprompt

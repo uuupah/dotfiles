@@ -6,7 +6,7 @@ if pgrep -x tofi >/dev/null; then
 fi
 
 promptlength=5
-characterwidth=8
+characterwidth=10
 tofipadding=10
 
 options=$(pactl list cards | awk '/Profiles:/{flag=1;next}/Active Profile:/{flag=0}flag' | awk '{$1=$1};1' | sed 's/:.*$//g')

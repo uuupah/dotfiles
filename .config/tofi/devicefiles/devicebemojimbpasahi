@@ -1,0 +1,9 @@
+font = "IosevkaCustom Nerd Font"
+font-size = 12
+
+width = 480
+height = 230
+scale = true
+result-spacing = -1
+
+prompt-text = "sel: "

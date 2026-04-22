@@ -25,9 +25,8 @@ width = 308
 height = 186
 num-results = 10
 
-include = /home/uuu/.config/tofi/themes/uuu
-include = /home/uuu/.config/tofi/device
-
+scale = false
 output = 
 
-scale = false
+include = /home/uuu/.config/tofi/themes/uuu
+include = /home/uuu/.config/tofi/device
