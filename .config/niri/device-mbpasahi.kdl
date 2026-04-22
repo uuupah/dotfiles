@@ -3,6 +3,12 @@ output "eDP-1" {
 	scale 1.2
     transform "normal"
     position x=0 y=0
+    layout {
+    	gaps 4
+    	border {
+    		width 3
+    	}
+    }
 }
 
 input {
