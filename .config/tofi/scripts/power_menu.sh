@@ -6,7 +6,7 @@ if pgrep -x tofi >/dev/null; then
   exit
 fi
 
-choice=$(printf "%s\n" "power off" "restart" "suspend" "hibernate" "lock" "log out" | tofi --config ~/.config/tofi/configpower) || exit 0
+choice=$(printf "%s\n" "power off" "restart" "suspend" "lock" "log out" | tofi --config ~/.config/tofi/configpower) || exit 0
 
 case "$choice" in
   "power off")
@@ -18,23 +18,13 @@ case "$choice" in
   "suspend")
     systemctl suspend
     ;;
-  "hibernate")
-    systemctl hibernate
-    ;;
+  # "hibernate")
+  #   systemctl hibernate
+  #   ;;
   "lock")
-    hyprlock
+    swaylock
     ;;
   "log out")
-    case "$DESKTOP_SESSION" in
-      hyprland | hyprland-uwsm)
-        hyprctl dispatch exit 1
-        ;;
-      niri)
-        niri msg action quit -s
-        ;;
-      sway)
-        swaymsg exit
-        ;;
-    esac
+    niri msg action quit -s
     ;;
 esac

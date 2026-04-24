@@ -97,7 +97,7 @@ layout {
 }
 
 spawn-at-startup "plasma-polkit-agent"
-spawn-at-startup "dunst"
+//spawn-at-startup "dunst"
 spawn-sh-at-startup "tailscale up"
 spawn-sh-at-startup "syncthing serve --no-browser"
 spawn-sh-at-startup "wl-paste --watch cliphist store"
