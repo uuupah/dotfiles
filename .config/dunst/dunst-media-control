@@ -60,9 +60,9 @@ function get_volume_icon {
 function get_mic_icon {
     mute=$(get_mic_mute)
     if [ "$mute" == "yes" ] ; then
-        mic_icon="mic on"
-    else
         mic_icon="mic off"
+    else
+        mic_icon="mic on"
     fi
 }
 
