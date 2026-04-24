@@ -47,6 +47,11 @@ output "dp-5" {
 	off
 }
 
+// thinkpad yoga laptop display
+output "AU Optronics 0x6693 Unknown" {
+	scale 1
+}
+
 // desktop displays:
 output "DP-1" {
 	focus-at-startup

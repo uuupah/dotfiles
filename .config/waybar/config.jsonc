@@ -28,9 +28,9 @@
 			"cpu",
 			"custom/spacer",
 			"memory",
-			"custom/spacer",
+			// "custom/spacer", // this space has been attached to the battery entry
 			"battery",
-			// "custom/pipe-divider", // as above, to allow battery to be hidden on desktops
+			"custom/pipe-divider",
 			"clock",
 			"custom/pipe-divider",
 			"tray"
@@ -120,11 +120,11 @@
 		},
 		"battery": {
 			"interval": 30,
-			"format": "bat {capacity} {time} | ",
+			"format": " bat {capacity} {time}",
 			"format-time": "({H}:{m})",
-			"format-full": "bat {capacity} | ",
-			"format-charging": "chg {capacity} {time} | ",
-			"format-plugged": "chg {capacity} {time} | ",
+			"format-full": " bat {capacity}",
+			"format-charging": " chg {capacity} {time}",
+			"format-plugged": " chg {capacity} {time}",
 		},
 		"battery#bat2": {
 			"bat": "BAT2"
