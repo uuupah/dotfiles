@@ -166,7 +166,7 @@
 			"format": "{format_source}",
 			"format-source": "mic on",
 			"format-source-muted": "mic off",
-			"on-click": "pavucontrol -t 4",
+			"on-click": "~/.config/dunst/dunst-media-control mic_mute",
 			"tooltip": false
 		},
 		"include": [
