@@ -12,29 +12,33 @@ wikipedia
 youtube"
 
 choice=$(printf "%s\n" "$options" | tofi --prompt="sel: " --print-index=true) || exit 0
-config="$HOME
-Changes to be committed:/.config/tofi/configprompt"
+config="$HOME/.config/tofi/configprompt"
+search_prompt=""
+search_url=""
 
 # TODO change this choice to indexes instead of words
 case "$choice" in
   1)
-    search_term=$(echo "" | tofi --config $config --prompt-text "googlemaps-search: ") || exit 0
-    librewolf --new-tab "https://google.com/maps/search/${search_term// /+}"
+    search_prompt="googlemaps-search: "
+    search_url="https://google.com/maps/search/"
     ;;
   2)
-    search_term=$(echo "" | tofi --config $config --prompt-text "recipe-tin-eats-search: ") || exit 0
-    librewolf --new-tab "https://recipetineats.com/?s=${search_term// /+}"
+    search_prompt="recipe-tin-eats-search: "
+    search_url="https://recipetineats.com/?s="
     ;;
   3)
-    search_term=$(echo "" | tofi --config $config --prompt-text "sallys-baking-addiction-search: ") || exit 0
-    librewolf --new-tab "https://sallysbakingaddiction.com/?s=${search_term// /+}"
+    search_prompt="sallys-baking-addiction-search: "
+    search_url="https://sallysbakingaddiction.com/?s="
     ;;
   4)
-    search_term=$(echo "" | tofi --config $config --prompt-text "wikipedia-search: " ) || exit 0
-    librewolf --new-tab "https://en.wikipedia.org/wiki/Special:Search?sourceid=Mozilla-search&search=${search_term// /+}"
+    search_prompt="wikipedia-search: "
+    search_url="https://en.wikipedia.org/wiki/Special:Search?sourceid=Mozilla-search&search="
     ;;
   5)
-    search_term=$(echo "" | tofi --config $config --prompt-text "youtube-search: " ) || exit 0
-    librewolf --new-tab "https://youtube.com/results?search_query=${search_term// /+}"
+    search_prompt="youtube-search: "
+    search_url="https://youtube.com/results?search_query="
     ;;
 esac
+
+search_term=$(echo "" | tofi --config $config --prompt-text "${search_prompt}" ) || exit 0
+librewolf --new-tab "${search_url}${search_term// /+}"
