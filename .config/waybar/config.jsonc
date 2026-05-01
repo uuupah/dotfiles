@@ -146,6 +146,7 @@
 			"tooltip-format": "{essid}\n{ifname} via {gwaddr}",
 			"format-linked": " {ifname} (No IP)",
 			"format-disconnected": "no wifi",
+			"format-disabled": "wifi off",
 			"on-click": "alacritty -e nmcli device wifi rescan; alacritty -e nmtui",
 		},
 		"bluetooth": {

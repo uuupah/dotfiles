@@ -217,8 +217,8 @@ binds {
     Mod+Shift+S { spawn "~/scripts/grim_save_screenshot_and_copy_to_clipboard.sh"; }
     Mod+Shift+C { spawn-sh "hyprpicker -a"; }
     Mod+E { spawn "thunar"; }
-    Mod+J { spawn "~/.config/tofi/scripts/search_wikipedia.sh"; }
-    Mod+L { spawn "swaylock"; }
+    //Mod+J { spawn "~/.config/tofi/scripts/search_wikipedia.sh"; }
+    Mod+Semicolon { spawn "swaylock"; }
     Mod+M { spawn "~/.config/tofi/scripts/musings.sh"; }
     Mod+P { spawn "~/.config/tofi/scripts/power_menu.sh"; }
     Mod+Q hotkey-overlay-title="Open a Terminal: alacritty" { spawn "alacritty"; }
@@ -255,11 +255,19 @@ binds {
     Mod+Down  { focus-window-down; }
     Mod+Up    { focus-window-up; }
     Mod+Right { focus-column-right; }
+    Mod+H { focus-column-left; }
+    Mod+J { focus-window-down; }
+    Mod+K { focus-window-up; }
+    Mod+L { focus-column-right; }
 
     Mod+Ctrl+Left  { move-column-left; }
     Mod+Ctrl+Down  { move-window-down; }
     Mod+Ctrl+Up    { move-window-up; }
     Mod+Ctrl+Right { move-column-right; }
+    Mod+Ctrl+H     { move-column-left; }
+    Mod+Ctrl+J     { move-window-down; }
+    Mod+Ctrl+K     { move-window-up; }
+    Mod+Ctrl+L     { move-column-right; }
 
     Mod+Home { focus-column-first; }
     Mod+End  { focus-column-last; }
@@ -280,6 +288,10 @@ binds {
     Mod+Page_Up        { focus-workspace-up; }
     Mod+Ctrl+Page_Down { move-column-to-workspace-down; }
     Mod+Ctrl+Page_Up   { move-column-to-workspace-up; }
+    Mod+U      	       { focus-workspace-down; }
+    Mod+I              { focus-workspace-up; }
+    Mod+Ctrl+U         { move-column-to-workspace-down; }
+    Mod+Ctrl+I         { move-column-to-workspace-up; }
 
     Mod+Shift+Page_Down { move-workspace-down; }
     Mod+Shift+Page_Up   { move-workspace-up; }
