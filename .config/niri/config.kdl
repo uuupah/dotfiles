@@ -185,6 +185,7 @@ window-rule {
 
 window-rule {
 	match app-id="AppImageLauncher" title="Desktop Integration — AppImageLauncher"
+	match app-id="thunar" title="File Operation Progress"
 	open-floating true
 }
 
@@ -216,7 +217,7 @@ binds {
     Mod+D { spawn "zed"; }
     Mod+Shift+S { spawn "~/scripts/grim_save_screenshot_and_copy_to_clipboard.sh"; }
     Mod+Shift+C { spawn-sh "hyprpicker -a"; }
-    Mod+E { spawn "thunar"; }
+    Mod+E { spawn "nemo"; }
     //Mod+J { spawn "~/.config/tofi/scripts/search_wikipedia.sh"; }
     Mod+Semicolon { spawn "swaylock"; }
     Mod+M { spawn "~/.config/tofi/scripts/musings.sh"; }

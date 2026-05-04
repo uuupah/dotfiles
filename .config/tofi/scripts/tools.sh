@@ -13,7 +13,8 @@ disconnect from wifi
 next wallpaper
 previous wallpaper
 change colour scheme
-remmina connections"
+remmina connections
+niri documentation"
 
 choice=$(printf "%s\n" "$options" | tofi --prompt="sel: ") || exit 0
 
@@ -43,5 +44,8 @@ case "$choice" in
     ;;
   "remmina connections")
     $HOME/.config/tofi/scripts/remote_connections.sh
+    ;;
+  "niri documentation")
+    librewolf --new-tab "https://niri-wm.github.io/niri/Configuration%3A-Introduction.html"
     ;;
 esac
