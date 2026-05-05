@@ -8,6 +8,7 @@ rm ~/.config/tofi/device
 rm ~/.config/tofi/deviceprompt
 rm ~/.config/tofi/devicebemoji
 rm ~/.config/tofi/devicepower
+rm ~/.config/wpaperd/config.toml
 
 ln -s ~/.config/niri/device-yoga.kdl ~/.config/niri/device.kdl
 ln -s ~/.config/dunst/dunstdeviceyoga ~/.config/dunst/dunstdevice
@@ -18,3 +19,4 @@ ln -s ~/.config/tofi/devicefiles/deviceyoga ~/.config/tofi/device
 ln -s ~/.config/tofi/devicefiles/devicepromptyoga ~/.config/tofi/deviceprompt
 ln -s ~/.config/tofi/devicefiles/devicebemojiyoga ~/.config/tofi/devicebemoji
 ln -s ~/.config/tofi/devicefiles/devicepoweryoga ~/.config/tofi/devicepower
+ln -s ~/.config/wpaperd/deviceconfigyoga.toml ~/.config/wpaperd/config.toml
