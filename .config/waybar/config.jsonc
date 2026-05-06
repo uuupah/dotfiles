@@ -64,9 +64,9 @@
 		"custom/nowplaying": {
 			"format": "{}",
 			"return-type": "text",
-			"exec": "/home/uuu/.config/waybar/scripts/quodlibet-now-playing.sh",
+			"exec": "/home/uuu/.config/waybar/scripts/now-playing.sh",
 			"interval": 1,
-			"on-click": "quodlibet --play-pause",
+			"on-click": "playerctl --player=kew,quodlibet,%any,firefox,chromium,edge play-pause",
 			"tooltip": false
 		},
 		"cpu": {
