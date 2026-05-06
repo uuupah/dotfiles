@@ -53,7 +53,7 @@ output "AU Optronics 0x6693 Unknown" {
 }
 
 // desktop displays:
-output "DP-1" {
+output "Samsung Electric Company Odyssey G52A H4ZT100423" {
 	focus-at-startup
 	mode "2560x1440@164.836"
     scale 1
