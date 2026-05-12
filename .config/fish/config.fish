@@ -58,6 +58,16 @@ function fish_prompt
     end
 end
 
+# yazi that can change working directory
+function y
+	set tmp (mktemp -t "yazi-cwd.XXXXXX")
+	command yazi $argv --cwd-file="$tmp"
+	if read -z cwd < "$tmp"; and [ "$cwd" != "$PWD" ]; and test -d "$cwd"
+		builtin cd -- "$cwd"
+	end
+	command rm -f -- "$tmp"
+end
+
 # set other-writable directory to yellow on black
 set -x LS_COLORS ":ow=01;33"
 
