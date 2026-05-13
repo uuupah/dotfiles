@@ -2,3 +2,5 @@
 .git*
 systemd-services
 desktop-files
+set_up_links_for_*
+README.md

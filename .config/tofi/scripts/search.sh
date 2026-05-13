@@ -9,7 +9,8 @@ options="wikipedia
 maps
 recipe tin eats
 sally's baking addiction
-youtube"
+youtube
+fedora packages"
 
 choice=$(printf "%s\n" "$options" | tofi --prompt="sel: " --print-index=true) || exit 0
 config="$HOME/.config/tofi/configprompt"
@@ -37,6 +38,9 @@ case "$choice" in
     search_prompt="youtube-search: "
     search_url="https://youtube.com/results?search_query="
     ;;
+  6)
+    search_prompt="fedora-package-search: "
+    search_url="https://packages.fedoraproject.org/search?query="
 esac
 
 search_term=$(echo "" | tofi --config $config --prompt-text "${search_prompt}" ) || exit 0

@@ -7,6 +7,7 @@ fi
 
 options="calculator
 toggle external monitors
+mount all mtp devices
 change audio profile
 connect to wifi
 disconnect from wifi
@@ -36,16 +37,19 @@ case "$choice" in
   "change colour scheme")
     $HOME/scripts/colour_scheme_script.sh
     ;;
+  "mount all mtp devices")
+    $HOME/scripts/mount_all_mtp_devices.sh
+    ;;
   "next wallpaper")
     wpaperctl next
+    ;;
+  "niri documentation")
+    librewolf --new-tab "https://niri-wm.github.io/niri/Configuration%3A-Introduction.html"
     ;;
   "previous wallpaper")
     wpaperctl previous
     ;;
   "remmina connections")
     $HOME/.config/tofi/scripts/remote_connections.sh
-    ;;
-  "niri documentation")
-    librewolf --new-tab "https://niri-wm.github.io/niri/Configuration%3A-Introduction.html"
     ;;
 esac

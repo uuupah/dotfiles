@@ -106,7 +106,6 @@ spawn-at-startup "plasma-polkit-agent"
 spawn-sh-at-startup "tailscale up"
 spawn-sh-at-startup "syncthing serve --no-browser"
 spawn-sh-at-startup "wl-paste --watch cliphist store"
-spawn-at-startup "wpaperd"
 
 hotkey-overlay {
     skip-at-startup
