@@ -74,5 +74,7 @@ set -x LS_COLORS ":ow=01;33"
 fish_add_path --path ~/.local/bin
 fish_add_path --path ~/.cargo/bin
 
+set --global fish_key_bindings fish_default_key_bindings
+
 # starship init fish | source
 set fish_greeting
