@@ -214,7 +214,7 @@ binds {
     Mod+Slash { spawn "~/.config/tofi/scripts/tools.sh"; }
     Mod+A { spawn "librewolf"; }
     Mod+S { spawn-sh "/usr/bin/flatpak run --branch=stable --command=obsidian.sh --file-forwarding md.obsidian.Obsidian @@u %U @@"; }
-    Mod+D { spawn "vscodium"; }
+    Mod+D { spawn "codium"; }
     Mod+Shift+S { spawn "~/scripts/grim_save_screenshot_and_copy_to_clipboard.sh"; }
     Mod+Shift+C { spawn-sh "hyprpicker -a"; }
     Mod+E { spawn "nemo"; }
