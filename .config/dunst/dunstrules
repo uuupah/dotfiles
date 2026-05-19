@@ -10,7 +10,7 @@
     origin = top-right
     offset = (12, 12)
     scale = 0
-    notification_limit = 10
+    notification_limit = 5
 
     progress_bar = true
     progress_bar_height = 10
