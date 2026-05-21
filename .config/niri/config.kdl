@@ -196,6 +196,20 @@ window-rule {
 	max-width 1260
 }
 
+window-rule {
+	match app-id="microsoft-edge"
+	border{
+		width 4
+	}
+}
+
+window-rule {
+	match app-id="librewolf"
+	border{
+		width 4
+	}
+}
+
 recent-windows {
 	binds {
 		Alt+Tab { next-window; } 
