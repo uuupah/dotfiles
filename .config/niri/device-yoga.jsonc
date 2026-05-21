@@ -1,0 +1,13 @@
+window-rule {
+	match app-id="microsoft-edge"
+	border{
+		width 4
+	}
+}
+
+window-rule {
+	match app-id="librewolf"
+	border{
+		width 4
+	}
+}
