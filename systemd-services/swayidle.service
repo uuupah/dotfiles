@@ -4,5 +4,8 @@ After=graphical-session.target
 Requisite=graphical-session.target
 
 [Service]
-ExecStart=/usr/bin/swayidle -w timeout 1200 'systemctl suspend' timeout 600 'swaylock -f' before-sleep 'swaylock -f'
+ExecStart=/usr/bin/swayidle -w \
+timeout 60 'brightnessctl -s sq 2%' resume 'brightnessctl -r'\
+timeout 900 'swaylock -f' before-sleep 'swaylock -f'\
+timeout 1800 'systemctl suspend' 
 Restart=on-failure
