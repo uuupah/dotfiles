@@ -192,13 +192,18 @@
 		"modules-left": [
 			"niri/workspaces",
 			"custom/pipe-divider",
-			"niri/window"
+			"niri/window",
 		],
 		"modules-right": [
-			"clock"
+			"clock",
+			"custom/spacer"
 		],
 		"custom/pipe-divider": {
 			"format": "|",
+			"tooltip": false,
+		},
+		"custom/spacer": {
+			"format": " ",
 			"tooltip": false,
 		},
 		"clock": {
