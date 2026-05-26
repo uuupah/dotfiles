@@ -13,6 +13,8 @@ connect to wifi
 disconnect from wifi
 next wallpaper
 previous wallpaper
+fahrenheit to celsius
+celsius to fahrenheit
 change colour scheme
 remmina connections
 niri documentation"
@@ -48,6 +50,12 @@ case "$choice" in
     ;;
   "previous wallpaper")
     wpaperctl previous
+    ;;
+  "fahrenheit to celsius")
+    $HOME/.config/tofi/scripts/fahrenheit_to_celsius.sh
+    ;;
+  "celsius to fahrenheit")
+    $HOME/.config/tofi/scripts/celsius_to_fahrenheit.sh
     ;;
   "remmina connections")
     $HOME/.config/tofi/scripts/remote_connections.sh
